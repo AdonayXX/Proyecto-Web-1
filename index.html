@@ -8,6 +8,12 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style/navbar.css">
     <title>Document</title>
 </head>
 
@@ -25,6 +31,7 @@
                     </li>
                     <li class="nav-item items">
                        <i class="bi-youtube Icons youtube"></i>
+                        <i class="bi bi-youtube Icons"></i>
                     </li>
                     <li class="nav-item  items">
                         <i class="bi-telegram Icons telegram"></i>
@@ -33,45 +40,122 @@
                         <i class="bi-instagram Icons instagram"></i>
                     </li>
                 </ul>
-
             </div>
         </div>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
-                    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#" aria-current="page">Home
-                                <span class="visually-hidden">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownId">
-                                <a class="dropdown-item" href="#">Action 1</a>
-                                <a class="dropdown-item" href="#">Action 2</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <form class="d-flex my-2 my-lg-0">
-                        <input class="form-control me-sm-2" type="text" placeholder="Search" />
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                            Search
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </nav>
 
+        <div class="row">
+            <nav class="navbar navbar-expand-sm nav1 ">
+                <div class="container-fluid">
+                    <a class="navbar-brand logo-img" href="#">
+                        <img src="/img/LogoHSRA.jpg" alt="Logo" width="" height="">
+                    </a>
+                    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse nav-colla" id="collapsibleNavId">
+                        <ul class="navbar-nav me-auto nav-h">
+                            <li class="nav-item nav-anima">
+                                <a class="nav-link nav-anima" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-anima" href="#">Nosotros</a>
+                            </li>
+                            <li class="nav-item dropdown nav-anima">
+                                <a class="nav-link dropdown-toggle nav-anima" href="#" id="dropdownId"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios
+                                    Médicos</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                    <a class="dropdown-item" href="#">Servicios Generales</a>
+                                    <a class="dropdown-item" href="#">Cirugías</a>
+                                    <a class="dropdown-item item-dwn" href="#">Directorio Médico</a>
+                                    <a class="dropdown-item item-dwn" href="#">Convenios Empresariales</a>
+                                    <a class="dropdown-item item-dwn" href="#">Paquetes Preventidos</a>
+                                    <a class="dropdown-item item-dwn" href="#">Chequeos INS Medical</a>
+                                    <a class="dropdown-item item-dwn" href="#">Láser Fotona</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown nav-anima">
+                                <a class="nav-link dropdown-toggle nav-anima" href="#" id="dropdownId"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Promociones</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                    <a class="dropdown-item item-dwn" href="#">Planes de cirugías</a>
+                                    <a class="dropdown-item item-dwn" href="#">Promociones del Mes</a>
+                                </div>
+                            </li>
+                            <li class="nav-item nav-anima">
+                                <a class="nav-link nav-anima" href="#">Maternidad</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex my-2 my-lg-0">
+                            <div class="input-group">
+                                <input class="form-control me-sm-2" type="text" placeholder="Search"
+                                    aria-label="Search" />
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+        <div class="opti-Direct">
+            <div class="box-Opti bx1">
+                <a href="">
+                    <h2>DIRECTORIO MÉDICO</h2>
+                </a>
+            </div>
+            <div class="box-Opti bx">
+                <a href=""><h2>SERVICIOS MÉDICOS</h2>
+                </a>
+                
+            </div>
+            <div class="box-Opti bx1">
+                <a href=""><H2>PLANES DE MATERNIDAD</H2></a>
+            </div>
+
+        </div>
+        <div class="row">
+        <div class="container-fluid about-us">
+            <h1>SOBRE NOSOTROS</h1>
+<div class="text-info">
+            <div class="text-1">
+                <p>
+                    El Hospital San Rafael Arcángel es una empresasensible
+                    orientada hacia las necesidades de nuestros
+                    pacientes y comprometida a la promoción de la salud
+                    integral en la provincia de Guanacaste actuando bajo el
+                    cumplimiento de nuestros valores: Seguridad,
+                    compromiso, respeto, sensibilidad e innovación.
+                </p>
+                <p>
+                    Nuestras modernas instalaciones albergan consulta a
+                    más de 55 médicos especialistas con condiciones de
+                    privacidad y confort así como con todo el equipo e
+                    instrumental requerido para la atención correcta del
+                    paciente ambulatorio con diferentes necesidades.
+                </p>
+            </div>
+
+            <div class="text-2">
+                <P>
+                    Areas de cirugía con modernos quirófanos y amplias
+                    áreas de recuperación. La seguridad de nuestros 
+                    pacientes es la máxima preocupación que mantenemos 
+                    en el área quirúrgica, las cuales cuentan con un sistema 
+                    de aire acondicionado que garantiza una purificación mayor al 99%.
+                </P><p>
+                    Habitaciones individuales que le ofrecen todas las comodidades para 
+                    la hospitalización de pacientes.
+                </p>
+            </div>
+        </div>
+
+        </div>
+    </div>
     </div>
 
 

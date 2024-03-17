@@ -1,0 +1,161 @@
+/* Estilo para la barra de navegación */
+*{
+    font-family: "Fira Sans", sans-serif;
+}
+.nav1{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    height: 100%;
+    
+}
+
+
+.nav-b{
+    border: 0.5px solid #000;
+}
+.nav-colla{
+    height: 100px;
+}
+
+/* Estilo para el logo */
+.logo-img{
+    margin-left: 20px;
+    margin-right: 160px;
+}
+    .navbar-brand img {
+        width: 233px;
+        height: 57px;
+    
+    
+}
+
+/* Animacion para  el menú de navegación */
+.navbar-nav .nav-link {
+    position: relative;
+    color: #000; 
+    padding: 5px; 
+}
+
+.navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; 
+    background-color: RGB(0, 156, 168); 
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::before {
+    width: 100%;
+}
+
+.navbar-nav .nav-item {
+    overflow:visible;
+}
+
+.navbar-nav .nav-link-expand {
+    transition: transform 0.3s ease;
+}
+
+.navbar-nav .nav-link-expand:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilo para el dropdown */
+
+.dropdown-menu .dropdown-item {
+    transition: background-color 0.3s linear;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: rgb(0, 156, 168); 
+    color: white;
+}
+
+
+/* Estilo para las cajas*/
+
+.opti-Direct{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+
+.box-Opti {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 262px;
+    height: 165px;
+}
+
+.box-Opti h2 {
+    color: white;
+    text-align: center;
+    font-weight: normal;
+}
+
+.bx{
+    background-color: rgb(48, 182, 206);
+}
+.bx1{
+    background-color:  rgb(0, 156, 168);
+    text-decoration: ;
+    
+}
+.bx1 a{
+    text-decoration: none;
+    
+}
+.bx a{
+    text-decoration: none;
+    
+}
+
+/*Animacion para las cajas*/
+
+.box-Opti:hover {
+    height: 175px;
+    box-shadow: 0 0 10px 0 rgba(230, 6, 6, 0.1);
+}
+
+/* Estilo de Sobre nosotros */
+
+
+.about-us{
+    display: flex;
+    flex-direction: column;
+    margin-top: 185px;
+    background-color: dodgerblue;
+    background-size: cover;
+    background-position: center;
+    height: auto;
+}
+.text-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+}
+.about-us h1{
+    color: white;
+    text-align: start;
+    margin-top: 50px;
+    font-size: 50px;
+    font-weight: normal;
+}
+
+.text-1{
+    color: white;
+    text-align: start;
+}
+
+.text-2{
+    color: white;
+    
+}
