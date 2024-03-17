@@ -274,6 +274,9 @@
         height: 100px;
     }
     
+.about-us{
+    margin-top: 15px;
+    
 }
 /* Responsivo Servicios */
 
@@ -290,10 +293,10 @@
       }
     
     .serv-r1 {
-      flex-direction: column; /* Cambia la dirección del flexbox a columna */
+      flex-direction: column;
     }
     .box-s{
-        width: 260px ;
+        width: 260px;
     
     }
     .about-us h1{
