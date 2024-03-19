@@ -2,8 +2,8 @@
     color: white;
     font-size: 26px;
 }
-.   {
-    background-color: RGB(48, 182, 206)
+.nav-p{
+    background: linear-gradient(to right, #30b6ce, #009ca8);
 }
 .login-icon{
     font-size: 26px;
