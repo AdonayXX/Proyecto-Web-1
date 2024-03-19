@@ -1,38 +1,41 @@
 /* Estilo para la barra de navegación */
-*{
+* {
     font-family: "Fira Sans", sans-serif;
 }
-.nav1{
+
+.nav1 {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     height: 100%;
-    
+
 }
 
 
-.nav-b{
+.nav-b {
     border: 0.5px solid #000;
 }
-.nav-colla{
+
+.nav-colla {
     height: auto;
 }
 
 /* Estilo para el logo */
-.logo-img{
+.logo-img {
     margin-left: 20px;
     margin-right: 160px;
 }
-    .navbar-brand img {
-        width: 233px;
-        height: 57px;
-    
-    
+
+.navbar-brand img {
+    width: 233px;
+    height: 57px;
+
+
 }
 
 /* Animacion para  el menú de navegación */
 .navbar-nav .nav-link {
     position: relative;
-    color: #000; 
-    padding: 5px; 
+    color: #000;
+    padding: 5px;
 }
 
 .navbar-nav .nav-link::before {
@@ -41,8 +44,8 @@
     bottom: 0;
     left: 0;
     width: 0;
-    height: 2px; 
-    background-color: RGB(0, 156, 168); 
+    height: 2px;
+    background-color: RGB(0, 156, 168);
     transition: width 0.3s ease;
 }
 
@@ -51,7 +54,7 @@
 }
 
 .navbar-nav .nav-item {
-    overflow:visible;
+    overflow: visible;
 }
 
 .navbar-nav .nav-link-expand {
@@ -69,25 +72,25 @@
 }
 
 .dropdown-menu .dropdown-item:hover {
-    background-color: rgb(0, 156, 168); 
+    background-color: rgb(0, 156, 168);
     color: white;
 }
 
 
 /* Estilo para las cajas*/
 
-.opti-Direct{
+.opti-Direct {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
+
 }
 
 
 .box-Opti {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     width: 262px;
     height: 165px;
 }
@@ -98,20 +101,23 @@
     font-weight: normal;
 }
 
-.bx{
+.bx {
     background-color: rgb(48, 182, 206);
 }
-.bx1{
-    background-color:  rgb(0, 156, 168);
-    
+
+.bx1 {
+    background-color: rgb(0, 156, 168);
+
 }
-.bx1 a{
+
+.bx1 a {
     text-decoration: none;
-    
+
 }
-.bx a{
+
+.bx a {
     text-decoration: none;
-    
+
 }
 
 /*Animacion para las cajas*/
@@ -125,21 +131,21 @@
 
 .cont-line {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-  }
-  
-  .line-c {
+    justify-content: center;
+    align-items: center;
+}
+
+.line-c {
     margin-top: 100px;
-    width: 68%; 
-    height: 3px; 
+    width: 68%;
+    height: 3px;
     background-color: rgb(0, 156, 168);
-  }
+}
 
 /* Estilo de Sobre nosotros */
 
 
-.about-us{
+.about-us {
     display: flex;
     flex-direction: column;
     margin-top: 85px;
@@ -148,22 +154,24 @@
     background-position: center;
     height: auto;
 }
-.text-info{
+
+.text-info {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 20px;
 
 }
-.about-us h1{
+
+.about-us h1 {
     color: rgb(0, 156, 168);
     text-align: start;
     margin-top: 50px;
     font-size: 50px;
-    font-weight:inherit;
+    font-weight: inherit;
 }
 
-.text-1{
+.text-1 {
     color: #504d4d;
     text-align: start;
     margin-top: 20px;
@@ -171,16 +179,16 @@
     margin-right: 20px;
 }
 
-.text-2{
+.text-2 {
     color: #504d4d;
-    margin-left: 20px; 
+    margin-left: 20px;
     margin-top: 20px;
     font-size: 15px;
 
-    
+
 }
 
-.line{
+.line {
     width: 8px;
     height: 170px;
     background-color: rgb(0, 156, 168);
@@ -189,63 +197,69 @@
 }
 
 /* Estilos para servicios */
-.services-M{
+.services-M {
     background-color: rgb(0, 156, 168);
     height: auto;
     margin-top: 30px;
 }
-.services-M h1{
+
+.services-M h1 {
     color: white;
     text-align: center;
     margin-top: 50px;
     font-size: 50px;
     font-weight: inherit;
 }
-.serv-r{
+
+.serv-r {
     display: flex;
     justify-content: center;
     flex-direction: row;
 
 }
 
-.serv-r1{
+.serv-r1 {
     display: flex;
     flex-direction: column;
 }
-.serv-c{
+
+.serv-c {
     display: flex;
     justify-content: center;
 }
 
-.text-t{
+.text-t {
     text-align: center;
     font-weight: normal;
 }
 
-.box-s{
+.box-s {
     padding: 10px;
-    width: 366px ;
+    width: 366px;
     height: auto;
-    margin: 30px; 
+    margin: 30px;
     background-color: rgb(147, 207, 211);
 
 }
-.box-s h5{
+
+.box-s h5 {
     text-align: center;
     font-weight: normal;
-    
+
     color: rgb(58, 54, 54);
 
 
 }
-.box-s p{
+
+.box-s p {
     text-align: center;
     color: white;
-    
+
     font-weight: normal;
 
 }
-.box-s a{
+
+.box-s a {
     display: flex;
     justify-content: center;
     text-decoration: none;
@@ -256,69 +270,179 @@
 
 /*Responsivo Navbar*/
 @media (max-width: 559px) {
-    
-    .logo-img{
+
+    .logo-img {
         margin-left: 0px;
         margin-right: 0px;
     }
-    .opti-Direct{
+
+    .opti-Direct {
         display: flex;
         flex-direction: column;
         justify-content: center;
         margin-bottom: 20px;
-        
+
     }
-    
+
     .box-Opti {
         width: 100%;
         height: 100px;
     }
-    
-.about-us{
-    margin-top: 15px;
-    
+
+    .about-us {
+        margin-top: 15px;
+
+    }
 }
+
 /* Responsivo Servicios */
 
 @media (max-width: 559px) {
 
-    .serv-r{
+    .serv-r {
         display: flex;
         justify-content: center;
         flex-direction: column;
-    
+
     }
+
     .line-c {
         display: none;
-      }
-    
+    }
+
     .serv-r1 {
-      flex-direction: column;
+        flex-direction: column;
     }
-    .box-s{
+
+    .box-s {
         width: 260px;
-    
+
     }
-    .about-us h1{
+
+    .about-us h1 {
         text-align: center;
     }
-    .line{
+
+    .line {
         height: 750px;
     }
-  }
-  
+}
+
 
 /* Animacion de los servicio*/
 
 .box-s {
-    transition: transform 0.3s ease; /* Transición suave para el zoom-in */
+    transition: transform 0.3s ease;
 }
 
 .box-s:hover {
-    transform: scale(1.1); /* Aumenta el tamaño al 110% cuando se pasa el cursor */
+    transform: scale(1.1);
 }
 
-.box-s a:hover{
+.box-s a:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 156, 168);
+}
+
+/* Animacion para toggle */
+
+.toggler {
+    border: none;
+}
+
+/* Estilo para el footer */
+
+.footer-P {
+    background-color: rgb(0, 156, 168);
+    height: auto;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.f-info {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    justify-content: space-around;
+    margin-top: 35px;
+    align-items: center;
+
+}
+
+.f-netw {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+
+
+}
+
+.f-netw li {
+    list-style: none;
+
+
+}
+
+.f-safety {
+    width: 91px;
+    height: 126px;
+    display: flex;
+    align-items: center;
+}
+
+.f-contac {
+    width: 277px;
+    height: auto;
+}
+
+.f-contac h6 {
+    color: white;
+    color: rgb(79, 77, 77);
+    margin-right: 10px;
+
+}
+
+.f-contac p {
+    color: white;
+    font-size: 11x;
+    margin-left: 29px;
+    width: 300px;
+
+
+}
+
+.info-items{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.subcri-b p{
+    color: white;
+    font-size: 15px;
+    margin-top: 10px;
+    width: 300px;
+}
+
+.subscribe-btn{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 150px;
+    text-align: center;
+    border: 1px solid rgb(82, 78, 78);
+}
+
+
+.suscribe-btn {
+    transition: transform 0.3s ease;
+}
+
+.subscribe-btn:hover {
+    transform: scale(1.1);
+}
+
+.subscribe-btn:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 156, 168);
 }
