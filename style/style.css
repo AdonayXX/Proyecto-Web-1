@@ -69,4 +69,51 @@
 body * {
     animation: fadeIn 1s ease-in-out;
 }
+/* Agrega animación al logo */
+.logo-img {
+    animation: fadeInUp 2s ease forwards;
+}
+
+/* Agrega animación al menú de navegación */
+.navbar-nav {
+    animation: slideInDown 1s ease forwards;
+}
+
+/* Agrega animación a los elementos de servicios médicos */
+.box-s {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* Agrega animación a los elementos de la sección "Sobre Nosotros" */
+.text-1, .text-2 {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 2s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
