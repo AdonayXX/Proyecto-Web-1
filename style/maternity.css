@@ -1,9 +1,10 @@
+/* Estilos de Maternidad */
 #pconte{
     margin-top: 144px;
 }
 
 #contenedor{
-    max-width: 900px;
+    max-width: 70%;
     display: flex;
     margin: auto;
     flex-direction: column;
@@ -14,6 +15,18 @@
     margin-block: 15px;
 }
 
+#titulo h1{
+    margin-bottom: 30px;
+    color: rgb(0, 156, 168);
+    font-size: 50px;
+    font-weight: inherit;
+
+}
+#informacion{
+    color: rgb(82, 79, 79);
+    
+}
+/*Estilos de botones Maternidad*/
 #content-btn{
     max-width: 90%;
     display: flex;
@@ -43,6 +56,8 @@
     background-color: rgb(255, 255, 255);
     color: rgb(0, 156, 168);
 }
+
+/*Maternidad Responsivo*/
 
 @media (max-width: 559px) {
     #content-btn{

@@ -60,7 +60,7 @@
 
 .line-c {
     margin-top: 100px;
-    width: 68%;
+    width: 70%;
     height: 3px;
     background-color: rgb(0, 156, 168);
 }
@@ -69,6 +69,7 @@
 
 
 .about-us {
+    max-width: 90%;
     display: flex;
     flex-direction: column;
     margin-top: 85px;
@@ -76,6 +77,7 @@
     background-size: cover;
     background-position: center;
     height: auto;
+    flex-basis: 80%;
 }
 
 .text-info {
@@ -83,6 +85,8 @@
     flex-direction: row;
     justify-content: center;
     margin-top: 20px;
+    flex-basis: 80%;
+
 
 }
 
@@ -113,7 +117,7 @@
 
 .line {
     width: 8px;
-    height: 170px;
+    height: 210px;
     background-color: rgb(0, 156, 168);
     margin-top: 20px;
     margin-bottom: 20px;

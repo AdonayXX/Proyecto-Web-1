@@ -31,9 +31,13 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.geo-point:hover {
+    color: rgb(219, 10, 10);
+}
 .icon-hover:hover {
     color: greenyellow;
 }
+
 
 .bi-instagram {
     transition: 0.8s;
