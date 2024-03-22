@@ -1,0 +1,75 @@
+
+/*Titulo de la pagina*/
+
+.conten{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+
+}
+
+.Titu-ini{
+    text-align: center; 
+    color: rgb(7, 7, 7); 
+    margin-top:129px ;
+
+} 
+
+.Titu-ini h1 {
+    color: rgb(0, 156, 168);
+    font-size: 50px;
+    font-weight: inherit;
+    margin-top: 30px;
+}
+
+.infor-parr p{
+    display: flex;
+    color: rgb(82, 79, 79);
+    margin-bottom: 20px;
+    margin-top: 20px;
+ }
+
+ .Serv-med{
+    color: rgb(114, 208, 210)
+ }
+ .Titu-servis{
+    color: rgb(114, 208, 210);
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+ }
+ 
+.column{
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+
+.infor-4{
+    margin-bottom: 100px;
+}
+
+
+
+/*Responsive*/
+
+@media (max-width: 559px){
+    .conten{
+        width: 100%;
+    }
+
+    .column{
+        flex-direction: column;
+        gap: 0px;
+    }
+    .infor-4{
+        margin-bottom: 0px;
+    }
+
+
+}
+
+
+
+

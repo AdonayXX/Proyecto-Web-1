@@ -1,5 +1,5 @@
 /* Estilo para la barra de navegación */
-* {
+*{
     font-family: "Fira Sans", sans-serif;
 }
 
@@ -96,200 +96,6 @@
 
 
 
-/* Estilo para las cajas*/
-
-.opti-Direct {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-    margin-top: 124px;
-
-}
-
-
-.box-Opti {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 262px;
-    height: 165px;
-}
-
-.box-Opti h2 {
-    color: white;
-    text-align: center;
-    font-weight: normal;
-}
-
-.bx {
-    background-color: rgb(48, 182, 206);
-}
-
-.bx1 {
-    background-color: rgb(0, 156, 168);
-
-}
-
-.bx1 a {
-    text-decoration: none;
-
-}
-
-.bx a {
-    text-decoration: none;
-
-}
-
-/*Animacion para las cajas*/
-
-.box-Opti:hover {
-    height: 175px;
-    box-shadow: 0 0 10px 0 rgba(230, 6, 6, 0.1);
-}
-
-/* Estilo para el line */
-
-.cont-line {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.line-c {
-    margin-top: 100px;
-    width: 68%;
-    height: 3px;
-    background-color: rgb(0, 156, 168);
-}
-
-/* Estilo de Sobre nosotros */
-
-
-.about-us {
-    display: flex;
-    flex-direction: column;
-    margin-top: 85px;
-    background-color: rgb(255, 255, 255);
-    background-size: cover;
-    background-position: center;
-    height: auto;
-}
-
-.text-info {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 20px;
-
-}
-
-.about-us h1 {
-    color: rgb(0, 156, 168);
-    text-align: start;
-    margin-top: 50px;
-    font-size: 50px;
-    font-weight: inherit;
-}
-
-.text-1 {
-    color: #504d4d;
-    text-align: start;
-    margin-top: 20px;
-    font-size: 15px;
-    margin-right: 20px;
-}
-
-.text-2 {
-    color: #504d4d;
-    margin-left: 20px;
-    margin-top: 20px;
-    font-size: 15px;
-
-
-}
-
-.line {
-    width: 8px;
-    height: 170px;
-    background-color: rgb(0, 156, 168);
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-/* Estilos para servicios */
-.services-M {
-    
-    background: linear-gradient(to right, #30b6ce, #009ca8);
-    height: auto;
-    margin-top: 80px;
-}
-
-.services-M h1 {
-    color: white;
-    text-align: center;
-    margin-top: 50px;
-    font-size: 50px;
-    font-weight: inherit;
-}
-
-.serv-r {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-
-}
-
-.serv-r1 {
-    display: flex;
-    flex-direction: column;
-}
-
-.serv-c {
-    display: flex;
-    justify-content: center;
-}
-
-.text-t {
-    text-align: center;
-    font-weight: normal;
-}
-
-.box-s {
-    padding: 10px;
-    width: 366px;
-    height: auto;
-    margin: 30px;
-    background-color: rgb(147, 207, 211);
-
-}
-
-.box-s h5 {
-    text-align: center;
-    font-weight: normal;
-
-    color: rgb(58, 54, 54);
-
-
-}
-
-.box-s p {
-    text-align: center;
-    color: white;
-
-    font-weight: normal;
-
-}
-
-.box-s a {
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    background-color: rgb(246, 254, 255);
-    color: rgb(49, 48, 48);
-
-}
-
 /*Responsivo Navbar*/
 @media (max-width: 559px) {
 
@@ -318,49 +124,6 @@
     }
 }
 
-/* Responsivo Servicios */
-
-@media (max-width: 559px) {
-
-    .serv-r {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-
-    }
-
-    .line-c {
-        display: none;
-    }
-
-    .serv-r1 {
-        flex-direction: column;
-        display: flex;
-        align-items: center;
-    }
-
-    .box-s {
-        width: 260px;
-
-    }
-
-    .about-us h1 {
-        text-align: center;
-    }
-
-    .line {
-        height: 750px;
-    }
-
-    .fixed-header {
-        position: none;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 0;
-
-    }
-}
 
 /* Responsivo Footer */
 
@@ -384,23 +147,19 @@
         width: auto;
     }
 
+    .fixed-header {
+        position: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 0;
+
+    }
+
+
 
 }
 
-/* Animacion de los servicio*/
-
-.box-s {
-    transition: transform 0.3s ease;
-}
-
-.box-s:hover {
-    transform: scale(1.1);
-}
-
-.box-s a:hover {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 156, 168);
-}
 
 /* Animacion para toggle */
 
@@ -415,7 +174,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    /* margin-top: 80px; */
     height: auto;
     background-color: none;
 }
