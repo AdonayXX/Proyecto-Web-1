@@ -1,0 +1,81 @@
+#principal{
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logo{
+    display: flex;
+    justify-content: center;
+}
+
+#logo img{
+    width: 80%;
+    margin-left: 10%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+#text_header h1{
+    font-size: 2.2em;
+    color: #009CA8;
+    margin: 20px 0;
+}
+
+#field{
+    width: 500px;
+}
+
+#textfields{
+    width: 100%;
+}
+
+.fields{
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: rgb(240, 240, 240);
+    outline: none; /* Anula el contorno predeterminado */
+    transition: all 0.3s ease;
+}
+
+.fields:focus{
+    background-color: white;
+    border: 1px solid #00AEEF;
+}
+
+#gestation_age > p{
+    font-size: 0.8em;
+    color: #009CA8;
+}
+
+#check{
+    font-size: 0.8em;
+}
+
+#enviar{
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #00AEEF;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 559px){
+    #field{
+        width: 100%;
+    }
+}

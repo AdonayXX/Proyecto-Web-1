@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style/navbar-S.css">
     <link rel="stylesheet" href="style/principal.css">
+    <link rel="stylesheet" href="/style/modal.css">
     <link rel="stylesheet" href="style/navbar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,9 +114,9 @@
                                     <a class="nav-link nav-anima" href="maternity.html">Maternidad</a>
                                 </li>
                             </ul>
-                            <div class="d-flex ms-md-4">
+                            <div class="d-flex ms-md-4 m-3">
                                 <a class="no-under-line m-md-0" href="login.html">
-                                    <i class="bi-person-fill login-icon"></i>Iniciar Sesión
+                                    <i class="bi-person-fill login-icon"></i>
                                 </a>
                             </div>
 
@@ -125,6 +126,10 @@
             </div>
 
         </div>
+        <div class="clima">
+            <div id="id8e9a326e8c303" a='{"t":"g7bs","v":"1.2","lang":"es","locs":[1543],"ssot":"c","sics":"ds","cbkg":"#FFFFFF","cfnt":"#000000","cend":"rgba(4,242,0,0)","sfnt":"a","slis":36}'>Fuente de datos meteorológicos: <a href="https://sharpweather.com/es/tiempo_liberia/30_días/">el tiempo 30 días Liberia</a></div>
+        </div>
+
         <div class="opti-Direct">
             <div class="box-Opti bx1">
                 <a href="">
@@ -144,6 +149,7 @@
             </div>
 
         </div>
+
         <div class="cont-line" id="about-us1">
             <div class="line-c"></div>
         </div>
@@ -244,6 +250,34 @@
             </div>
         </div>
 
+        <div class="gallery">
+            <div class="image-item">
+                <img src="/img/C-3.png" alt="Imagen 3" onclick="openModal('/img/C-3.png')">
+            </div>
+            <div class="image-item">
+                <img src="/img/C-4.png" alt="Imagen 6" onclick="openModal('/img/C-4.png')">  
+            </div>
+            <div class="image-item" id="img1">
+                <img src="/img/C-1.png" alt="Imagen 1" onclick="openModal('/img/C-1.png')">
+            </div>
+            <div class="image-item">
+                <img src="/img/C-5.png" alt="Imagen 6" onclick="openModal('/img/C-5.png')">  
+            </div>
+            <div class="image-item">
+                <img src="/img/C-6.png" alt="Imagen 6" onclick="openModal('/img/C-6.png')">  
+            </div>
+            <div class="image-item">
+                <img src="/img/C-2.png" alt="Imagen 2" onclick="openModal('/img/C-2.png')">  
+            </div>
+        </div>
+    
+    <div id="myModal" class="modal">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+      </div>
+
+
+
         <div class="row f-op">
             <footer class="container-fluid footer-P">
 
@@ -309,6 +343,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        <script src="/Js/modal.js"></script>
+        <script async src="https://static1.sharpweather.com/widgetjs/?id=id8e9a326e8c303"></script>
 </body>
 
 </html>
