@@ -1,0 +1,34 @@
+
+* {
+    font-family: "Fira Sans", sans-serif;
+}
+
+h2{
+    color: rgb(0, 156, 168);
+}
+h5{
+    color: rgb(0, 156, 168);
+}
+
+.Container-p{
+    margin-top: 160px;
+}
+
+#containerEs {
+    margin-top: 160px;
+    max-width: 70%;
+    margin: auto;
+
+}
+   @media (max-width: 559px){
+      #Especialidades {
+      flex-direction: row;
+    }
+
+     #Especialidades h5 {
+    font-size: 14px;
+    }
+  }
+    
+
+  

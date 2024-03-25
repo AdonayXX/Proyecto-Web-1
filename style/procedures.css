@@ -1,0 +1,56 @@
+* {
+    font-family: "Fira Sans", sans-serif;
+}
+
+#containerS{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+}
+
+.column {
+    flex: 1;
+}
+
+#Procetitu{
+    margin-top: 170px;
+    color: rgb(0, 156, 168);
+}
+
+
+#ginetitu{
+    margin-top: 80px;
+    color: rgb(0, 156, 168);
+}
+ 
+#btn-foto{
+    background-color: RGB(3, 184, 190);
+    color: rgb(12, 12, 12);
+    font-size: 16px;
+    width: 40%;
+    padding: 3px;
+    border: none;
+    margin-top: 10px;
+    transition: background-color 0.5s ease-in-ou;
+    cursor: pointer;
+}
+
+#btn-foto:hover{
+    background-color: #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 559px) {
+    #containerS {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        
+    }
+    #btn-foto {
+        width: 100%;
+        font-size: 10px;
+    }
+   
+}
