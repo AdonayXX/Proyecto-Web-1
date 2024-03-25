@@ -8,10 +8,11 @@
     max-width: 60%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Cambiado a 6 columnas */
-    grid-template-rows: auto; /* Eliminado el valor fijo de 250px */
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: auto;
     grid-gap: 20px;
-    padding: 100px 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .image-item {
@@ -28,15 +29,16 @@
 @media screen and (max-width: 559px) {
     .gallery {
       max-width: 100%;
-      grid-template-columns: repeat(2, 1fr); /* Cambiado a 2 columnas */
-      padding: 50px 0; /* Reducido el padding */
+      grid-template-columns: repeat(2, 1fr); 
+      padding: 50px 0; 
     }
   }
   
 
   /* Estilo del modal */
+  
 .modal {
-    display: none; /* Por defecto oculto */
+    display: none; 
     position: fixed;
     z-index: 9999;
     left: 0;
@@ -47,7 +49,6 @@
     background-color: rgba(0,0,0,0.9);
   }
   
-  /* Estilo para la imagen dentro del modal */
   .modal-content {
     margin: auto;
     display: block;
@@ -59,7 +60,6 @@
     transform: translate(-50%, -50%);
   }
   
-  /* Estilo para el botón de cerrar */
   .close-btn {
     color: #fff;
     font-size: 30px;
@@ -68,4 +68,6 @@
     right: 20px;
     cursor: pointer;
   }
+  
+
   
