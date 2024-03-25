@@ -18,8 +18,8 @@ h5{
     margin-top: 160px;
     max-width: 70%;
     margin: auto;
-
 }
+
    @media (max-width: 559px){
       #Especialidades {
       flex-direction: row;
