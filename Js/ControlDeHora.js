@@ -32,8 +32,10 @@ function agendarCita() {
         return;
     }
     const cita = {
+        numeroCedula:document.getElementById('ID').value,
         nombre: document.getElementById('name').value,
         apellidos: document.getElementById('lastname').value,
+        numeroTelefono:document.getElementById('cellphoneNumber').value,
         especialidad: document.getElementById('specialty').value,
         fecha: fechaCita,
         hora: horaCita,
@@ -190,4 +192,21 @@ function esFechaYHoraValida(fechaCita, horaCita) {
     }
 
     return true;
+}
+function cancelarCita(citaId) {
+    const transaction = db.transaction(["citas"], "readwrite");
+    const objectStore = transaction.objectStore("citas");
+
+    const request = objectStore.delete(Number(citaId)); // Asegúrate de que citaId sea un número, ya que es el tipo más común para un ID
+
+    request.onsuccess = function() {
+        console.log('Cita cancelada con éxito');
+        actualizarListaCitas(); // Actualiza tu interfaz de usuario aquí
+        // Por ejemplo, podrías recargar la lista de citas o mostrar un mensaje de éxito
+    };
+
+    request.onerror = function(e) {
+        console.error('Error al cancelar la cita', e.target.error);
+        // Aquí podrías mostrar un mensaje de error al usuario
+    };
 }

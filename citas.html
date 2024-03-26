@@ -20,6 +20,10 @@
         <h2 class="text-center">Módulo de citas San Rafael Arcangel</h2>
         <form id="appointmentForm">
             <div class="mb-3">
+                <label for="ID" class="form-label">Número de cédula:</label>
+                <input type="text" class="form-control" id="ID" required>
+            </div>
+            <div class="mb-3">
                 <label for="name" class="form-label">Nombre:</label>
                 <input type="text" class="form-control" id="name" required>
             </div>
@@ -28,9 +32,19 @@
                 <input type="text" class="form-control" id="lastname" required>
             </div>
             <div class="mb-3">
+                <label for="phoneNumber" class="form-label">Número de teléfono:</label>
+                <input type="text" class="form-control" id="phoneNumber" required>
+            </div>
+            <div class="mb-3">
                 <label for="specialty" class="form-label">Especialidad:</label>
                 <select class="form-control" id="specialty" required>
                     <option value="" selected>Seleccionar...</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="doctor" class="form-label">Doctor:</label>
+                <select class="form-control" id="doctor" required>
+                    <option value="" selected></option>
                 </select>
             </div>
             <div class="mb-3">
@@ -40,12 +54,6 @@
             <div class="mb-3">
                 <label for="time" class="form-label">Hora:</label>
                 <select class="form-control" id="time" required></select>
-            </div>
-            <div class="mb-3">
-                <label for="doctor" class="form-label">Doctor:</label>
-                <select class="form-control" id="doctor" required>
-                    <option value="" selected></option>
-                </select>
             </div>
             <button type="submit" class="btn">Agendar cita</button>
         </form>
