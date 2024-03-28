@@ -30,5 +30,49 @@ h5{
     }
   }
     
-
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   
+  
+  .animated-fadeInUp {
+    animation: fadeInUp 1s ease forwards;
+  }
+  
+  .animated-rotateIn {
+    animation: rotateIn 0.5s ease forwards;
+  }
+  
+  .hidden {
+    opacity: 0;
+  }
+ 
+#Ginecología{
+    animation: fadeIn 2s ease-in-out ;
+}  
+#anestesia{
+    animation: fadeIn 2s ease-in;
+}
+#cirugiageneral{
+    animation: fadeIn 2s ease-in-out;
+}
+#Ortopedia{
+    animation: fadeIn 2s ease-in-out;
+
+}
+#ContainerEs{
+  animation: fadeIn 2s ease-in-out;
+}
+#titulo{
+  animation: fadeIn 2s ease-in;
+}
+#info{
+  animation: fadeIn 2s ease-in-out;
+}

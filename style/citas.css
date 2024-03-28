@@ -1,0 +1,133 @@
+/* citas.css - Estilos renovados */
+
+/* Animaciones */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Fira Sans', sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease forwards;
+}
+
+h2 {
+    color: #007bff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Estilos para los campos del formulario y etiquetas */
+.form-label {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+
+
+.form-control {
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    animation: slideInLeft 0.5s cubic-bezier(0.4, 0, 1, 1) forwards;
+    ;
+}
+
+.form-control:focus {
+    border-color: #48afea;
+    box-shadow: 0 0 0 0.2rem rgba(72, 175, 234, 0.25);
+}
+
+
+
+
+/* Media query para pantallas de menos de 768px de ancho */
+@media (max-width: 767.98px) {
+    .toast-container.position-absolute.top-0.end-0 {
+        top: auto;
+        /* Quita el posicionamiento superior */
+        bottom: 0;
+        /* Coloca el toast en la parte inferior */
+        right: 0;
+        /* Asegura que el toast se alinee a la derecha */
+        left: 0;
+        /* Asegura que el toast se alinee a la izquierda */
+        width: 100%;
+        /* Hace que el toast ocupe el ancho completo */
+    }
+
+    .toast {
+        margin: 0 auto;
+        /* Centra el toast horizontalmente si es más angosto que el contenedor */
+    }
+}
+
+
+/* Botones y su interactividad */
+.btn {
+    background-color: #30B6CE;
+    /* Azul claro */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    transition: background-color 0.3s;
+    animation: fadeIn 0.5s ease forwards;
+}
+.iconClose {
+    font-size: 25px;
+    color: gray;
+    text-shadow: 1px 1px #ccc;
+    margin-bottom: 100;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+/* Mejoras para responsividad */
+@media (max-width: 768px) {
+    .body {
+        padding: 20px 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
