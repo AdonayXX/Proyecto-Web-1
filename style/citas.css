@@ -108,12 +108,6 @@ h2 {
     transition: background-color 0.3s;
     animation: fadeIn 0.5s ease forwards;
 }
-.iconClose {
-    font-size: 25px;
-    color: gray;
-    text-shadow: 1px 1px #ccc;
-    margin-bottom: 100;
-}
 
 .btn:hover,
 .btn:focus {
@@ -128,6 +122,6 @@ h2 {
     }
 
     .container {
-        padding: 10px;
+        padding: 20px;
     }
 }

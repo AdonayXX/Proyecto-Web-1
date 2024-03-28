@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function verificarDiaSeleccionado(inputFecha) {
     const fechaSeleccionada = new Date(inputFecha.value);
-    if (fechaSeleccionada.getDay() === 6) { //6 es domingo
+    if (fechaSeleccionada.getDay() === 6) { // 6 es Domingo
         alert('Los domingos no están disponibles. Por favor, seleccione otra fecha.');
         inputFecha.value = ''; 
     }
@@ -149,7 +149,7 @@ document.getElementById('specialty').addEventListener('change', function(e) {
 });
 function cargarDoctoresPorEspecialidad(especialidad) {
     let selectDoctores = document.getElementById('doctor');
-    selectDoctores.innerHTML = ""; 
+    selectDoctores.innerHTML = ""; // Limpia el select antes de cargar nuevos doctores
 
     // Añade la opción predeterminada "Seleccionar..." cada vez que se carga la lista de doctores.
     let opcionPredeterminada = document.createElement('option');
@@ -157,6 +157,7 @@ function cargarDoctoresPorEspecialidad(especialidad) {
     opcionPredeterminada.value = "";
     selectDoctores.appendChild(opcionPredeterminada);
 
+    // Si no se ha seleccionado una especialidad o es la opción predeterminada, detiene la ejecución aquí.
     if (!especialidad || especialidad === "") {
         return;
     }
@@ -181,12 +182,10 @@ function esFechaYHoraValida(fechaCita, horaCita) {
     const ahora = new Date();
     const fechaHoraCita = new Date(`${fechaCita}T${horaCita}`);
 
-    // Verificar que la cita no sea en el pasado
     if (fechaHoraCita < ahora) {
         return false;
     }
 
-    // Verificar que no sea domingo (getDay() devuelve 0 para domingo)
     if (fechaHoraCita.getDay() === 0) {
         return false;
     }

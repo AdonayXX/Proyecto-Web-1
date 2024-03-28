@@ -18,12 +18,11 @@
 </head>
 
 <body class="body">
-    <div class="container">
-        <div class="position-relative" style="background-color: black;">
-            <div class="position-absolute top-0 start-0" style="margin-bottom: 200px;">
-                 <a href=""><i class="bi bi-x-circle iconClose"></i></a>
+        <div class="container position-relative">
+            <!-- Botón de cierre con ícono de Bootstrap en la esquina superior derecha del container -->
+            <div class="position-absolute top-0 end-0 p-2">
+                <button type="button" class="btn-close" aria-label="Cerrar" onclick="window.close();"></button>
             </div>
-        </div>
         <h2 class="text-center">Módulo de citas San Rafael Arcangel</h2>
         <form id="appointmentForm">
             <div class="mb-3">
@@ -39,8 +38,8 @@
                 <input type="text" class="form-control" id="lastname" required>
             </div>
             <div class="mb-3">
-                <label for="phoneNumber" class="form-label">Número de teléfono:</label>
-                <input type="text" class="form-control" id="phoneNumber" required>
+                <label for="cellphoneNumber" class="form-label">Número de Teléfono:</label>
+                <input type="text" class="form-control" id="cellphoneNumber" required>
             </div>
             <div class="mb-3">
                 <label for="specialty" class="form-label">Especialidad:</label>
@@ -63,6 +62,7 @@
                 <select class="form-control" id="time" required></select>
             </div>
             <button type="submit" class="btn">Agendar cita</button>
+            <a href="http://localhost:3000" target="_blank">Abrir Chat</a>
         </form>
         <div class="toast-container position-absolute top-0 end-0">
             <div id="liveToast" class="toast toastCita" role="alert" aria-live="assertive" aria-atomic="true"
