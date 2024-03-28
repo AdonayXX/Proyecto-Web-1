@@ -13,6 +13,7 @@ function openDatabase() {
         cargarEspecialidades();
         cargarDoctoresPorEspecialidad();
         cargarHorasDisponibles();
+        getUsers()
     };
 
     request.onupgradeneeded = function (event) {
@@ -31,6 +32,13 @@ function openDatabase() {
             citaStore.createIndex('doctor', 'doctor', { unique: false });
             // Crea un índice compuesto para doctor y fecha
             citaStore.createIndex('doctorFecha', ['doctor', 'fecha'], { unique: false });
+        }
+        if (!db.objectStoreNames.contains('usuarios')) {
+            const userStore = db.createObjectStore('usuarios', { keyPath: 'id', autoIncrement: true });
+            userStore.createIndex('name', 'name',  { unique: false });
+            userStore.createIndex('email', 'email', { unique: true });
+            userStore.createIndex('password', 'password', { unique: false });
+            userStore.createIndex('rol', 'rol', { unique: false });
         }
 
 

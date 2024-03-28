@@ -26,6 +26,16 @@
     object-fit: cover;
 }
 
+/* animacion del gallery */
+
+.image-item img {
+    transition: transform 0.5s;
+}
+
+.image-item:hover img {
+    transform: scale(1.1);
+}
+
 @media screen and (max-width: 559px) {
     .gallery {
       max-width: 100%;
