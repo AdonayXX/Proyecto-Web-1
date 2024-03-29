@@ -25,36 +25,45 @@ function verificarDiaSeleccionado(inputFecha) {
 }
 
 function agendarCita() {
-    const fechaCita = document.getElementById('date').value;
-    const horaCita = document.getElementById('time').value; // Formato HH:MM
-    if (!esFechaYHoraValida(fechaCita, horaCita)) {
-        alert('Por favor, seleccione una fecha y hora válida para la cita. No se permiten citas en fechas pasadas ni los domingos.');
-        return;
-    }
-    const cita = {
-        numeroCedula:document.getElementById('ID').value,
+
+    // Getting patient information
+    const paciente = {
         nombre: document.getElementById('name').value,
         apellidos: document.getElementById('lastname').value,
-        numeroTelefono:document.getElementById('cellphoneNumber').value,
-        especialidad: document.getElementById('specialty').value,
-        fecha: fechaCita,
-        hora: horaCita,
-        doctor: document.getElementById('doctor').value
+        numeroTelefono: document.getElementById('cellphoneNumber').value,
+        //La cédula es única entonces la usamos como Keyphat
+        pacienteId: document.getElementById('ID').value,
     };
 
-    const request = db.transaction(["citas"], "readwrite")
-        .objectStore("citas")
-        .add(cita);
+    // Adding or updating the patient information
+    const transactionPacientes = db.transaction(["pacientes"], "readwrite");
+    const objectStorePacientes = transactionPacientes.objectStore("pacientes");
+    objectStorePacientes.put(paciente).onsuccess = function(event) {
+        console.log('Paciente agregado o actualizado con éxito');
+    };
 
-    request.onsuccess = function() {
+    // Getting appointment information
+    const cita = {
+        especialidad: document.getElementById('specialty').value,
+        fecha: document.getElementById('date').value,
+        hora: document.getElementById('time').value, // Format HH:MM
+        doctor: document.getElementById('doctor').value,
+        pacienteId: paciente.pacienteId //Reltaionship with the patient
+    };
+
+    // Adding the appointment
+    const transactionCitas = db.transaction(["citas"], "readwrite");
+    const objectStoreCitas = transactionCitas.objectStore("citas");
+    objectStoreCitas.add(cita).onsuccess = function() {
         showNotification('¡Su cita se ha agendado correctamente!');
     };
 
-    request.onerror = function() {
-        console.error('Error al agendar la cita', request.error);
+    objectStoreCitas.onerror = function(error) {
+        console.error('Error al agendar la cita', error);
         alert('Error al agendar la cita. Por favor, intente de nuevo.');
     };
 }
+
 
 function cargarHorasDisponibles() {
     // Asegúrate de que doctor y fecha están seleccionados
@@ -88,6 +97,7 @@ function generarHorasDisponibles() {
     }
     return horas;
 }
+
 
 function filtrarHorasDisponibles(horasDisponibles, citasDelDia) {
     return horasDisponibles.filter(hora => !citasDelDia.includes(hora));
@@ -149,7 +159,7 @@ document.getElementById('specialty').addEventListener('change', function(e) {
 });
 function cargarDoctoresPorEspecialidad(especialidad) {
     let selectDoctores = document.getElementById('doctor');
-    selectDoctores.innerHTML = ""; // Limpia el select antes de cargar nuevos doctores
+    selectDoctores.innerHTML = ""; 
 
     // Añade la opción predeterminada "Seleccionar..." cada vez que se carga la lista de doctores.
     let opcionPredeterminada = document.createElement('option');
@@ -196,7 +206,7 @@ function cancelarCita(citaId) {
     const transaction = db.transaction(["citas"], "readwrite");
     const objectStore = transaction.objectStore("citas");
 
-    const request = objectStore.delete(Number(citaId)); // Asegúrate de que citaId sea un número, ya que es el tipo más común para un ID
+    const request = objectStore.delete(Number(citaId)); 
 
     request.onsuccess = function() {
         console.log('Cita cancelada con éxito');
