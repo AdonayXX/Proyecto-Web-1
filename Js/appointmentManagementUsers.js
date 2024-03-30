@@ -1,4 +1,4 @@
-var db; // Asegúrate de que db se declare fuera de tus funciones para tener un alcance global
+var db; 
 
 document.addEventListener('DOMContentLoaded', function () {
     openDatabase().then(() => {
@@ -28,20 +28,21 @@ async function openDatabase() {
     });
 }
 
-function mostrarCitasPendientes() {
+async function mostrarCitasPendientes() {
     const lista = document.getElementById('listaCitas');
     lista.innerHTML = ''; 
 
-    let transaction = db.transaction(['citas'], 'readonly');
+    let transaction = db.transaction(['citas', 'pacientes'], 'readonly');
     let objectStore = transaction.objectStore('citas');
 
-    objectStore.openCursor().onsuccess = function(event) {
+    objectStore.openCursor().onsuccess = async function(event) {
         let cursor = event.target.result;
         if (cursor) {
             const cita = cursor.value;
+            const paciente = await obtenerPacientePorId(cita.pacienteId);
             const li = document.createElement('li');
             li.classList.add('list-group-item');
-            li.innerHTML = `Cita el ${cita.fecha} a las ${cita.hora} con el doctor ${cita.doctor} - Paciente: ${cita.nombre} ${cita.apellidos}
+            li.innerHTML = `Cita el ${cita.fecha} a las ${cita.hora} con el doctor ${cita.doctor} - Paciente: ${paciente.nombre} ${paciente.apellidos}
                 <button class="btn btn-danger btn-sm float-end cancelar-cita-btn" data-cita-id="${cursor.key}">Cancelar</button>`;
             lista.appendChild(li);
             cursor.continue();
@@ -49,6 +50,26 @@ function mostrarCitasPendientes() {
     };
 }
 
+// Función para obtener detalles del paciente por ID
+async function obtenerPacientePorId(pacienteId) {
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(['pacientes'], 'readonly');
+        const store = transaction.objectStore('pacientes');
+        const request = store.get(pacienteId); // Asume que pacienteId es el adecuado para el store.get
+
+        request.onsuccess = () => {
+            if (request.result) {
+                resolve(request.result);
+            } else {
+                reject('Paciente no encontrado');
+            }
+        };
+
+        request.onerror = (event) => {
+            reject(event.target.error);
+        };
+    });
+}
 document.addEventListener('click', function(e) {
     if (e.target.classList.contains('cancelar-cita-btn')) {
         const citaId = e.target.getAttribute('data-cita-id');
@@ -83,3 +104,4 @@ function cancelarCita(citaId) {
         // Maneja el error, posiblemente mostrando un mensaje al usuario
     };
 }
+//REVISAR EL REPOSITORIO DE NOSOTROS PARA REVISAR LA FUNCIÓN PARA QUE ME MUESTRE TODAS LAS CITAS PENDIENTES

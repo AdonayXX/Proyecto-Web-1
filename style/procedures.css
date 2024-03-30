@@ -92,10 +92,18 @@ hr {
         flex-direction: column;
 
     }
+    #ginecologia {
+        width: 90%;
+    
+    }
+    .container-Procedures {
+        width: 90%;
+    }
 
     #btn-foto {
         width: 100%;
-        font-size: 10px;
+        font-size: 20px;
+        margin-bottom: 60px;
     }
 
     #Procetitu h2 {
@@ -109,15 +117,9 @@ hr {
     }
 
     .img-p img {
-        width: 314px;
-        height: 224px;
-        margin-top: 20px;
+        display: none;
 
     }
-    .carousel-P{
-        object-fit: cover;
-    }
-    
-
-
+   
+   
 }

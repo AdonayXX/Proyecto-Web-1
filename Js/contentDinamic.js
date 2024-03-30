@@ -133,7 +133,7 @@ function cargarContenidoSeguros() {
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "nationalInsurance.html", true);
+    xhr.open("GET", "contentNationalInsurance.html", true);
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
@@ -144,3 +144,66 @@ function cargarContenidoSeguros() {
     xhr.send();
 }
 
+function cargarContenidoPreventidos() {
+    var contenedor = document.getElementById("contenidoPrincipal");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "contentPre-emptedpackages.html", true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            contenedor.innerHTML = xhr.responseText;
+            window.scrollTo(0, 0);
+        }
+    };
+    xhr.send();
+}
+
+function cargarContenidoDeberesyDerechos() {
+    var contenedor = document.getElementById("contenidoPrincipal");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "contentRightsduties.html", true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            contenedor.innerHTML = xhr.responseText;
+            window.scrollTo(0, 0);
+        }
+    };
+    xhr.send();
+}
+
+function cargarContenidoParqueo() {
+    var contenedor = document.getElementById("contenidoPrincipal");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "contentUseParking.html", true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            contenedor.innerHTML = xhr.responseText;
+            window.scrollTo(0, 0);
+        }
+    };
+    xhr.send();
+}
+
+function cargarContenidoChequeos() {
+    var contenedor = document.getElementById("contenidoPrincipal");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "contentCheckups.html", true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            contenedor.innerHTML = xhr.responseText;
+            window.scrollTo(0, 0);
+        }
+    };
+    xhr.send();
+}
