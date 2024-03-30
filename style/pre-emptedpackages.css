@@ -1,0 +1,33 @@
+
+#container{
+    margin-top: 140px;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    margin-top: 170px;
+}
+
+#Primer-part h2{
+    text-align: center;
+    
+}
+
+#parrafo{
+    text-align: center;
+}
+
+#Segun-part{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.paquete{
+    background-color: #e0e0e0;
+    padding: 20px;
+    margin: 10px;
+}
+
+.titu{
+    font-weight: bold;
+}
