@@ -29,7 +29,7 @@
 }
 
 .bx1 {
-    background-color: rgb(0, 156, 168);
+    background-color: #009ca8;
 
 }
 
@@ -96,6 +96,15 @@
     margin-top: 50px;
     font-size: 50px;
     font-weight: inherit;
+}
+.more-About h1{
+    
+    color: rgb(0, 156, 168);
+    text-align: center;
+    margin-top: 50px;
+    font-size: 50px;
+    font-weight: inherit;
+
 }
 
 .text-1 {
@@ -166,9 +175,10 @@
     width: 366px;
     height: auto;
     margin: 30px;
-    background-color: rgb(147, 207, 211);
+    background-color: rgb(164, 216, 219);
 
 }
+
 
 .box-s h5 {
     text-align: center;
@@ -178,7 +188,6 @@
 
 
 }
-
 .box-s p {
     text-align: center;
     color: white;
@@ -190,6 +199,7 @@
 .box-s a {
     display: flex;
     justify-content: center;
+    margin: auto;
     text-decoration: none;
     background-color: rgb(246, 254, 255);
     color: rgb(49, 48, 48);
@@ -208,8 +218,8 @@
 }
 
 .box-s a:hover {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 156, 168);
+    background-color: rgb(0, 156, 168);
+    color: rgb(255, 255, 255);
 }
 
 
@@ -247,6 +257,21 @@
 
     .line {
         height: 750px;
+    }
+    .opti-Direct {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    
+        /* margin-top: 164px; */
+    
+    }
+
+    .box-Opti {
+        display: flex;
+        width: 100%;
+        height: 98px;
+        margin: auto;
     }
 
 }
