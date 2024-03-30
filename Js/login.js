@@ -64,27 +64,8 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('userlogin').addEventListener('click', login);
 
   function redirectToRolePage(rol) {
-    switch (rol) {
-      case 'admin':
-        window.location.href = 'Principal.html';
-        break;
-      case 'recepcionista':
-        window.location.href = 'Principal.html';
-        break;
-      case 'medico':
-        window.location.href = 'Principal.html';
-        break;
-      case 'public':
-        window.location.href = 'Principal.html';
-        break;
-      default:
-        alert('Rol no reconocido');
-        break;
-    }
+    window.location.href = 'Principal.html';
   }
- 
-
-
 });
 
 

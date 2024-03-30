@@ -1,0 +1,102 @@
+body {
+    font-family: "Fira Sans", sans-serif;
+}
+
+
+.container-P {
+    min-height: 100vh;
+   
+    margin: 0 auto;
+    background: linear-gradient(to right, #30b6ce, #009ca8);
+
+}
+
+.container-P h1 {
+    text-align: center;
+    color: white;
+    padding: 10px;
+
+}
+
+.table-c {
+    display: flex;
+    margin: auto    ;
+    align-items: center;
+    background-color: white;
+    width: 93%;
+}
+
+thead {
+    background-color: #f2f2f2;
+    color: rgb(0, 0, 0);
+}
+
+table {
+    width: 100%;
+    border: 1px solid #000000;
+
+}
+
+.options {
+    display: flex;
+    justify-content: end;
+}
+
+.opt-icons {
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.table-cell {
+    padding: 8px;
+}
+
+.table-cell {
+    border-bottom: 1px solid #000;
+}
+
+
+
+
+/*Modal de pacientes estilos*/
+
+.form-Principal {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.forms-P {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-1 {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+   
+}
+.modal-topic{ 
+    text-align: center;
+
+}
+.modal-topic button{
+    justify-content: end;
+
+}
+.form-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-btns{
+    display: flex;
+    justify-content: center;
+  
+}
+
