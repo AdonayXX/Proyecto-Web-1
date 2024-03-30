@@ -11,6 +11,7 @@ document.getElementById('form-especialidad').addEventListener('submit', function
 
     transaction.oncomplete = () => {
         console.log('Especialidad añadida');
+        mostrarToastEspecialidadAgregada();
         cargarEspecialidades(); // Actualizar la lista de especialidades
     };
 });
@@ -64,7 +65,8 @@ document.getElementById('form-doctor').addEventListener('submit', function (e) {
 
     request.onsuccess = () => {
         console.log('Doctor añadido con éxito');
-        cargarDoctores(); 
+        mostrarToastDoctorAgregado();
+        cargarDoctores();
     };
 
     request.onerror = (e) => {
@@ -132,4 +134,21 @@ function deleteSpeciality(especialityName) {
         console.log('Especialidad Eliminada');
         cargarEspecialidades();
     }
+
 }
+
+function mostrarToastEspecialidadAgregada() {
+    var toast = new bootstrap.Toast(document.getElementById('toastEspecialidadAgregada'));
+    toast.show();
+    setTimeout(function() {
+      toast.hide();
+    }, 3000);
+  }
+
+function mostrarToastDoctorAgregado() {
+    var toast = new bootstrap.Toast(document.getElementById('toastDoctorAgregado'));
+    toast.show();
+    setTimeout(function() {
+      toast.hide();
+    }, 3000);
+  }

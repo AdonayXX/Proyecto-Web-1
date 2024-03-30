@@ -1,11 +1,10 @@
 
 #container{
-    margin-top: 140px;
     display: flex;
     flex-direction: column;
     width: 70%;
     margin: auto;
-    margin-top: 170px;
+    margin-top: 37px;
 }
 
 #Primer-part h2{

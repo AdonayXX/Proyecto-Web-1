@@ -1,14 +1,6 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-  }
-  
+
   #botonChat {
     padding: 10px 20px;
-    font-size: 20px;
     color: white;
     background-color: #007BFF;
     border: none;
@@ -18,6 +10,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
+  
   #botonChat:hover {
     background-color: #0056b3;
     transform: scale(1.05);
@@ -26,14 +19,7 @@ body {
   #botonChat:focus {
     outline: none;
   }
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    margin: 0;
-  }
+
   
   @keyframes pulseAnimation {
     0% {
@@ -51,8 +37,6 @@ body {
   }
   
   #botonChat {
-    padding: 10px 20px;
-    font-size: 20px;
     color: white;
     background-color: #007BFF;
     border: none;

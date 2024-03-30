@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     var formExamenSangre = document.getElementById("formExamenSangre");
     var formExamenOrina = document.getElementById("formExamenOrina");
-
+    
     formExamenSangre.addEventListener("submit", function (event) {
         event.preventDefault();
         mostrarToast('toastExamenSangre', 7000);
@@ -26,4 +26,5 @@ document.addEventListener("DOMContentLoaded", function () {
         toastBody.textContent = `Registrado con éxito el ${fechaActual}.`;
         toast.show();
     }
+ 
 });

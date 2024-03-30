@@ -199,6 +199,7 @@ function cargarContenidoChequeos() {
 
     xhr.open("GET", "contentCheckups.html", true);
 
+   
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             contenedor.innerHTML = xhr.responseText;
@@ -207,3 +208,4 @@ function cargarContenidoChequeos() {
     };
     xhr.send();
 }
+
