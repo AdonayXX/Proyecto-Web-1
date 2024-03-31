@@ -67,7 +67,7 @@ function openDatabase() {
         if (!db.objectStoreNames.contains('familiares')) {
             //Pide el número de cédula del familiar
             const familiaresStore = db.createObjectStore('familiares', { keyPath: 'familiarId', autoIncrement: true });
-            consultasMedicasStore.createIndex('pacienteId', 'pacienteId', { unique: false });
+            familiaresStore.createIndex('pacienteId', 'pacienteId', { unique: false });
             familiaresStore.createIndex('nombreCompleto', 'nombreCompleto', { unique: false });
             familiaresStore.createIndex('relacionFamiliar', 'relacionFamiliar', { unique: false });
             familiaresStore.createIndex('telefono', 'telefono', { unique: true });
