@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     request.onsuccess = function (event) {
         alert('Usuario agregado correctamente');
-        mostrarToastRegistrado();
         redirectToRolePage(rol);
     };
 
@@ -75,10 +74,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-function mostrarToastRegistrado() {
-  var toast = new bootstrap.Toast(document.getElementById('toastRegistrado'));
-  toast.show();
-  setTimeout(function() {
-    toast.hide();
-  }, 3000);
-}
