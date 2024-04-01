@@ -1,0 +1,68 @@
+#pcontent{
+    margin-top: 140px;
+}
+
+#content{
+    width: 70%;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+}
+
+#titulo{
+    margin-bottom: 20px;
+}
+
+#title{
+    color: rgb(0, 156, 168);
+}
+
+#carouselExampleCaptions{
+    width: 60%;
+    margin-left: 15%;
+}
+
+#content-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.btn-maternity {
+    width: 370px;
+    height: auto;
+    margin: 10px;
+    background-color: #02B8BF;
+    color: white;
+    border: 1px solid white;
+    padding: 3px;
+}
+
+.btn-maternity {
+    transition: transform 0.3s ease;
+}
+
+.btn-maternity:hover {
+    transform: scale(1.1);
+}
+
+.btn-maternity a:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 156, 168);
+}
+
+@media (max-width: 559px) {
+    #carouselExampleCaptions{
+        width: 80%;
+        margin-right: 10%;
+    }
+
+    .btns-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+}
