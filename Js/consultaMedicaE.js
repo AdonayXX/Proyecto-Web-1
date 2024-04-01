@@ -30,7 +30,7 @@ document.getElementById('formularioConsulta').addEventListener('submit', functio
     const fechaHora = new Date().toISOString();
 
     // Actualizar los datos del paciente
-    actualizarPaciente(pacienteID, nombre, apellidos, edad);
+    actualizarPaciente(pacienteID, nombre, apellidos, edad,peso,altura);
 
     // Guardar la consulta médica
     guardarConsultaMedica(pacienteID, presion, peso, altura, sintomas);
@@ -39,7 +39,7 @@ document.getElementById('formularioConsulta').addEventListener('submit', functio
     guardarRegistroPresionPeso(pacienteID, fechaHora, presion, peso);
 });
 
-function actualizarPaciente(id, nombre, apellidos, edad) {
+function actualizarPaciente(id, nombre, apellidos, edad, peso, altura) {
     const transaction = db.transaction(['pacientes'], 'readwrite');
     const store = transaction.objectStore('pacientes');
     const request = store.get(id);
@@ -47,13 +47,37 @@ function actualizarPaciente(id, nombre, apellidos, edad) {
     request.onsuccess = function (event) {
         const paciente = event.target.result;
         if (paciente) {
+            // Actualizar los datos del paciente
+            paciente.cedula = id;
             paciente.nombre = nombre;
             paciente.apellidos = apellidos;
             paciente.edad = edad;
+            paciente.peso = peso;
+            paciente.altura = altura;
+
             store.put(paciente);
             console.log('Paciente actualizado correctamente.');
         } else {
             console.error('Paciente no encontrado');
+
+            // Si el paciente no existe, agregar uno nuevo con la cédula como keyPath
+            const nuevoPaciente = {
+                pacienteId: id,
+                cedula: id,
+                nombre: nombre,
+                apellidos: apellidos,
+                edad: edad,
+                peso: peso,
+                altura: altura
+            };
+
+            const addRequest = store.add(nuevoPaciente);
+            addRequest.onsuccess = function () {
+                console.log('Nuevo paciente agregado correctamente.');
+            };
+            addRequest.onerror = function () {
+                console.error('Error al agregar nuevo paciente:', addRequest.error);
+            };
         }
     };
 
