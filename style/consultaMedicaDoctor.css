@@ -1,0 +1,42 @@
+.c-CM {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.a-CM {
+    width: 60%; /* Cambiado a porcentaje */
+    margin-top: 94px;
+    margin-right: 20px; /* Ajustado el margen */
+}
+
+.h-CM {
+    width: 30%; /* Porcentaje del 20% */
+    /* po; Añadida la posición fija */
+}
+h2{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 50px;
+}
+
+.C-medic{
+    max-width: 90%;
+    background-color: #ffffff;
+    padding: 20px;
+    min-height: 600px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 1px solid #dcdcdc;
+    box-shadow: 0px 0px 4px 0px #807f7f;
+}
+.f-CM{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+body{
+    background-color: #f5f5f5;
+
+}
