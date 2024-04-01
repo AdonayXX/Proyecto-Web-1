@@ -1,25 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Principal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style/navbar-S.css">
-    <link rel="stylesheet" href="style/principal.css">
-    <link rel="stylesheet" href="/style/modal.css">
     <link rel="stylesheet" href="style/navbar.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style/menuAdmin.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="img/HSRA-.svg">
 </head>
 
 <body>
+    <div class="d-flex sidebar-P position-absolute top-0 " id="wrapper">
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading side-T">Panel de Administración</div>
+            <div class="list-group list-group-flush mb-5m option-S">
+                <a href="adminDoctores.html" class="list-group-item list-group-item-action bg-light"><i
+                        class="fas fa-user-md me-2"></i>Gestión de Medicos y especialidades</a>
+                <a href="citas.html" class="list-group-item list-group-item-action bg-light"><i
+                        class="fa-solid fa-calendar-check me-2"></i>Gestion de citas</a>
+                <a href="Roles.html" class="list-group-item list-group-item-action bg-light"><i
+                        class="fas fa-users-cog me-2"></i>Gestión de Roles</a>
+                <a href="patientManagement.html" class="list-group-item list-group-item-action bg-light"><i
+                        class="fa-solid fa-users-gear me-2"></i>Gestión de Pacientes</a>
+                <a href="testGeneralOfThePacient.html" class="list-group-item list-group-item-action bg-light"><i
+                        class="bi bi-clipboard2-pulse-fill me-2"></i>Gestión de Examenes</a>
+            </div>
+        </div>
+    </div>
+
     <div class="container-fluid">
         <div class="fixed-header">
             <div class="row">
@@ -31,12 +45,14 @@
                         <div class="col-auto">
                             <ul class="nav">
                                 <li class="nav-item mx-1">
-                                    <a href="https://www.google.com/maps?ll=10.62995,-85.435744&z=15&t=m&hl=en&gl=CR&mapclient=embed&cid=6157595285764845165">
+                                    <a
+                                        href="https://www.google.com/maps?ll=10.62995,-85.435744&z=15&t=m&hl=en&gl=CR&mapclient=embed&cid=6157595285764845165">
                                         <i class="bi bi-geo-alt-fill Icons geo-point"></i>
                                     </a>
                                 </li>
                                 <li class="nav-item mx-1">
-                                    <a href="https://api.whatsapp.com/send/?phone=50626905551&text=Deseo+informaci%C3%B3n&type=phone_number&app_absent=0">
+                                    <a
+                                        href="https://api.whatsapp.com/send/?phone=50626905551&text=Deseo+informaci%C3%B3n&type=phone_number&app_absent=0">
                                         <i class="bi-whatsapp Icons icon-hover"></i>
                                     </a>
                                 </li>
@@ -57,7 +73,7 @@
                                 </li>
                                 <li class="nav-item mx-1">
                                     <a href="https://www.instagram.com/hospitalsanrafaelarcangel/">
-                                    <i class="bi-instagram Icons instagram"></i>
+                                        <i class="bi-instagram Icons instagram"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -70,7 +86,7 @@
             <div class="row">
                 <nav class="navbar navbar-expand-sm nav1">
                     <div class="container-fluid">
-                        <a class="navbar-brand logo-img" href="principal.html">
+                        <a class="navbar-brand logo-img" href="#" onclick=" cargarContenidoInicio()">
                             <img src="/img/LogoHSRA.jpg" alt="Logo" width="" height="">
                         </a>
                         <button class="navbar-toggler d-lg-none btn-drop toggler" type="button"
@@ -79,25 +95,34 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse nav-colla" id="collapsibleNavId">
-                            <ul class="navbar-nav me-auto nav-h">
+                            <ul class="navbar-nav me-auto nav-h ml-16">
                                 <li class="nav-item nav-anima">
-                                    <a class="nav-link nav-anima" href="principal.html">Inicio</a>
+                                    <a id="boton-inicio" class="nav-link nav-anima" href="#">Inicio</a>
                                 </li>
+
                                 <li class="nav-item">
-                                    <a class="nav-link nav-anima" id="s" href="#about-us1">Nosotros</a>
+                                    <a class="nav-link nav-anima" id="s" onclick="cargarContenidoInicio()"
+                                        href="#about-us1">Nosotros</a>
                                 </li>
                                 <li class="nav-item dropdown nav-anima">
                                     <a class="nav-link dropdown-toggle nav-anima" href="#our-Serv" id="dropdownId"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios
                                         Médicos</a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownId">
-                                        <a class="dropdown-item" href="serviceG.html">Servicios Generales</a>
-                                        <a class="dropdown-item" href="surgeries.html">Cirugías</a>
-                                        <a class="dropdown-item item-dwn" href="#">Directorio Médico</a>
-                                        <a class="dropdown-item item-dwn" href="#">Convenios Empresariales</a>
-                                        <a class="dropdown-item item-dwn" href="#">Paquetes Preventidos</a>
-                                        <a class="dropdown-item item-dwn" href="#">Chequeos INS Medical</a>
-                                        <a class="dropdown-item item-dwn" href="#">Láser Fotona</a>
+                                        <a class="dropdown-item" href="#"
+                                            onclick=" cargarContenidoServicios()">Servicios Generales</a>
+                                        <a class="dropdown-item" href="#"
+                                            onclick="cargarContenidoCirugias()">Cirugías</a>
+                                        <a class="dropdown-item item-dwn" href="#"
+                                            onclick="cargarContenidoDirectorio()">Directorio Médico</a>
+                                        <a class="dropdown-item item-dwn" href="#"
+                                            onclick="cargarContenidoConvenios()">Convenios Empresariales</a>
+                                        <a class="dropdown-item item-dwn" href="#"
+                                            onclick=" cargarContenidoPreventidos()">Paquetes Preventidos</a>
+                                        <a class="dropdown-item item-dwn" href="#"
+                                            onclick="cargarContenidoChequeos()">Chequeos INS Medical</a>
+                                        <a class="dropdown-item item-dwn" href="#"
+                                            onclick="cargarContenidoFotona()">Láser Fotona</a>
                                     </div>
                                 </li>
 
@@ -111,240 +136,71 @@
                                     </div>
                                 </li>
                                 <li class="nav-item nav-anima">
-                                    <a class="nav-link nav-anima" href="maternity.html">Maternidad</a>
+                                    <a class="nav-link nav-anima" href="#"
+                                        onclick="cargarContenidoMaternidad()">Maternidad</a>
+                                </li>
+                                <li class="nav-item dropdown nav-anima">
+                                    <a class="nav-link dropdown-toggle nav-anima" href="#" id="dropdownId"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Para
+                                        Clientes</a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                        <a class="dropdown-item item-dwn" href="#"
+                                            onclick="cargarContenidoParqueo()">Uso Parqueo</a>
+                                        <a class="dropdown-item item-dwn" href="#"
+                                            onclick="cargarContenidoSeguros()">Seguros Nacionales</a>
+                                        <a class="dropdown-item item-dwn" href="#"
+                                            onclick="cargarContenidoDeberesyDerechos()">Deberes y derechos del
+                                            paciente</a>
+                                        <a class="dropdown-item item-dwn" href="#">Lectura Imagenes de un TAC</a>
+                                    </div>
                                 </li>
                             </ul>
-                            <div class="d-flex ms-md-4 m-3">
-                                <a class="no-under-line m-md-0" href="login.html">
-                                    <i class="bi-person-fill login-icon"></i>
+                            <div class="d-flex ms-md-4 m-0">
+                                <a class="no-under-line m-md-0" href="#">
+                                    <i class="bi bi-person-fill-gear login-icon menu-t" id="menu-toggle"></i>
                                 </a>
                             </div>
-
+                            <div class="d-flex ms-md-4 m-3">
+                                <a class="no-under-line m-md-0" href="Principal.html">
+                                    <i class="bi bi-box-arrow-in-right login-icon" id="logoutButton"
+                                        style="display: none;"></i>
+                                </a>
+                            </div>
+                            <div class="d-flex ms-md-4 m-3">
+                                <a class="no-under-line m-md-0" href="login.html">
+                                    <i class="bi-person-fill login-icon" id="loginButton"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </nav>
             </div>
-
         </div>
+
         <div class="clima">
-            <div id="id8e9a326e8c303" a='{"t":"g7bs","v":"1.2","lang":"es","locs":[1543],"ssot":"c","sics":"ds","cbkg":"#FFFFFF","cfnt":"#000000","cend":"rgba(4,242,0,0)","sfnt":"a","slis":36}'>Fuente de datos meteorológicos: <a href="https://sharpweather.com/es/tiempo_liberia/30_días/">el tiempo 30 días Liberia</a></div>
+            <div id="id8e9a326e8c303"
+                a='{"t":"g7bs","v":"1.2","lang":"es","locs":[1543],"ssot":"c","sics":"ds","cbkg":"#FFFFFF","cfnt":"#000000","cend":"rgba(4,242,0,0)","sfnt":"a","slis":36}'>
+                Fuente de datos meteorológicos: <a href="https://sharpweather.com/es/tiempo_liberia/30_días/">el
+                    tiempo 30 días Liberia</a></div>
         </div>
+        
+        <div id="contenidoPrincipal"></div>
 
-        <div class="opti-Direct">
-            <div class="box-Opti bx1">
-                <a href="">
-                    <h2>DIRECTORIO MÉDICO</h2>
-                </a>
-            </div>
-            <div class="box-Opti bx">
-                <a href="serviceG.html">
-                    <h2>SERVICIOS MÉDICOS</h2>
-                </a>
-
-            </div>
-            <div class="box-Opti bx1">
-                <a href="">
-                    <H2>PLANES DE MATERNIDAD</H2>
-                </a>
-            </div>
-
-        </div>
-
-        <div class="cont-line" id="about-us1">
-            <div class="line-c"></div>
-        </div>
-
-        <div class="row">
-            <div class="container-fluid about-us">
-                <h1 id="">SOBRE NOSOTROS</h1>
-                <div class="text-info">
-                    <div class="text-1">
-                        <p>
-                            El Hospital San Rafael Arcángel es una empresa sensible
-                            orientada hacia las necesidades de nuestros
-                            pacientes y comprometida a la promoción de la salud
-                            integral en la provincia de Guanacaste actuando bajo el
-                            cumplimiento de nuestros valores: Seguridad,
-                            compromiso, respeto, sensibilidad e innovación.
-                        </p>
-                        <p>
-                            Nuestras modernas instalaciones albergan consulta a
-                            más de 55 médicos especialistas con condiciones de
-                            privacidad y confort así como con todo el equipo e
-                            instrumental requerido para la atención correcta del
-                            paciente ambulatorio con diferentes necesidades.
-                        </p>
-                    </div>
-                    <div class="line"> </div>
-
-                    <div class="text-2">
-                        <P>
-                            Areas de cirugía con modernos quirófanos y amplias
-                            áreas de recuperación. La seguridad de nuestros
-                            pacientes es la máxima preocupación que mantenemos
-                            en el área quirúrgica, las cuales cuentan con un sistema
-                            de aire acondicionado que garantiza una purificación mayor al 99%.
-                        </P>
-                        <p>
-                            Habitaciones individuales que le ofrecen todas las comodidades para
-                            la hospitalización de pacientes.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="container-fluid services-M" id="our-Serv">
-                <h1 class="text-t">NUESTROS SERVICIOS</h1>
-                <div class="serv-r">
-                    <div class="serv-r1">
-                        <div id="r1" class="box-s box-s-1">
-                            <h5>SERVICIOS 24 HORAS</h5>
-                            <p>Capacidad de respuesta médica resolutiva las 24 horas los 365 días del año.</p>
-                            <a href="serviceG.html">+INFO</a>
-                        </div>
-                        <div id="r2" class="box-s box-s-1">
-                            <h5>ESPECIALIDADES MÉDICAS</h5>
-                            <p>Listado de especialidades médicas y médicos que dan servicio en nuestras instalaciones.
-                            </p>
-                            <a href="#">+ INFO</a>
-                        </div>
-                        <div id="r3" class="box-s box-s-1">
-                            <h5>FOTONA</h5>
-                            <p>Conozca la última tecnología láser, unica en guanacaste evitando procesos invasivos.</p>
-                            <a href="#">+INFO</a>
-                        </div>
-                        <div id="r4" class="box-s box-s-1">
-                            <h5>PROMOCIONES VIGENTES</h5>
-                            <p>¿Necesita una cirugía? Revise este listado de cirugías electivas en promoción.</p>
-                            <a href="#">+INFO</a>
-                        </div>
-                    </div>
-
-                    <div class="serv-r1">
-                        <div id="r5" class="box-s box-s-2">
-                            <h5>CIRUGÍAS</h5>
-                            <p>Listado de cirugías que se realizan en San Rafael Arcángel</p>
-                            <a href="#">+INFO</a>
-                        </div>
-                        <div id="r6" class="box-s box-s-2">
-                            <h5>PAQUETES PREVENTIVOS</h5>
-                            <p>Mantenga una prevención médica responsable de su salud y la su familia.</p>
-                            <a href="#">+INFO</a>
-                        </div>
-                        <div id="r7" class="box-s box-s-2">
-                            <h5>PLANES DE MATERNIDAD</h5>
-                            <p>Sus hijos estarán en manos de médicos con amplia experiencia y altamente capacitados.</p>
-                            <a href="#">+INFO</a>
-                        </div>
-                        <div id="r8" class="box-s box-s-2">
-                            <h5>VISITAS ESPECIALISTAS</h5>
-                            <p>Calendario mensual de las fechas que nos visitan médicos especialistas</p>
-                            <a href="#">+INFO</a>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-        <div class="gallery">
-            <div class="image-item">
-                <img src="/img/C-3.png" alt="Imagen 3" onclick="openModal('/img/C-3.png')">
-            </div>
-            <div class="image-item">
-                <img src="/img/C-4.png" alt="Imagen 6" onclick="openModal('/img/C-4.png')">  
-            </div>
-            <div class="image-item" id="img1">
-                <img src="/img/C-1.png" alt="Imagen 1" onclick="openModal('/img/C-1.png')">
-            </div>
-            <div class="image-item">
-                <img src="/img/C-5.png" alt="Imagen 6" onclick="openModal('/img/C-5.png')">  
-            </div>
-            <div class="image-item">
-                <img src="/img/C-6.png" alt="Imagen 6" onclick="openModal('/img/C-6.png')">  
-            </div>
-            <div class="image-item">
-                <img src="/img/C-2.png" alt="Imagen 2" onclick="openModal('/img/C-2.png')">  
-            </div>
-        </div>
-    
-    <div id="myModal" class="modal">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImg">
-      </div>
-
-
-
-        <div class="row f-op">
-            <footer class="container-fluid footer-P">
-
-                <div class="f-info">
-                    <div class="info-items">
-                        <img class="f-safety" src="/img/safery-cov.png" alt="">
-                        <div class="f-contac">
-                            <ul class="f-netw">
-                                <h6>SIGUENOS EN:</h6>
-                                    <li class="nav-item mx-1">
-                                        <a href="https://api.whatsapp.com/send/?phone=50626905551&text=Deseo+informaci%C3%B3n&type=phone_number&app_absent=0">
-                                            <i class="bi-whatsapp Icons icon-hover"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item mx-1">
-                                        <a href="https://www.facebook.com/HospitalSanRafaelArcangel/">
-                                            <i class="bi-facebook Icons facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item mx-1">
-                                        <a href="https://www.youtube.com/channel/UCYDJYg8oEq4Gu_gg2p3NF-g">
-                                            <i class="bi-youtube Icons youtube"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item mx-1">
-                                        <a href="https://t.me/hcsra_bot">
-                                            <i class="bi-telegram Icons telegram"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item mx-1">
-                                        <a href="https://www.instagram.com/hospitalsanrafaelarcangel/">
-                                        <i class="bi-instagram Icons instagram"></i>
-                                        </a>
-                                    </li>
-                                
-                            </ul>
-                            <p>© Hospital San Rafael Arcángel
-                                Teléfonos (506) 2690-5500 | 2666-1717
-                                contacto@hcsanrafael.com
-                                Av. Central, Calle 3, Liberia, Guanacaste, Costa Rica
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="map">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.3492798761085!2d-85.43832428913726!3d10.629950189466312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f7562d5114149bf%3A0x55742c49bea22e6d!2sClinical%20Hospital%20San%20Rafa%C3%A9l%20Arc%C3%A1ngel!5e0!3m2!1sen!2scr!4v1710723747426!5m2!1sen!2scr"
-                            width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <div class="subcri-b">
-                        <button class="subscribe-btn">Suscribete ahora</button>
-                        <p>Manténgase al día de nuestros servicios y promociones.</p>
-                    </div>
-                </div>
-
-            </footer>
-
-        </div>
 
     </div>
-
+    <script async src="https://static1.sharpweather.com/widgetjs/?id=id8e9a326e8c303"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-        <script src="/Js/modal.js"></script>
-        <script async src="https://static1.sharpweather.com/widgetjs/?id=id8e9a326e8c303"></script>
+    <script src="/Js/toggleMenu.js"></script>
+    <script src="/Js/modal.js"></script>
+    <script src="/Js/contentDinamic.js"></script>
+    <script src="/Js/Roles.js"></script>
+    <script src="/Js/Login.js"></script>
+    <script src="/Js/database.js"></script>
+    <script src="/Js/logiLogin.js"></script>
+
+
 </body>
 
 </html>

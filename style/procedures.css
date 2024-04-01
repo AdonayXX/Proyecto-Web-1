@@ -1,0 +1,128 @@
+* {
+    font-family: "Fira Sans", sans-serif;
+}
+
+
+/* Estilos de la sección de procedimientos */
+
+.container-Procedures {
+    width: 70%;
+    margin: auto;
+}
+
+#ginecologia {
+    width: 70%;
+    margin: auto;
+
+}
+
+hr {
+    margin-top: 20px;
+    width: 70%;
+    margin: auto;
+}
+
+.column {
+    flex: 1;
+}
+
+#Procetitu {
+    margin-top: 45px;
+    color: rgb(0, 156, 168);
+}
+
+#Procetitu h2 {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: start;
+}
+
+.container-p {
+    display: flex;
+    flex-direction: row;
+}
+
+
+#ginetitu {
+    margin-top: 30px;
+    color: rgb(0, 156, 168);
+}
+
+/* Estilos de botones de procedimientos */
+
+#btn-foto {
+    background-color: RGB(3, 184, 190);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    width: 40%;
+    padding: 3px;
+    border: none;
+    margin-top: 35px;
+    transition: background-color 0.5s ease-in-ou;
+    cursor: pointer;
+}
+
+
+/*Animacion de botones */
+
+#btn-foto:hover {
+    background-color: #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.img-p img {
+    width: 400px;
+    height: 224px;
+    margin-top: 20px;
+
+}
+
+.carousel-P {
+    width: 100%;
+    height: 278px;
+}
+
+
+/* Responsivo */
+
+@media screen and (max-width: 559px) {
+    #containerS {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+
+    }
+
+    #ginecologia {
+        width: 90%;
+
+    }
+
+    .container-Procedures {
+        width: 90%;
+    }
+
+    #btn-foto {
+        width: 100%;
+        font-size: 20px;
+        margin-bottom: 60px;
+    }
+
+    #Procetitu h2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .container-p {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img-p img {
+        display: none;
+
+    }
+
+
+}

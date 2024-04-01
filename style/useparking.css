@@ -1,0 +1,35 @@
+* {
+    font-family: "Fira Sans", sans-serif;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    margin-top: 35px;
+    margin-bottom: 100px;
+}
+#container h2{
+    margin-bottom: 20px;
+    color: rgb(0, 156, 168);
+    font-size: 45px;
+    margin-bottom: 20px;
+    font-weight: inherit;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+#pnegrita{
+    font-weight: bold;
+}
+
+/* Responsivo */
+
+@media screen and (max-width: 559px) {
+    #container{
+        width: 90%;
+        margin-bottom: 50px;
+    }
+}

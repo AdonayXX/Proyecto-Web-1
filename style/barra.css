@@ -1,0 +1,17 @@
+.loading-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
+  
+  .loading-bar-progress {
+    height: 100%;
+    background-color: #007bff; /* Color de la barra de carga */
+    width: 0; /* Inicialmente, la barra de carga estará vacía */
+    transition: width 0.3s ease; /* Transición suave al cambiar el ancho */
+  }
+  

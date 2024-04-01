@@ -6,8 +6,10 @@
 .nav1 {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     height: 100%;
-
     background-color: white;
+}
+.ml-16{
+    margin-left: 135px;
 
 }
 
@@ -23,7 +25,7 @@
 /* Estilo para el logo */
 .logo-img {
     margin-left: 20px;
-    margin-right: 160px;
+    
 }
 
 .navbar-brand img {
@@ -122,6 +124,12 @@
         margin-top: 15px;
 
     }
+
+    .ml-16{
+        margin-left: 0px;
+    
+    }
+    
 }
 
 
@@ -288,4 +296,11 @@
 
 .clima{
     margin-top: 133px;
+}
+
+.sectionConvenios{
+    background-color: #009ca8;
+}
+.marginConvenios{
+    margin-top: 160px;
 }

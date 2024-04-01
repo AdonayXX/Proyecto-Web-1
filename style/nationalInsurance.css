@@ -1,0 +1,101 @@
+.container-P{
+   max-width: 70%;
+   margin: 0 auto;
+   /* background-color: black; */
+   margin-top: 41px;
+   margin-bottom: 100px;
+}
+
+.form-NI{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-Insurance{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.ima-S{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.img-1 img,
+.img-2 img {
+    width: 170px;
+    height: auto; /* Para mantener la proporción de aspecto */
+    margin: 10px;
+    
+}
+
+.img-1{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+.img-2{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+.py-5{
+    padding: 3rem !important;
+    border: 1px solid #e9ecef;
+    border-radius: 0.25rem;
+    background-color: rgb(253, 253, 253)!important;
+}
+.form-t{
+    color: rgb(0, 156, 168);
+}
+
+.container-P p{
+    color: rgb(82, 79, 79);
+    font-size: 1.5rem;
+}
+.text-center button{
+
+    background-color: rgb(3, 184, 190);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    width: 40%;
+    padding: 3px;
+    border: 1px solid rgb(183, 231, 233);
+    margin-top: 35px;
+    transition: background-color 0.5s ease-in-ou;
+    cursor: pointer;
+
+}
+
+.text-center button:hover{
+    background-color: rgb(3, 184, 190);
+    transform: scale(1.1);
+    color: white;
+
+}
+
+
+/* Responsivo */
+
+@media screen and (max-width: 768px){
+    .container-P{
+        max-width: 90%;
+    }
+    .img-1 img,
+    .img-2 img {
+        width: 100px;
+        height: auto; /* Para mantener la proporción de aspecto */
+        margin: 10px;
+    }
+    .img-1,
+    .img-2{
+        margin-right: 0;
+    }
+    .info-Insurance{
+        flex-direction: column;
+        align-items: center;
+    }
+}
