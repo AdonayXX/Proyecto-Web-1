@@ -1,0 +1,80 @@
+#pcontent {
+    margin-top: 140px;
+}
+
+#title{
+    color: rgb(0, 156, 168);
+    margin-bottom: 20px;
+}
+
+#content {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+}
+
+.additional-info {
+    position: absolute;
+    top: 0px;
+    right: 0px; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: small;
+    transition: opacity 0.5s ease; /* Transición de opacidad */
+    opacity: 1; /* Opacidad inicial */
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item:not(.active) .additional-info {
+    opacity: 0; /* Ocultar el elemento cuando no está activo */
+}
+
+.additional-info h3 {
+    font-size: 18px; /* Tamaño de fuente más pequeño */
+    margin-bottom: 10px; /* Espacio inferior */
+}
+
+.img-car {
+    width: 100%;
+    max-height: 400px; /* Ajusta la altura según tus necesidades */
+    object-fit: cover; /* Esto asegura que la imagen se ajuste manteniendo su relación de aspecto */
+}
+
+.btn-car{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 1px solid white;
+}
+
+.btn-maternity {
+    width: 370px;
+    height: auto;
+    margin: 20px;
+    background-color: #02B8BF;
+    color: white;
+    border: 1px solid white;
+    padding: 3px;
+}
+
+.btn-maternity {
+    transition: transform 0.3s ease;
+}
+
+.btn-maternity:hover {
+    transform: scale(1.1);
+}
+
+.btn-maternity a:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 156, 168);
+}
