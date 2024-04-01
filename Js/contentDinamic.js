@@ -209,3 +209,53 @@ function cargarContenidoChequeos() {
     xhr.send();
 }
 
+function cargarContenidoInstalaciones() {
+    var contenedor = document.getElementById("contenidoPrincipal");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "contentFacilities.html", true);
+
+   
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            contenedor.innerHTML = xhr.responseText;
+            window.scrollTo(0, 0);
+        }
+    };
+    xhr.send();
+}
+function cargarContenidoEquipo() {
+    var contenedor = document.getElementById("contenidoPrincipal");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "contentMedical_Team.html", true);
+
+   
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            contenedor.innerHTML = xhr.responseText;
+            window.scrollTo(0, 0);
+        }
+    };
+    xhr.send();
+}
+function cargarContenidoPlan() {
+    var contenedor = document.getElementById("contenidoPrincipal");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "contentPlan_Includes.html", true);
+
+   
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            contenedor.innerHTML = xhr.responseText;
+            window.scrollTo(0, 0);
+        }
+    };
+    xhr.send();
+}
+
+

@@ -75,29 +75,29 @@ document.querySelector("form").addEventListener("submit", function(event) {
 // Función para actualizar los datos del paciente
 function actualizarPaciente(id, enfermedades, medicamentosAlergicos) {
     const transaction = db.transaction(['pacientes'], 'readwrite');
-    const store = transaction.objectStore('pacientes');
     const request = store.get(id);
-
+    const store = transaction.objectStore('pacientes');
     request.onsuccess = function (event) {
+
         const paciente = event.target.result;
         if (paciente) {
             paciente.medicamentosAlergicos = medicamentosAlergicos;
             paciente.enfermedades = enfermedades;
 
-            store.put(paciente).onsuccess = function () {
                 console.log('Paciente actualizado correctamente.');
+            store.put(paciente).onsuccess = function () {
             };
-
             store.put(paciente).onerror = function (error) {
+
                 console.error('Error al actualizar el paciente:', error);
             };
         } else {
-            console.error('Paciente no encontrado');
         }
-    };
+            console.error('Paciente no encontrado');
 
-    request.onerror = function (event) {
+    };
         console.error('Error al actualizar el paciente:', event.target.error);
+    request.onerror = function (event) {
     };
 }
 

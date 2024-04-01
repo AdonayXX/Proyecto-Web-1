@@ -1,46 +1,34 @@
-/* Estilos de Maternidad */
-#pconte {
+#pcontent{
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-.m-mb8 {
-    margin-bottom: 80px;
-}
-
-#contenedor {
-    max-width: 70%;
+#content{
+    width: 70%;
     display: flex;
     margin: auto;
     flex-direction: column;
     height: auto;
-}
-
-#informacion {
-    margin-block: 15px;
-}
-
-#titulo h1 {
-    margin-bottom: 20px;
-    color: rgb(0, 156, 168);
-    font-size: 46px;
-    font-weight: inherit;
-    text-transform: uppercase;
-    text-align: center;
-
-}
-
-#informacion {
-    color: rgb(82, 79, 79);
-
-}
-
-/*Estilos de botones Maternidad*/
-#content-btn {
-    max-width: 90%;
-    display: flex;
-    margin: auto;
-    flex-direction: row;
     align-items: center;
+}
+
+#titulo{
+    margin-bottom: 20px;
+}
+
+#title{
+    color: rgb(0, 156, 168);
+}
+
+#carouselExampleCaptions{
+    width: 60%;
+    margin-left: 15%;
+}
+
+#content-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .btn-maternity {
@@ -66,15 +54,16 @@
     color: rgb(0, 156, 168);
 }
 
-/*Maternidad Responsivo*/
-
 @media (max-width: 559px) {
-    #content-btn {
-        flex-direction: column;
-        
-    }
-    #contenedor {
-        max-width: 90%;
+    #carouselExampleCaptions{
+        width: 80%;
+        margin-right: 10%;
     }
 
+    .btns-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
 }
