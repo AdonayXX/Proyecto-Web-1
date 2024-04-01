@@ -62,16 +62,8 @@ document.querySelector("form").addEventListener("submit", function(event) {
                 fecha: new Date().toISOString()
             };
 
-            store.add(consultaMedica).onsuccess = function() {
-                console.log("Consulta médica guardada correctamente.");
-            };
-
-            store.add(consultaMedica).onerror = function(error) {
-                console.error("Error al guardar la consulta médica:", error);
-            };
-
-            // Llama a la función para actualizar también los datos del paciente
-            actualizarPaciente(pacienteID, consultaMedica.enfermedades, consultaMedica.medicamentosAlergicos);
+            // Verifica si el paciente existe antes de guardar la consulta médica
+            guardarConsultaMedica(pacienteID, consultaMedica);
         }
     };
 
@@ -106,5 +98,37 @@ function actualizarPaciente(id, enfermedades, medicamentosAlergicos) {
 
     request.onerror = function (event) {
         console.error('Error al actualizar el paciente:', event.target.error);
+    };
+}
+
+// Función para guardar la consulta médica
+function guardarConsultaMedica(pacienteID, consultaMedica) {
+    const transaction = db.transaction(['pacientes'], 'readonly');
+    const store = transaction.objectStore('pacientes');
+    const request = store.get(pacienteID);
+
+    request.onsuccess = function(event) {
+        const paciente = event.target.result;
+        if (paciente) {
+            // El paciente existe, puedes guardar la consulta médica aquí
+            const transactionConsulta = db.transaction(['consultasMedicas'], 'readwrite');
+            const storeConsulta = transactionConsulta.objectStore('consultasMedicas');
+            const addRequest = storeConsulta.add(consultaMedica);
+
+            addRequest.onsuccess = function() {
+                console.log('Consulta médica guardada correctamente.');
+            };
+
+            addRequest.onerror = function(event) {
+                console.error('Error al guardar la consulta médica:', event.target.error);
+            };
+        } else {
+            // El paciente no existe, muestra un mensaje de error
+            console.error('No se puede crear la consulta médica. Paciente no encontrado.');
+        }
+    };
+
+    request.onerror = function(event) {
+        console.error('Error al buscar el paciente:', event.target.error);
     };
 }
