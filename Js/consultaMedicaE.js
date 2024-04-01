@@ -22,12 +22,13 @@ document.getElementById('formularioConsulta').addEventListener('submit', functio
     const pacienteID = document.getElementById('cedula').value;
     const nombre = document.getElementById('nombre').value;
     const apellidos = document.getElementById('apellidos').value;
-    const edad = document.getElementById('edad').value;
+    const  fechaNacimiento = document.getElementById('edad').value;
     const presion = document.getElementById('presion').value;
     const peso = document.getElementById('peso').value;
     const altura = document.getElementById('altura').value;
     const sintomas = document.getElementById('sintomas').value;
     const fechaHora = new Date().toISOString();
+    const edad = calcularEdad(fechaNacimiento);
 
     // Actualizar los datos del paciente
     actualizarPaciente(pacienteID, nombre, apellidos, edad,peso,altura);
@@ -130,4 +131,14 @@ function guardarRegistroPresionPeso(idPaciente, fechaHora, presion, peso) {
     request.onerror = function () {
         console.error("Error al guardar el registro de presión y peso:", request.error);
     };
+}
+function calcularEdad(fechaNacimiento) {
+    const hoy = new Date();
+    const nacimiento = new Date(fechaNacimiento);
+    let edad = hoy.getFullYear() - nacimiento.getFullYear();
+    const m = hoy.getMonth() - nacimiento.getMonth();
+    if (m < 0 || (m === 0 && hoy.getDate() < nacimiento.getDate())) {
+        edad--;
+    }
+    return edad;
 }
