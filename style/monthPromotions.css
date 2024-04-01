@@ -1,0 +1,25 @@
+#pconte{
+    margin-top: 140px;
+}
+
+#content{
+    max-width: 70%;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    height: auto;
+}
+
+#title > h1{
+    color: rgb(0, 156, 168);
+}
+
+#cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card{
+    margin-bottom: 20px;
+}
