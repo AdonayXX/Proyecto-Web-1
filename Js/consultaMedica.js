@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Abre la base de datos cuando se carga el documento
     openDatabase();
 }, false);
 
@@ -20,10 +19,9 @@ document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault();
     const pacienteID = document.getElementById('ID').value;
 
-    // Inicia la transacción y obtiene el almacén de objetos
     const transaction = db.transaction(['consultasMedicas'], 'readwrite');
     const store = transaction.objectStore('consultasMedicas');
-    const index = store.index('pacienteId'); // Asume que has creado este índice en tu almacén
+    const index = store.index('pacienteId');
     const request = index.get(pacienteID);
 
     request.onsuccess = function() {
@@ -36,9 +34,9 @@ document.querySelector("form").addEventListener("submit", function(event) {
             data.diagnostico = document.getElementById('diagnostico').value;
             data.medicamentos = document.getElementById('medicamentos').value;
             data.examenes = document.getElementById('examenes').value;
-            data.fecha = new Date().toISOString(); // Actualiza la fecha de la consulta
+            data.fecha = new Date().toISOString(); 
 
-            const updateRequest = store.put(data); // Intenta actualizar la entrada
+            const updateRequest = store.put(data); 
 
             updateRequest.onsuccess = function() {
                 console.log("Consulta médica actualizada correctamente.");
@@ -48,7 +46,6 @@ document.querySelector("form").addEventListener("submit", function(event) {
                 console.error("Error al actualizar la consulta médica:", updateRequest.error);
             };
 
-            // Llama a la función para actualizar también los datos del paciente
             actualizarPaciente(pacienteID, data.enfermedades, data.medicamentosAlergicos);
         } else {
             // Si no existe, crea una nueva entrada
@@ -75,29 +72,28 @@ document.querySelector("form").addEventListener("submit", function(event) {
 // Función para actualizar los datos del paciente
 function actualizarPaciente(id, enfermedades, medicamentosAlergicos) {
     const transaction = db.transaction(['pacientes'], 'readwrite');
+    const store = transaction.objectStore('pacientes'); 
     const request = store.get(id);
-    const store = transaction.objectStore('pacientes');
-    request.onsuccess = function (event) {
 
+    request.onsuccess = function(event) {
         const paciente = event.target.result;
         if (paciente) {
             paciente.medicamentosAlergicos = medicamentosAlergicos;
             paciente.enfermedades = enfermedades;
 
+            const updateRequest = store.put(paciente);
+            updateRequest.onsuccess = function() {
                 console.log('Paciente actualizado correctamente.');
-            store.put(paciente).onsuccess = function () {
             };
-            store.put(paciente).onerror = function (error) {
-
+            updateRequest.onerror = function(error) {
                 console.error('Error al actualizar el paciente:', error);
             };
         } else {
-        }
             console.error('Paciente no encontrado');
-
+        }
     };
+    request.onerror = function(event) {
         console.error('Error al actualizar el paciente:', event.target.error);
-    request.onerror = function (event) {
     };
 }
 
@@ -110,7 +106,6 @@ function guardarConsultaMedica(pacienteID, consultaMedica) {
     request.onsuccess = function(event) {
         const paciente = event.target.result;
         if (paciente) {
-            // El paciente existe, puedes guardar la consulta médica aquí
             const transactionConsulta = db.transaction(['consultasMedicas'], 'readwrite');
             const storeConsulta = transactionConsulta.objectStore('consultasMedicas');
             const addRequest = storeConsulta.add(consultaMedica);
@@ -123,7 +118,6 @@ function guardarConsultaMedica(pacienteID, consultaMedica) {
                 console.error('Error al guardar la consulta médica:', event.target.error);
             };
         } else {
-            // El paciente no existe, muestra un mensaje de error
             console.error('No se puede crear la consulta médica. Paciente no encontrado.');
         }
     };

@@ -11,6 +11,7 @@ document.getElementById('form-especialidad').addEventListener('submit', function
 
     transaction.oncomplete = () => {
         console.log('Especialidad añadida');
+        document.getElementById('nombre-especialidad').value = '';
         mostrarToastEspecialidadAgregada();
         cargarEspecialidades(); // Actualizar la lista de especialidades
     };
@@ -18,8 +19,8 @@ document.getElementById('form-especialidad').addEventListener('submit', function
 function cargarEspecialidades() {
     let selectEspecialidades = document.getElementById('especialidad-doctor');
     let listaEspecialidades = document.getElementById('lista-especialidades');
-    selectEspecialidades.innerHTML = ''; // Limpia el select
-    listaEspecialidades.innerHTML = ''; // Limpia la lista
+    selectEspecialidades.innerHTML = '';
+    listaEspecialidades.innerHTML = '';
 
     const transaction = db.transaction(['especialidades'], 'readonly');
     const store = transaction.objectStore('especialidades');
@@ -65,6 +66,7 @@ document.getElementById('form-doctor').addEventListener('submit', function (e) {
 
     request.onsuccess = () => {
         console.log('Doctor añadido con éxito');
+        document.getElementById('nombre-doctor').value = '';
         mostrarToastDoctorAgregado();
         cargarDoctores();
     };
@@ -104,7 +106,7 @@ function cargarDoctores() {
 
             }; //Pendiente a hacer.
 
-            
+
             li.appendChild(btnEditar);
             li.appendChild(btnEliminar);
 
@@ -122,7 +124,8 @@ function eliminarDoctor(doctorId) {
 
     transaction.oncomplete = () => {
         console.log('Doctor eliminado');
-        cargarDoctores(); 
+        cargarDoctores();
+
     };
 }
 function deleteSpeciality(especialityName) {
@@ -140,15 +143,15 @@ function deleteSpeciality(especialityName) {
 function mostrarToastEspecialidadAgregada() {
     var toast = new bootstrap.Toast(document.getElementById('toastEspecialidadAgregada'));
     toast.show();
-    setTimeout(function() {
-      toast.hide();
+    setTimeout(function () {
+        toast.hide();
     }, 3000);
-  }
+}
 
 function mostrarToastDoctorAgregado() {
     var toast = new bootstrap.Toast(document.getElementById('toastDoctorAgregado'));
     toast.show();
-    setTimeout(function() {
-      toast.hide();
+    setTimeout(function () {
+        toast.hide();
     }, 3000);
-  }
+}

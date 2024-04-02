@@ -29,7 +29,6 @@ async function openDatabase() {
 
         request.onupgradeneeded = function(event) {
             let db = event.target.result;
-            // Considerar agregar aquí la creación de object stores si aún no existen
         };
     });
 }
@@ -44,7 +43,7 @@ async function revisarYActualizarEstadosDeCitas() {
         const cursor = event.target.result;
         if (cursor) {
             const cita = cursor.value;
-            const nuevoEstado = determinarEstadoCita(cita.fecha, cita.hora); // Implementa esta función basada en tu lógica
+            const nuevoEstado = determinarEstadoCita(cita.fecha, cita.hora); 
             if (cita.estado !== nuevoEstado) {
                 cita.estado = nuevoEstado;
                 cursor.update(cita);
@@ -97,7 +96,6 @@ document.addEventListener('click', function(e) {
     if (e.target.classList.contains('cancelar-cita-btn')) {
         const citaId = e.target.getAttribute('data-cita-id');
         document.getElementById('confirmarCancelacionBtn').setAttribute('data-cita-id', citaId);
-        // Mostrar el modal de Bootstrap
         var modal = new bootstrap.Modal(document.getElementById('cancelarCitaModal'));
         modal.show();
     }
