@@ -30,9 +30,9 @@
 }
 
 .paquete{
-    background-color: #e0e0e0;
+    background-color: #f4f4f4;
     border-radius: 10px;
-    border: 1px solid #cccbcb;
+    border: 1px solid rgb(255, 255, 255);
     padding: 20px;
     margin: 10px;
     
