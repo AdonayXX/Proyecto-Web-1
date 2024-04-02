@@ -257,5 +257,38 @@ function cargarContenidoPlan() {
     };
     xhr.send();
 }
+function cargarContenidoPlanCirugia() {
+    var contenedor = document.getElementById("contenidoPrincipal");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "contentSurgeryPlans.html", true);
+
+   
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            contenedor.innerHTML = xhr.responseText;
+            window.scrollTo(0, 0);
+        }
+    };
+    xhr.send();
+}
+function cargarContenidoPlanMeses() {
+    var contenedor = document.getElementById("contenidoPrincipal");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "contentMonthPromotions.html", true);
+
+   
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            contenedor.innerHTML = xhr.responseText;
+            window.scrollTo(0, 0);
+        }
+    };
+    xhr.send();
+}
+
 
 
