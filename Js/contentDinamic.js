@@ -128,4 +128,134 @@ function cargarContenidoConvenios() {
     };
     xhr.send();
 }
+function cargarContenidoSeguros() {
+    var contenedor = document.getElementById("contenidoPrincipal");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "contentNationalInsurance.html", true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            contenedor.innerHTML = xhr.responseText;
+            window.scrollTo(0, 0);
+        }
+    };
+    xhr.send();
+}
+
+function cargarContenidoPreventidos() {
+    var contenedor = document.getElementById("contenidoPrincipal");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "contentPre-emptedpackages.html", true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            contenedor.innerHTML = xhr.responseText;
+            window.scrollTo(0, 0);
+        }
+    };
+    xhr.send();
+}
+
+function cargarContenidoDeberesyDerechos() {
+    var contenedor = document.getElementById("contenidoPrincipal");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "contentRightsduties.html", true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            contenedor.innerHTML = xhr.responseText;
+            window.scrollTo(0, 0);
+        }
+    };
+    xhr.send();
+}
+
+function cargarContenidoParqueo() {
+    var contenedor = document.getElementById("contenidoPrincipal");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "contentUseParking.html", true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            contenedor.innerHTML = xhr.responseText;
+            window.scrollTo(0, 0);
+        }
+    };
+    xhr.send();
+}
+
+function cargarContenidoChequeos() {
+    var contenedor = document.getElementById("contenidoPrincipal");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "contentCheckups.html", true);
+
+   
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            contenedor.innerHTML = xhr.responseText;
+            window.scrollTo(0, 0);
+        }
+    };
+    xhr.send();
+}
+
+function cargarContenidoInstalaciones() {
+    var contenedor = document.getElementById("contenidoPrincipal");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "contentFacilities.html", true);
+
+   
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            contenedor.innerHTML = xhr.responseText;
+            window.scrollTo(0, 0);
+        }
+    };
+    xhr.send();
+}
+function cargarContenidoEquipo() {
+    var contenedor = document.getElementById("contenidoPrincipal");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "contentMedical_Team.html", true);
+
+   
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            contenedor.innerHTML = xhr.responseText;
+            window.scrollTo(0, 0);
+        }
+    };
+    xhr.send();
+}
+function cargarContenidoPlan() {
+    var contenedor = document.getElementById("contenidoPrincipal");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "contentPlan_Includes.html", true);
+
+   
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            contenedor.innerHTML = xhr.responseText;
+            window.scrollTo(0, 0);
+        }
+    };
+    xhr.send();
+}
+
 

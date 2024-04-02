@@ -10,7 +10,6 @@
 }
 
 .sidebar-P{
-    
     position: fixed;
     z-index: 1001;
 }
@@ -50,4 +49,13 @@
     background-color: #007bff;
     border-color: #007bff;
     color: white;
+}
+
+.option-S a:hover{
+    color: #009ca8;
+}
+
+.side-T{
+    text-align: center;
+    padding: 10px;
 }

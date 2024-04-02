@@ -113,6 +113,7 @@ function getUsers() {
 
 // Se encarga de actualizar el rol de un usuario en la base de datos //
 
+
 function updateUserRole(userId, newRole) {
   const transaction = db.transaction(['usuarios'], 'readwrite');
   const store = transaction.objectStore('usuarios');
@@ -127,8 +128,8 @@ function updateUserRole(userId, newRole) {
       const updateRequest = store.put(user);
 
       updateRequest.onsuccess = function () {
-        alert('Rol de usuario actualizado correctamente');
         getUsers();
+        mostrarToastRolActualizado(); // Mostrar el toast después de actualizar el rol
       };
 
       updateRequest.onerror = function (event) {
@@ -142,4 +143,15 @@ function updateUserRole(userId, newRole) {
   request.onerror = function (event) {
     alert('Error al obtener el usuario para actualizar el rol: ' + event.target.errorCode);
   };
+
+  function mostrarToastRolActualizado() {
+    var toast = new bootstrap.Toast(document.getElementById('toastRolActualizado'));
+    toast.show();
+    setTimeout(function() {
+      toast.hide();
+    }, 3000);
+  }
 }
+
+  
+

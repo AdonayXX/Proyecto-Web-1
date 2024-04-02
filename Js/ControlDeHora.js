@@ -33,6 +33,7 @@ function agendarCita() {
         numeroTelefono: document.getElementById('cellphoneNumber').value,
         //La cédula es única entonces la usamos como Keyphat
         pacienteId: document.getElementById('ID').value,
+        cedula: document.getElementById('ID').value
     };
 
     // Adding or updating the patient information
@@ -48,7 +49,8 @@ function agendarCita() {
         fecha: document.getElementById('date').value,
         hora: document.getElementById('time').value, // Format HH:MM
         doctor: document.getElementById('doctor').value,
-        pacienteId: paciente.pacienteId //Reltaionship with the patient
+        pacienteId: paciente.pacienteId, //Reltaionship with the patient
+        estado: 'pendiente'
     };
 
     // Adding the appointment

@@ -2,21 +2,43 @@
     font-family: "Fira Sans", sans-serif;
 }
 
-#container{
+.container {
     width: 70%;
     margin: auto;
-    margin-top: 140px;
-    
+    margin-top: 41px;
+    margin-bottom: 100px;
+
 }
 
-h2{
+h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-p{
+p {
     font-size: 15px;
-    text-align: justify;
+    text-align: start;
     margin-top: 10px;
 }
 
+.c-1{
+    margin-bottom: 30px;
+
+}
+.c-1 h2{
+    color: rgb(0, 156, 168);
+    font-size: 46px;
+    font-weight: inherit;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+
+}
+/* RESPONSIVO */
+
+@media screen and (max-width: 559px) {
+    .container {
+        width: 90%;
+        margin-bottom: 50px;
+    }
+       
+    }

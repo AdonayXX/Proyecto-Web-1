@@ -1,9 +1,34 @@
 /* Estilo para las cajas*/
 
-.opti-Direct {
+.box-Direc {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-basis: 98%;
+    margin-left:135px;
+
+}
+
+.btn-chat {
+    display: flex;
+    justify-content:end;
+    flex-basis: 2%;
+    margin: auto;
+
+}
+
+.btn-chat button {
+    width: 130px;
+    height: 40px;
+    font-size: small;
+
+}
+
+.opti-Direct {
+    display: flex;
+    flex-direction: row;
+    /* background-color: red; */
+
 
     /* margin-top: 164px; */
 
@@ -13,6 +38,7 @@
 .box-Opti {
     display: flex;
     justify-content: center;
+    position: static;
     align-items: center;
     width: 262px;
     height: 165px;
@@ -59,7 +85,7 @@
 }
 
 .line-c {
-    margin-top: 100px;
+    margin-top: 50px;
     width: 70%;
     height: 3px;
     background-color: rgb(0, 156, 168);
@@ -97,8 +123,9 @@
     font-size: 50px;
     font-weight: inherit;
 }
-.more-About h1{
-    
+
+.more-About h1 {
+
     color: rgb(0, 156, 168);
     text-align: center;
     margin-top: 50px;
@@ -134,7 +161,7 @@
 
 /* Estilos para servicios */
 .services-M {
-    
+
     background: linear-gradient(to right, #30b6ce, #009ca8);
     height: auto;
     margin-top: 80px;
@@ -188,6 +215,7 @@
 
 
 }
+
 .box-s p {
     text-align: center;
     color: white;
@@ -258,13 +286,14 @@
     .line {
         height: 750px;
     }
+
     .opti-Direct {
         display: flex;
         flex-direction: column;
         width: 100%;
-    
+
         /* margin-top: 164px; */
-    
+
     }
 
     .box-Opti {
@@ -274,4 +303,47 @@
         margin: auto;
     }
 
+    .box-Direc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-basis: 98%;
+        margin-left:0px;
+    
+    }
+
+    .btn-chat {
+        display: flex;
+        margin-top: 10px;
+        flex-basis: 100%;
+        justify-content:end;
+        margin: none;
+    
+    }
+
 }
+
+.subscribe-btn {
+    background-color: rgb(0, 156, 168);; 
+    color: white;
+    padding: 10px 45px; 
+    border: none; 
+    border-radius: 20px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    width: 80%;
+    text-align: center; /* Added to center the text */
+}
+  
+  .subscribe-btn:hover, .suscribe-btn:focus {
+    transform: scale(1.05); /* Ligeramente más grande al pasar el mouse o enfocar */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el mouse o enfocar */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que es clickeable */
+  }
+  
+  .subscribe-btn:active {
+    transform: scale(0.95); /* Efecto de presionado */
+  }
+  

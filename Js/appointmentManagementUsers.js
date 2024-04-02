@@ -92,7 +92,7 @@ function cancelarCita(citaId) {
     const objectStore = transaction.objectStore('citas');
 
     // Intenta eliminar la cita
-    const request = objectStore.delete(Number(citaId)); // Asegúrate de que citaId sea un número si tu clave primaria es numérica
+    const request = objectStore.delete(Number(citaId)); 
 
     request.onsuccess = function() {
         console.log(`Cita con ID ${citaId} cancelada exitosamente.`);
