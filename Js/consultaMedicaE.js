@@ -17,7 +17,7 @@ function openDatabase() {
 }
 
 document.getElementById('formularioConsulta').addEventListener('submit', function (event) {
-    event.preventDefault(); // Evita el envío normal del formulario
+    event.preventDefault(); 
 
     const pacienteID = document.getElementById('cedula').value;
     const nombre = document.getElementById('nombre').value;
@@ -30,13 +30,10 @@ document.getElementById('formularioConsulta').addEventListener('submit', functio
     const fechaHora = new Date().toISOString();
     const edad = calcularEdad(fechaNacimiento);
 
-    // Actualizar los datos del paciente
     actualizarPaciente(pacienteID, nombre, apellidos, edad,peso,altura);
 
-    // Guardar la consulta médica
     guardarConsultaMedica(pacienteID, presion, peso, altura, sintomas);
 
-    // Guardar registro de presión y peso
     guardarRegistroPresionPeso(pacienteID, fechaHora, presion, peso);
 });
 
@@ -94,7 +91,7 @@ function guardarConsultaMedica(idPaciente, presion, peso, altura, sintomas) {
         peso: peso,
         altura: altura,
         sintomas: sintomas,
-        fecha: new Date().toISOString() // Agrega una marca de tiempo a la entrada
+        fecha: new Date().toISOString()
     };
 
     const transaction = db.transaction(['consultasMedicas'], 'readwrite');
@@ -103,12 +100,10 @@ function guardarConsultaMedica(idPaciente, presion, peso, altura, sintomas) {
 
     request.onsuccess = function () {
         console.log("Consulta médica guardada correctamente.");
-        // Aquí puedes limpiar el formulario o dar feedback al usuario
     };
 
     request.onerror = function () {
         console.error("Error al guardar la consulta médica:", request.error);
-        // Maneja los errores, por ejemplo, mostrando un mensaje al usuario
     };
 }
 
