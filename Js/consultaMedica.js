@@ -39,6 +39,8 @@ document.querySelector("form").addEventListener("submit", function(event) {
             const updateRequest = store.put(data); 
 
             updateRequest.onsuccess = function() {
+                mostrarToastConsultaMedico();
+                limpiarCampos();
                 console.log("Consulta médica actualizada correctamente.");
             };
 
@@ -83,6 +85,8 @@ function actualizarPaciente(id, enfermedades, medicamentosAlergicos) {
 
             const updateRequest = store.put(paciente);
             updateRequest.onsuccess = function() {
+                mostrarToastConsultaMedico();
+                limpiarCampos();
                 console.log('Paciente actualizado correctamente.');
             };
             updateRequest.onerror = function(error) {
@@ -111,6 +115,8 @@ function guardarConsultaMedica(pacienteID, consultaMedica) {
             const addRequest = storeConsulta.add(consultaMedica);
 
             addRequest.onsuccess = function() {
+                mostrarToastConsultaMedico();
+                limpiarCampos();
                 console.log('Consulta médica guardada correctamente.');
             };
 
@@ -125,4 +131,24 @@ function guardarConsultaMedica(pacienteID, consultaMedica) {
     request.onerror = function(event) {
         console.error('Error al buscar el paciente:', event.target.error);
     };
+}
+
+
+function mostrarToastConsultaMedico() {
+    var toast = new bootstrap.Toast(document.getElementById('toastConsultaMedicoRealizada'));
+    toast.show();
+    setTimeout(function () {
+        toast.hide();
+    }, 3000);
+}
+
+//FUNCION PARA LIMPIAR LOS CAMPOS DEL FORMULARIO
+
+function limpiarCampos() {
+    document.getElementById('ID').value
+    document.getElementById('medicamentosAlergicos').value = '';
+    document.getElementById('enfermedades').value = '';
+    document.getElementById('diagnostico').value = '';
+    document.getElementById('medicamentos').value = '';
+    document.getElementById('examenes').value = '';
 }
