@@ -39,6 +39,11 @@
     width: 60%;
 }
 
+.a{
+    outline: none;
+    text-decoration: none;
+}
+
 .btn-maternity {
     width: 370px;
     height: auto;
@@ -67,8 +72,16 @@
         width: 100%;
     }
 
+    #content-info{
+        width: 60%;
+    }
+
+    #img_baby{
+        width: 40%;
+    }
+
     #img-info {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .imgb {
