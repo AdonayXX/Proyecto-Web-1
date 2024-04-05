@@ -1,5 +1,6 @@
+let db;
+
 document.addEventListener('DOMContentLoaded', function () {
-    // Abre la base de datos cuando se carga el documento
     openDatabase();
 }, false);
 
@@ -17,12 +18,12 @@ function openDatabase() {
 }
 
 document.getElementById('formularioConsulta').addEventListener('submit', function (event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
     const pacienteID = document.getElementById('cedula').value;
     const nombre = document.getElementById('nombre').value;
     const apellidos = document.getElementById('apellidos').value;
-    const  fechaNacimiento = document.getElementById('edad').value;
+    const fechaNacimiento = document.getElementById('edad').value;
     const presion = document.getElementById('presion').value;
     const peso = document.getElementById('peso').value;
     const altura = document.getElementById('altura').value;
@@ -30,7 +31,7 @@ document.getElementById('formularioConsulta').addEventListener('submit', functio
     const fechaHora = new Date().toISOString();
     const edad = calcularEdad(fechaNacimiento);
 
-    actualizarPaciente(pacienteID, nombre, apellidos, edad,peso,altura);
+    actualizarPaciente(pacienteID, nombre, apellidos, edad, peso, altura);
 
     guardarConsultaMedica(pacienteID, presion, peso, altura, sintomas);
 
@@ -45,7 +46,6 @@ function actualizarPaciente(id, nombre, apellidos, edad, peso, altura) {
     request.onsuccess = function (event) {
         const paciente = event.target.result;
         if (paciente) {
-            // Actualizar los datos del paciente
             paciente.cedula = id;
             paciente.nombre = nombre;
             paciente.apellidos = apellidos;
@@ -54,11 +54,11 @@ function actualizarPaciente(id, nombre, apellidos, edad, peso, altura) {
             paciente.altura = altura;
 
             store.put(paciente);
+            mostrarToastConsultaEnfermera();
+            limpiarCampos();
             console.log('Paciente actualizado correctamente.');
         } else {
             console.error('Paciente no encontrado');
-
-            // Si el paciente no existe, agregar uno nuevo con la cédula como keyPath
             const nuevoPaciente = {
                 pacienteId: id,
                 cedula: id,
@@ -85,25 +85,41 @@ function actualizarPaciente(id, nombre, apellidos, edad, peso, altura) {
 }
 
 function guardarConsultaMedica(idPaciente, presion, peso, altura, sintomas) {
-    const consultaMedica = {
-        pacienteId: idPaciente,
-        presion: presion,
-        peso: peso,
-        altura: altura,
-        sintomas: sintomas,
-        fecha: new Date().toISOString()
-    };
-
     const transaction = db.transaction(['consultasMedicas'], 'readwrite');
     const store = transaction.objectStore('consultasMedicas');
-    const request = store.add(consultaMedica);
+    const index = store.index('pacienteId');
+    const request = index.openCursor(IDBKeyRange.only(idPaciente));
 
-    request.onsuccess = function () {
-        console.log("Consulta médica guardada correctamente.");
+    request.onsuccess = function(event) {
+        const cursor = event.target.result;
+        if (cursor) {
+            const consulta = cursor.value;
+            consulta.presion = presion;
+            consulta.peso = peso;
+            consulta.altura = altura;
+            consulta.sintomas = sintomas;
+
+            cursor.update(consulta);
+            console.log("Consulta médica actualizada correctamente.");
+        } else {
+            const nuevaConsulta = {
+                pacienteId: idPaciente,
+                presion: presion,
+                peso: peso,
+                altura: altura,
+                sintomas: sintomas,
+                fecha: new Date().toISOString()
+            };
+            store.add(nuevaConsulta);
+            mostrarToastConsultaEnfermera();
+            limpiarCampos();
+
+            console.log("Nueva consulta médica creada.");
+        }
     };
 
-    request.onerror = function () {
-        console.error("Error al guardar la consulta médica:", request.error);
+    request.onerror = function() {
+        console.error("Error al buscar la consulta médica:", request.error);
     };
 }
 
@@ -127,6 +143,7 @@ function guardarRegistroPresionPeso(idPaciente, fechaHora, presion, peso) {
         console.error("Error al guardar el registro de presión y peso:", request.error);
     };
 }
+
 function calcularEdad(fechaNacimiento) {
     const hoy = new Date();
     const nacimiento = new Date(fechaNacimiento);
@@ -136,4 +153,24 @@ function calcularEdad(fechaNacimiento) {
         edad--;
     }
     return edad;
+}
+
+
+function limpiarCampos() {
+    document.getElementById('cedula').value = '';
+    document.getElementById('nombre').value = '';
+    document.getElementById('apellidos').value = '';
+    document.getElementById('edad').value = '';
+    document.getElementById('presion').value = '';
+    document.getElementById('peso').value = '';
+    document.getElementById('altura').value = '';
+    document.getElementById('sintomas').value = '';
+}
+
+function mostrarToastConsultaEnfermera() {
+    var toast = new bootstrap.Toast(document.getElementById('toastConsultaRealizada'));
+    toast.show();
+    setTimeout(function () {
+        toast.hide();
+    }, 3000);
 }

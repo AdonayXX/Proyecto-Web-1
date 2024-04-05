@@ -32,6 +32,12 @@
     opacity: 1; /* Opacidad inicial */
 }
 
+#carrusel{
+    width: 100%;
+    height: auto;
+    padding: 2px;
+}
+
 .carousel-item {
     position: relative;
 }
@@ -47,7 +53,7 @@
 
 .img-car {
     width: 100%;
-    max-height: 400px; /* Ajusta la altura según tus necesidades */
+    height: 400px; /* Ajusta la altura según tus necesidades */
     object-fit: cover; /* Esto asegura que la imagen se ajuste manteniendo su relación de aspecto */
 }
 
