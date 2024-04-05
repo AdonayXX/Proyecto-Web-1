@@ -84,6 +84,7 @@ function openDatabase() {
             consultasMedicasStore.createIndex('diagnostico', 'diagnostico', { unique: false });
             consultasMedicasStore.createIndex('medicamentos', 'medicamentos', { unique: false });
             consultasMedicasStore.createIndex('examenes', 'examenes', { unique: false });
+            consultasMedicasStore.createIndex('pacienteIdFecha', ['pacienteId', 'fecha'], { unique: false });
         }
         // Almacen para registro de presión y peso
         if (!db.objectStoreNames.contains('registrosPresionPeso')) {
@@ -93,6 +94,19 @@ function openDatabase() {
             registrosStore.createIndex('presion', 'presion', { unique: false });
             registrosStore.createIndex('peso', 'peso', { unique: false });
         }
+        
+        //Almacen para historial de consultas médicas
+        // if (!db.objectStoreNames.contains('historialConsultas')) {
+        //     const historialConsultasStore = db.createObjectStore('historialConsultas', { keyPath: 'historialId', autoIncrement: true });
+        //     historialConsultasStore.createIndex('pacienteId', 'pacienteId', { unique: false });
+        //     historialConsultasStore.createIndex('fecha', 'fecha', { unique: false });
+        //     historialConsultasStore.createIndex('presion', 'presion', { unique: false });
+        //     historialConsultasStore.createIndex('peso', 'peso', { unique: false });
+        //     historialConsultasStore.createIndex('sintomas', 'sintomas', { unique: false });
+        //     historialConsultasStore.createIndex('diagnostico', 'diagnostico', { unique: false });
+        //     historialConsultasStore.createIndex('medicamentos', 'medicamentos', { unique: false });
+        // };
+        
 
     };
 
