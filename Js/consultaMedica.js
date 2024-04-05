@@ -34,15 +34,15 @@ function openDatabase() {
 
 document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault();
-    const consultaId = document.getElementById('idConsulta').value; // Asegúrate de que este ID corresponde al campo en tu formulario
+    const consultaId = document.getElementById('idConsulta').value; 
 
     const datosActualizados = {
-        pacienteId: document.getElementById('ID').value, // Aunque no se actualiza, es útil para validación o referencia
+        pacienteId: document.getElementById('ID').value, 
         medicamentosAlergicos: document.getElementById('medicamentosAlergicos').value,
         enfermedades: document.getElementById('enfermedades').value,
         diagnostico: document.getElementById('diagnostico').value,
         medicamentos: document.getElementById('medicamentos').value,
-        examenes: document.getElementById('examenes').value, // Asegúrate de que este campo se maneje correctamente dependiendo de cómo almacenas los datos
+        examenes: document.getElementById('examenes').value, 
         fecha: new Date().toISOString()
     };
 
