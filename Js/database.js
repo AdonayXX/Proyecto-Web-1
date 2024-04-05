@@ -80,6 +80,7 @@ function openDatabase() {
             consultasMedicasStore.createIndex('presion', 'presion', { unique: false });
             consultasMedicasStore.createIndex('peso', 'peso', { unique: false });
             consultasMedicasStore.createIndex('sintomas', 'sintomas', { unique: false });
+            consultasMedicasStore.createIndex('fecha', 'fecha', { unique: false });
             consultasMedicasStore.createIndex('diagnostico', 'diagnostico', { unique: false });
             consultasMedicasStore.createIndex('medicamentos', 'medicamentos', { unique: false });
             consultasMedicasStore.createIndex('examenes', 'examenes', { unique: false });
@@ -96,4 +97,5 @@ function openDatabase() {
     };
 
 }
+
 openDatabase();
