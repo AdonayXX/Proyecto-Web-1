@@ -108,6 +108,17 @@ function openDatabase() {
             examenesSangreStore.createIndex('creatinina', 'creatinina', { unique: false });
         }
 
+        //Almacen para examenes de Orina
+        if (!db.objectStoreNames.contains('examenesOrina')) {
+            const examenOrinaStore = db.createObjectStore('examenesOrina', { keyPath: 'id', autoIncrement: true })
+            examenOrinaStore.createIndex('idPaciente', 'idPaciente', { unique: false });
+            examenOrinaStore.createIndex('consultaId', 'consultaId', { unique: false });
+            examenOrinaStore.createIndex('glucosa', 'glucosa', { unique: false });
+            examenOrinaStore.createIndex('eritrocitos', 'eritrocitos', { unique: false });
+            examenOrinaStore.createIndex('color', 'color', { unique: false });
+            examenOrinaStore.createIndex('leucocitos', 'leucocitos', { unique: false });
+        }    
+        
         //Almacen para historial de consultas médicas
         // if (!db.objectStoreNames.contains('historialConsultas')) {
         //     const historialConsultasStore = db.createObjectStore('historialConsultas', { keyPath: 'historialId', autoIncrement: true });
