@@ -62,6 +62,8 @@ function openDatabase() {
             pacienteStore.createIndex('medicamentosAlergicos', 'medicamentosAlergicos', { unique: false });
             pacienteStore.createIndex('tipoSangre', 'tipoSangre', { unique: false });
             pacienteStore.createIndex('enfermedades', 'enfermedades', { unique: false });
+            //Campo para ligar examenes de Sangre a pacientes
+            pacienteStore.createIndex('examenesSangre', 'examenesSangre', { unique: false });
         }
         //Almacén para contactos de Emergencia
         if (!db.objectStoreNames.contains('familiares')) {
@@ -85,6 +87,8 @@ function openDatabase() {
             consultasMedicasStore.createIndex('medicamentos', 'medicamentos', { unique: false });
             consultasMedicasStore.createIndex('examenes', 'examenes', { unique: false });
             consultasMedicasStore.createIndex('pacienteIdFecha', ['pacienteId', 'fecha'], { unique: false });
+            //Campo para ligar examenes de Sangre a consultas
+            consultasMedicasStore.createIndex('examenesSangre', 'examenesSangre', { unique: false });
         }
         // Almacen para registro de presión y peso
         if (!db.objectStoreNames.contains('registrosPresionPeso')) {
@@ -108,6 +112,17 @@ function openDatabase() {
             examenesSangreStore.createIndex('creatinina', 'creatinina', { unique: false });
         }
 
+        // Almacén para pruebas de sangre (excluyendo consultaId y pacienteId)
+        // if (!db.objectStoreNames.contains('pruebaSangre')) {
+        //     const pruebaSangreStore = db.createObjectStore('pruebaSangre', { keyPath: 'pruebaSangreId', autoIncrement: true });
+        //     pruebaSangreStore.createIndex('hemoglobina', 'hemoglobina', { unique: false });
+        //     pruebaSangreStore.createIndex('hematocrito', 'hematocrito', { unique: false });
+        //     pruebaSangreStore.createIndex('trigliceridos', 'trigliceridos', { unique: false });
+        //     pruebaSangreStore.createIndex('colesterolTotal', 'colesterolTotal', { unique: false });
+        //     pruebaSangreStore.createIndex('acidoUrico', 'acidoUrico', { unique: false });
+        //     pruebaSangreStore.createIndex('creatinina', 'creatinina', { unique: false });
+        // }
+
         //Almacen para examenes de Orina
         if (!db.objectStoreNames.contains('examenesOrina')) {
             const examenOrinaStore = db.createObjectStore('examenesOrina', { keyPath: 'id', autoIncrement: true })
@@ -117,8 +132,8 @@ function openDatabase() {
             examenOrinaStore.createIndex('eritrocitos', 'eritrocitos', { unique: false });
             examenOrinaStore.createIndex('color', 'color', { unique: false });
             examenOrinaStore.createIndex('leucocitos', 'leucocitos', { unique: false });
-        }    
-        
+        }
+
         //Almacen para historial de consultas médicas
         // if (!db.objectStoreNames.contains('historialConsultas')) {
         //     const historialConsultasStore = db.createObjectStore('historialConsultas', { keyPath: 'historialId', autoIncrement: true });
