@@ -96,13 +96,15 @@ function openDatabase() {
         }
         //Almacen para examenes de Orina
         if (!db.objectStoreNames.contains('examenesOrina')) {
-            const examenOrinaStore = db.createObjectStore('examenesOrina', { keyPath: 'idExamenOrina', autoIncrement: true });
-            examenOrinaStore.createIndex('idPaciente', 'idPaciente', { unique: true});
+            const examenOrinaStore = db.createObjectStore('examenesOrina', { keyPath: 'id', autoIncrement: true })
+            examenOrinaStore.createIndex('idPaciente', 'idPaciente', { unique: true });
+            examenOrinaStore.createIndex('consultaId', 'consultaId', { unique: true });
             examenOrinaStore.createIndex('glucosa', 'glucosa', { unique: false });
             examenOrinaStore.createIndex('eritrocitos', 'eritrocitos', { unique: false });
             examenOrinaStore.createIndex('color', 'color', { unique: false });
             examenOrinaStore.createIndex('leucocitos', 'leucocitos', { unique: false });
         }
+        
         
         //Almacen para historial de consultas médicas
         // if (!db.objectStoreNames.contains('historialConsultas')) {
