@@ -94,6 +94,30 @@ function openDatabase() {
             registrosStore.createIndex('presion', 'presion', { unique: false });
             registrosStore.createIndex('peso', 'peso', { unique: false });
         }
+
+        // Almacen para exámenes de sangre
+        if (!db.objectStoreNames.contains('examenesSangre')) {
+            const examenesSangreStore = db.createObjectStore('examenesSangre', { keyPath: 'ExamenSangreId', autoIncrement: true });
+            examenesSangreStore.createIndex('pacienteId', 'pacienteId', { unique: false });
+            examenesSangreStore.createIndex('consultaId', 'consultaId', { unique: false });
+            examenesSangreStore.createIndex('hemoglobina', 'hemoglobina', { unique: false });
+            examenesSangreStore.createIndex('hematocrito', 'hematocrito', { unique: false });
+            examenesSangreStore.createIndex('trigliceridos', 'trigliceridos', { unique: false });
+            examenesSangreStore.createIndex('colesterolTotal', 'colesterolTotal', { unique: false });
+            examenesSangreStore.createIndex('acidoUrico', 'acidoUrico', { unique: false });
+            examenesSangreStore.createIndex('creatinina', 'creatinina', { unique: false });
+        }
+
+        //Almacen para examenes de Orina
+        if (!db.objectStoreNames.contains('examenesOrina')) {
+            const examenOrinaStore = db.createObjectStore('examenesOrina', { keyPath: 'id', autoIncrement: true })
+            examenOrinaStore.createIndex('idPaciente', 'idPaciente', { unique: false });
+            examenOrinaStore.createIndex('consultaId', 'consultaId', { unique: false });
+            examenOrinaStore.createIndex('glucosa', 'glucosa', { unique: false });
+            examenOrinaStore.createIndex('eritrocitos', 'eritrocitos', { unique: false });
+            examenOrinaStore.createIndex('color', 'color', { unique: false });
+            examenOrinaStore.createIndex('leucocitos', 'leucocitos', { unique: false });
+        }    
         
         //Almacen para historial de consultas médicas
         // if (!db.objectStoreNames.contains('historialConsultas')) {
@@ -106,7 +130,7 @@ function openDatabase() {
         //     historialConsultasStore.createIndex('diagnostico', 'diagnostico', { unique: false });
         //     historialConsultasStore.createIndex('medicamentos', 'medicamentos', { unique: false });
         // };
-        
+
 
     };
 
