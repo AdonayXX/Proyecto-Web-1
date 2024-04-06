@@ -97,8 +97,8 @@ function openDatabase() {
         //Almacen para examenes de Orina
         if (!db.objectStoreNames.contains('examenesOrina')) {
             const examenOrinaStore = db.createObjectStore('examenesOrina', { keyPath: 'id', autoIncrement: true })
-            examenOrinaStore.createIndex('idPaciente', 'idPaciente', { unique: true });
-            examenOrinaStore.createIndex('consultaId', 'consultaId', { unique: true });
+            examenOrinaStore.createIndex('idPaciente', 'idPaciente', { unique: false });
+            examenOrinaStore.createIndex('consultaId', 'consultaId', { unique: false });
             examenOrinaStore.createIndex('glucosa', 'glucosa', { unique: false });
             examenOrinaStore.createIndex('eritrocitos', 'eritrocitos', { unique: false });
             examenOrinaStore.createIndex('color', 'color', { unique: false });
