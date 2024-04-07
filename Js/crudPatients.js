@@ -2,6 +2,7 @@
 //----------------------------------------- AgregarPacientes -----------------------------------------//
 
 function agregarPaciente() {
+    
     let id = document.getElementById('identificacion').value;
     let nombre = document.getElementById('nombre').value;
     let apellidos = document.getElementById('apellido').value;
@@ -13,9 +14,8 @@ function agregarPaciente() {
     let medicamentosAlergicos = document.getElementById('alergias').value;
 
     if (!id || !nombre || !apellidos || !peso || !fechaNacimiento || !altura || !enfermedades || !tipoSangre || !medicamentosAlergicos) {
-        // alert('Todos los campos son obligatorios. Por favor, complete todos los campos.');    //REVISAR PARA VER COMO NO DEJAR CAMPOS VACIOS A LA HORA DE AGREGAR PACIENTE
-        //HACER CON TOAST
-        return ;
+        mostrarToastCompleteDatos();
+        return  ;
     }
     let edad = calcularEdad(fechaNacimiento);
 
@@ -322,6 +322,7 @@ function agregarPaciente() {
                     };
                 } else {
                     console.error('No se encontró al paciente con ID:', pacienteId);
+                    mostrarToastPacienteNoEncontrado();
                 }
             })
             .catch(error => {
@@ -509,6 +510,18 @@ function agregarPaciente() {
         }, 5000);
     }
 
+
+    function mostrarToastCompleteDatos() {
+        var toast = new bootstrap.Toast(document.getElementById('toastIngreseDatos'));
+        toast.show();
+        setTimeout(function () {
+            toast.hide();
+        }, 5000);
+    }
+
+
+
+    
 
 
 

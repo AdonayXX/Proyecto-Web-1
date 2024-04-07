@@ -174,3 +174,14 @@ table {
     transform: translateY(-3px);
     box-shadow: 0 18px 20px rgba(0, 0, 0, 0.2);
 }
+
+/* Estilos para el modal */
+.modal {
+    z-index: 1000; /* Puedes ajustar este valor según sea necesario */
+  }
+  
+  /* Estilos para el toast */
+  .toast {
+    z-index: 1100; /* Un valor mayor al z-index del modal para que se muestre encima */
+  }
+  

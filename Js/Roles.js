@@ -84,7 +84,7 @@ function getUsers() {
         const selectRole = document.createElement('select');
         selectRole.dataset.userId = user.id;
 
-        const roles = ['public', 'admin', 'recepcionista', 'medico'];
+        const roles = ['public', 'admin', 'recepcionista', 'medico', 'enfermero'];
         roles.forEach(role => {
           const option = document.createElement('option');
           option.value = role;
