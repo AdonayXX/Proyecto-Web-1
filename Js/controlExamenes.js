@@ -12,7 +12,7 @@ async function agregarExamenSangre() {
 
     // Verificar si los campos obligatorios están llenos
     if (!hemoglobina || !hematocrito || !trigliceridos || !colesterolTotal || !acidoUrico || !creatinina) {
-        alert('Todos los campos son obligatorios. Por favor, complete todos los campos.');
+        mostrarToastCamposObligatorios();
         return; // Detener la ejecución si hay campos vacíos
     }
 
@@ -49,25 +49,24 @@ async function agregarExamenSangre() {
                     // Agregar el examen de sangre al almacén
                     let addRequest = store.add(examenSangre);
                     addRequest.onsuccess = function () {
-                        console.log('Examen de sangre agregado correctamente');
-                        // Aquí puedes realizar cualquier acción adicional después de agregar el examen de sangre, como cargar datos o mostrar un mensaje de éxito.
+                        mostrarToastExamenAgregadoCorrectamente();
                     };
                     addRequest.onerror = function () {
-                        console.error('Error al agregar el examen de sangre');
+                        mostrarToastErrorAgregarExamen();
                     };
                 } else {
-                    alert('El paciente no existe en la base de datos.');
+                    mostrarToastPacienteNoExiste();
                 }
             };
             pacienteRequest.onerror = function (event) {
-                console.log('Error al obtener la información del paciente:', event.target.error);
+                mostrarToastErrorObtenerPaciente();
             };
         };
         request.onerror = function (event) {
-            console.error('Error al abrir la base de datos:', event.target.error);
+            mostrarToastErrorAbrirBD();
         };
     } catch (error) {
-        console.error('Error al verificar la existencia del paciente:', error);
+        mostrarToastErrorVerificarPaciente();
     }
 }
 
@@ -75,6 +74,48 @@ document.getElementById('agregarExamenSangre').addEventListener('click', functio
     agregarExamenSangre();
 });
 
+
+// Mostrar Toast de Todos los campos son obligatorios
+function mostrarToastCamposObligatorios() {
+    var toast = new bootstrap.Toast(document.getElementById('toastCamposObligatorios'));
+    toast.show();
+}
+
+// Mostrar Toast de El paciente no existe en la base de datos
+function mostrarToastPacienteNoExiste() {
+    var toast = new bootstrap.Toast(document.getElementById('toastPacienteNoExiste'));
+    toast.show();
+}
+
+// Mostrar Toast de Error al obtener la información del paciente
+function mostrarToastErrorObtenerPaciente() {
+    var toast = new bootstrap.Toast(document.getElementById('toastErrorObtenerPaciente'));
+    toast.show();
+}
+
+// Mostrar Toast de Error al abrir la base de datos
+function mostrarToastErrorAbrirBD() {
+    var toast = new bootstrap.Toast(document.getElementById('toastErrorAbrirBD'));
+    toast.show();
+}
+
+// Mostrar Toast de Error al verificar la existencia del paciente
+function mostrarToastErrorVerificarPaciente() {
+    var toast = new bootstrap.Toast(document.getElementById('toastErrorVerificarPaciente'));
+    toast.show();
+}
+
+// Mostrar Toast de Error al agregar el examen de sangre
+function mostrarToastErrorAgregarExamen() {
+    var toast = new bootstrap.Toast(document.getElementById('toastErrorAgregarExamen'));
+    toast.show();
+}
+
+// Mostrar Toast de Examen de sangre agregado correctamente
+function mostrarToastExamenAgregadoCorrectamente() {
+    var toast = new bootstrap.Toast(document.getElementById('toastExamenAgregadoCorrectamente'));
+    toast.show();
+}
 
 
 //Funcion con verificacion de existencia de paciente y consulta
