@@ -21,35 +21,39 @@
             </div>
             <div class="card-body">
                 <form id="formExamenSangre" class="formExamenSangre">
-                    <input type="text" class="form-control" placeholder="Paciente ID" name="pacienteId">
-                    <input type="text" class="form-control" placeholder="Consulta ID" name="consultaId">
-                    <input type="text" class="form-control" placeholder="Hemoglobina" name="hemoglobina">
-                    <input type="text" class="form-control" placeholder="Hematocrito" name="hematocrito">
-                    <input type="text" class="form-control" placeholder="Triglicéridos" name="trigliceridos">
-                    <input type="text" class="form-control" placeholder="Colesterol total" name="colesterolTotal">
-                    <input type="text" class="form-control" placeholder="Ácido Úrico" name="acidoUrico">
-                    <input type="text" class="form-control" placeholder="Creatinina" name="creatinina">
+                    <div id="verification-data">
+                    <input type="text" class="form-control" placeholder="Paciente ID" name="pacienteId" id="pacienteId">
+                    <input type="text" class="form-control" placeholder="Consulta ID" name="consultaId" id="consultaId">
+                    </div>
+                    <input type="text" class="form-control" placeholder="Hemoglobina" name="hemoglobina" id="hemoglobina">
+                    <input type="text" class="form-control" placeholder="Hematocrito" name="hematocrito" id="hematocrito">
+                    <input type="text" class="form-control" placeholder="Triglicéridos" name="trigliceridos" id="trigliceridos">
+                    <input type="text" class="form-control" placeholder="Colesterol total" name="colesterolTotal" id="colesterolTotal">
+                    <input type="text" class="form-control" placeholder="Ácido Úrico" name="acidoUrico" id="acidoUrico">
+                    <input type="text" class="form-control" placeholder="Creatinina" name="creatinina" id="creatinina">
                     <button id="agregarExamenSangre" type="submit" class="btn btn-primary">Registrar Examen de Sangre</button>
                 </form>
             </div>
         </div>
 
-        <div class="card">
-            <div class="card-header">
-                <h3>Examen de Orina</h3>
+<div class="card">
+    <div class="card-header">
+        <h3>Examen de Orina</h3>
+    </div>
+    <div class="card-body">
+        <form id="formExamenOrina" class="formExamenOrina">
+            <div id="verification-data">
+                <input type="text" class="form-control" placeholder="Paciente ID" name="pacienteId" id="pacienteId">
+                <input type="text" class="form-control" placeholder="Consulta ID" name="consultaId" id="consultaId">
             </div>
-            <div class="card-body">
-                <form id="formExamenOrina" class="formExamenOrina">
-                    <input type="text" class="form-control" placeholder="ID Paciente">
-                    <input type="text" class="form-control" placeholder="ID Consulta">
-                    <input type="text" class="form-control" placeholder="Glucosa">
-                    <input type="text" class="form-control" placeholder="Eritrocitos">
-                    <input type="text" class="form-control" placeholder="Color">
-                    <input type="text" class="form-control" placeholder="Leucocitos (Esterasa)">
-                    <button type="submit" class="btn btn-primary">Registrar Examen de Orina</button>
-                </form>
-            </div>
-        </div>
+            <input type="text" class="form-control" placeholder="Glucosa" name="glucosa" id="glucosa">
+            <input type="text" class="form-control" placeholder="Eritrocitos" name="eritrocitos" id="eritrocitos">
+            <input type="text" class="form-control" placeholder="Color" name="color" id="color">
+            <input type="text" class="form-control" placeholder="Leucocitos (Esterasa)" name="leucocitos" id="leucocitos">
+            <button id="ExamenesOrina" type="submit" class="btn btn-primary">Registrar Examen de Orina</button>
+        </form>
+    </div>
+</div>
         <div class="toast-container position-absolute top-0 end-0 p-3">
             <!-- Toast para Examen de Sangre -->
             <div class="toast" id="toastExamenSangre" role="alert" aria-live="assertive" aria-atomic="true">
@@ -77,6 +81,7 @@
         <script src="Js/obtainDateToast.js"></script>
         <script src="js/database.js"></script>
         <script src="Js/controlExamenes.js"></script>
+        <script src="Js/pruebaSangre.js"></script>
 </body>
 
 </html>

@@ -70,7 +70,7 @@ function openDatabase() {
             familiaresStore.createIndex('pacienteId', 'pacienteId', { unique: false });
             familiaresStore.createIndex('nombreCompleto', 'nombreCompleto', { unique: false });
             familiaresStore.createIndex('relacionFamiliar', 'relacionFamiliar', { unique: false });
-            familiaresStore.createIndex('telefono', 'telefono', { unique: false });
+            familiaresStore.createIndex('telefono', 'telefono', { unique: true });
             familiaresStore.createIndex('direccion', 'direccion', { unique: false });
         }
         //Almacén para consultas médicas
