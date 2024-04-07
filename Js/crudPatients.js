@@ -15,7 +15,7 @@ function agregarPaciente() {
     if (!id || !nombre || !apellidos || !peso || !fechaNacimiento || !altura || !enfermedades || !tipoSangre || !medicamentosAlergicos) {
         // alert('Todos los campos son obligatorios. Por favor, complete todos los campos.');    //REVISAR PARA VER COMO NO DEJAR CAMPOS VACIOS A LA HORA DE AGREGAR PACIENTE
         //HACER CON TOAST
-        return modal;
+        return ;
     }
     let edad = calcularEdad(fechaNacimiento);
 
@@ -375,7 +375,7 @@ function agregarPaciente() {
     
         contactos.forEach(contacto => {
             let fila = tablaContactosEmergencia.insertRow();
-            fila.insertCell().textContent = contacto.id;
+            // fila.insertCell().textContent = contacto.id;
             fila.insertCell().textContent = contacto.nombreCompleto;
             fila.insertCell().textContent = contacto.telefono;
             fila.insertCell().textContent = contacto.relacionFamiliar;

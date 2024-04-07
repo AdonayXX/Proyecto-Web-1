@@ -6,6 +6,7 @@ body {
   #userTable {
     margin: 0 auto;
     width: 80%;
+    margin-top: 20px;
   }
   h1 {
     color: #333;
@@ -49,10 +50,46 @@ body {
     border: none;
     overflow: hidden;
     margin-bottom: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 #userTable:hover {
-    box-shadow: 0 18px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.card-header {
+  font-size: 20px;
+  font-weight: 600;
+  background: linear-gradient(45deg, #007bff, #6c757d);
+  background-color: #007bff;
+  color: #ffffff;
+  border-bottom: none;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.card{
+  width: 90%;
+}
+
+.card {
+  border: none;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-header h1{
+  display: grid;
+  place-items: center;
 }

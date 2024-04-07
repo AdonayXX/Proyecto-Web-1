@@ -15,17 +15,21 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body style="background-color: #F0F2F5;">
     <div class="row">
-        <div class="container-fluid container-P">
-            <div class=" opt-t">
+        
+        <div class="container-fluid container-P mt-4" >
+        <div class="card m-auto">
+            
+            <div class="card-header">
+            <!-- <div class=" opt-t"> -->
                 <h1>Gestión de Pacientes</h1>
 
                 <div class="options">
-                    <a class="opt-icons" href="#" data-bs-toggle="modal" data-bs-target="#agregarPacienteModal"> <i
-                            class="bi bi-plus"></i></a>
-                    <a class="opt-icons" href="#" data-bs-toggle="modal" data-bs-target="#eliminarPacienteModal"> <i
-                            class="bi bi-trash"></i></a>
+                    <a class="opt-icons" href="#" data-bs-toggle="modal" data-bs-target="#agregarPacienteModal"><i 
+                        class="bi bi-person-plus"></i></a>
+                    <a class="opt-icons" href="#" data-bs-toggle="modal" data-bs-target="#eliminarPacienteModal"><i 
+                        class="bi bi-person-slash"></i></i></a>
                     <a class="opt-icons" href="#" data-bs-toggle="modal" data-bs-target="#editarPacienteModal"><i
                             class="bi bi-pencil"></i></a>
                     <a class="opt-icons" href="" data-bs-toggle="modal" data-bs-target="#buscarPacienteModal"><i
@@ -36,7 +40,8 @@
                         class="bi bi-bookmark-plus"></i></a>
 
                 </div>
-            </div>
+            <!-- </div> -->
+        </div>
             <div class="table-c">
                 <table>
                     <thead>
@@ -62,6 +67,7 @@
             </div>
 
         </div>
+    </div>
     </div>
     <!-- Modal de Agregar Paciente -->
     <div class="modal-1">
@@ -439,7 +445,7 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">ID</th>
+                                <!-- <th scope="col">ID</th> -->
                                 <th scope="col">Nombre Completo</th>
                                 <th scope="col">Teléfono</th>
                                 <th scope="col">Relación Familiar</th>
