@@ -75,6 +75,80 @@ document.getElementById('agregarExamenSangre').addEventListener('click', functio
     agregarExamenSangre();
 });
 
+//----------------------------------------- AgregarExamenesdeOrina -----------------------------------------//
+async function agregarExamenOrina() {
+    let pacienteId = document.getElementById('pacienteId').value;
+    let consultaId = document.getElementById('consultaId').value;
+    let glucosa = document.getElementById('glucosa').value;
+    let eritrocitos = document.getElementById('eritrocitos').value;
+    let color = document.getElementById('color').value;
+    let leucocitos = document.getElementById('leucocitos').value;
+
+    // Verificar si los campos obligatorios están llenos
+    if (!glucosa || !eritrocitos || !color || !leucocitos) {
+        alert('Todos los campos son obligatorios. Por favor, complete todos los campos.');
+        return; // Detener la ejecución si hay campos vacíos
+    }
+
+    try {
+        // Abrir la base de datos IndexedDB
+        let request = indexedDB.open('ClinicaDB');
+        request.onsuccess = async function (event) {
+            let db = event.target.result;
+
+            // Verificar si hay una consulta asociada al ID proporcionado
+            let consultaTransaction = db.transaction(['consultas'], 'readonly');
+            let consultaStore = consultaTransaction.objectStore('consultas');
+            let consultaRequest = consultaStore.get(consultaId);
+
+            consultaRequest.onsuccess = async function (event) {
+                let consulta = event.target.result;
+
+                // Si la consulta existe, agregar el examen de orina
+                if (consulta) {
+                    let examenOrina = {
+                        pacienteId: pacienteId,
+                        consultaId: consultaId,
+                        glucosa: glucosa,
+                        eritrocitos: eritrocitos,
+                        color: color,
+                        leucocitos: leucocitos
+                    };
+
+                    let transaction = db.transaction(['examenesOrina'], 'readwrite');
+                    let store = transaction.objectStore('examenesOrina');
+
+                    // Agregar el examen de orina al almacén
+                    let addRequest = store.add(examenOrina);
+                    addRequest.onsuccess = function () {
+                        console.log('Examen de orina agregado correctamente');
+                        // Aquí puedes realizar cualquier acción adicional después de agregar el examen de orina, como cargar datos o mostrar un mensaje de éxito.
+                    };
+                    addRequest.onerror = function () {
+                        console.error('Error al agregar el examen de orina');
+                    };
+                } else {
+                    alert('El ID de consulta proporcionado no está asociado a ninguna consulta en la base de datos.');
+                }
+            };
+            consultaRequest.onerror = function (event) {
+                console.log('Error al obtener la información de la consulta:', event.target.error);
+            };
+        };
+        request.onerror = function (event) {
+            console.error('Error al abrir la base de datos:', event.target.error);
+        };
+    } catch (error) {
+        console.error('Error al verificar la existencia de la consulta:', error);
+    }
+}
+
+document.getElementById('ExamenesOrina').addEventListener('click', function () {
+    agregarExamenOrina();
+});
+
+
+
 
 
 //Funcion con verificacion de existencia de paciente y consulta
@@ -185,3 +259,21 @@ document.getElementById('agregarExamenSangre').addEventListener('click', functio
 // document.getElementById('agregarExamenSangre').addEventListener('click', function () {
 //     agregarExamenSangre();
 // });
+
+//---------------------Examenes de Orina--------------------------------
+function agregarExamenOrina(db, examenOrina) {
+    const transaction = db.transaction(['examenesOrina'], 'readwrite');
+    const store = transaction.objectStore('examenesOrina');
+    
+    const agregarRequest = store.add(examenOrina);
+
+    agregarRequest.onsuccess = function(event) {
+        console.log('Examen de orina agregado con éxito.');
+    };
+
+    agregarRequest.onerror = function(event) {
+        console.error('Error al intentar agregar el examen de orina:', event.target.error);
+    };
+}
+
+
