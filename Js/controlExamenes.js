@@ -191,7 +191,6 @@ function mostrarToastExamenAgregadoCorrectamente() {
     toast.show();
 }
 
-
 //Funcion con verificacion de existencia de paciente y consulta
 // async function agregarExamenSangre() {
 //     let pacienteId = document.getElementById('pacienteId').value;
