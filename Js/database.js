@@ -38,7 +38,8 @@ function openDatabase() {
             // Nuevo índice para pacienteId
             // Índice compuesto para estado y fecha para asignar un estado
             citaStore.createIndex('estadoFecha', ['estado', 'fecha'], { unique: false });
-
+            
+            citaStore.createIndex('pacienteIdFecha', ['pacienteId', 'fecha'], { unique: false });
         }
 
         // Almacén para usuarios
