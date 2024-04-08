@@ -3,19 +3,16 @@ body {
 }
 
 
-.container-P {
-   
-    margin: 0 auto;
 
-}
-.opt-t{
+.opt-t {
     background: linear-gradient(45deg, #007bff, #6c757d);
 
 }
-.opt-t h1{
+
+.opt-t h1 {
     font-style: italic;
     font-size: 40px;
-    
+
     font-weight: inherit;
 
 }
@@ -29,14 +26,20 @@ body {
 
 .table-c {
     display: flex;
-    margin: auto    ;
+    margin: auto;
     align-items: center;
     background-color: white;
     width: 93%;
 }
 
+
+tr:hover {
+    background-color: #f2f5f9;
+    color: rgb(0, 0, 0);
+}
+
 thead {
-    background-color: #f2f2f2;
+    background-color: #F0F2F5;
     color: rgb(0, 0, 0);
 }
 
@@ -88,25 +91,28 @@ table {
     display: flex;
     flex-direction: column;
     margin-right: 20px;
-   
+
 }
-.modal-topic{ 
+
+.modal-topic {
     text-align: center;
 
 }
-.modal-topic button{
+
+.modal-topic button {
     justify-content: end;
 
 }
+
 .form-2 {
     display: flex;
     flex-direction: column;
 }
 
-.modal-btns{
+.modal-btns {
     display: flex;
     justify-content: center;
-  
+
 }
 
 .table-c {
@@ -119,7 +125,63 @@ table {
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .table-c:hover {
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Icons animacion */
+
+.options i:hover{
+    color: #0C7BF2;
+    transition: 0.5s;
+    
+
+}
+#accordionExample{
+    width: 70%;
+
+}
+
+.card-header {
+    font-size: 20px;
+    font-weight: 600;
+    background: linear-gradient(45deg, #007bff, #6c757d);
+    background-color: #007bff;
+    color: #ffffff;
+    border-bottom: none;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.card{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+
+.card {
+    border: none;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-3px);
     box-shadow: 0 18px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilos para el modal */
+.modal {
+    z-index: 1000; /* Puedes ajustar este valor según sea necesario */
+  }
+  
+  /* Estilos para el toast */
+  .toast {
+    z-index: 1100; /* Un valor mayor al z-index del modal para que se muestre encima */
+  }
+  

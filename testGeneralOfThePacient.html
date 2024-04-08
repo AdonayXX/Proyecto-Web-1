@@ -21,31 +21,39 @@
             </div>
             <div class="card-body">
                 <form id="formExamenSangre" class="formExamenSangre">
-                    <input type="text" class="form-control" placeholder="Hemoglobina">
-                    <input type="text" class="form-control" placeholder="Hematocrito">
-                    <input type="text" class="form-control" placeholder="Triglicéridos">
-                    <input type="text" class="form-control" placeholder="Colesterol total">
-                    <input type="text" class="form-control" placeholder="Ácido Úrico">
-                    <input type="text" class="form-control" placeholder="Creatinina">
-                    <button type="submit" class="btn btn-primary">Registrar Examen de Sangre</button>
+                    <div id="verification-data">
+                        <input type="text" class="form-control" placeholder="Paciente ID" name="pacienteId" id="pacienteId" required>
+                        <input type="text" class="form-control" placeholder="Consulta ID" name="consultaId" id="consultaId" required>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Hemoglobina" name="hemoglobina" id="hemoglobina" required>
+                    <input type="text" class="form-control" placeholder="Hematocrito" name="hematocrito" id="hematocrito" required>
+                    <input type="text" class="form-control" placeholder="Triglicéridos" name="trigliceridos" id="trigliceridos" required>
+                    <input type="text" class="form-control" placeholder="Colesterol total" name="colesterolTotal" id="colesterolTotal" required>
+                    <input type="text" class="form-control" placeholder="Ácido Úrico" name="acidoUrico" id="acidoUrico" required>
+                    <input type="text" class="form-control" placeholder="Creatinina" name="creatinina" id="creatinina" required>
+                    <button id="agregarExamenSangre" type="submit" class="btn btn-primary">Registrar Examen de Sangre</button>
                 </form>
             </div>
         </div>
 
-        <div class="card">
-            <div class="card-header">
-                <h3>Examen de Orina</h3>
+<div class="card">
+    <div class="card-header">
+        <h3>Examen de Orina</h3>
+    </div>
+    <div class="card-body">
+        <form id="formExamenOrina" class="formExamenOrina">
+            <div id="verification-data">
+                <input type="text" class="form-control" placeholder="Paciente ID" name="pacienteId" id="pacienteId">
+                <input type="text" class="form-control" placeholder="Consulta ID" name="consultaId" id="consultaId">
             </div>
-            <div class="card-body">
-                <form id="formExamenOrina" class="formExamenOrina">
-                    <input type="text" class="form-control" placeholder="Glucosa">
-                    <input type="text" class="form-control" placeholder="Eritrocitos">
-                    <input type="text" class="form-control" placeholder="Color">
-                    <input type="text" class="form-control" placeholder="Leucocitos (Esterasa)">
-                    <button type="submit" class="btn btn-primary">Registrar Examen de Orina</button>
-                </form>
-            </div>
-        </div>
+            <input type="text" class="form-control" placeholder="Glucosa" name="glucosa" id="glucosa">
+            <input type="text" class="form-control" placeholder="Eritrocitos" name="eritrocitos" id="eritrocitos">
+            <input type="text" class="form-control" placeholder="Color" name="color" id="color">
+            <input type="text" class="form-control" placeholder="Leucocitos (Esterasa)" name="leucocitos" id="leucocitos">
+            <button id="ExamenesOrina" type="submit" class="btn btn-primary">Registrar Examen de Orina</button>
+        </form>
+    </div>
+</div>
         <div class="toast-container position-absolute top-0 end-0 p-3">
             <!-- Toast para Examen de Sangre -->
             <div class="toast" id="toastExamenSangre" role="alert" aria-live="assertive" aria-atomic="true">
@@ -56,11 +64,81 @@
                 </div>
                 <div class="toast-body">Examen de sangre registrado con éxito.</div>
             </div>
+            <!-- Toast para Todos los campos son obligatorios -->
+            <div class="toast" id="toastCamposObligatorios" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="img/HSRA-.svg" class="img-fluid p-md-1" alt="" width="50px" height="50px">
+                    <strong class="me-auto">Registro de Exámenes</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                </div>
+                <div class="toast-body">Todos los campos son obligatorios. Por favor, complete todos los campos.</div>
+            </div>
+
+            <!-- Toast para El paciente no existe en la base de datos -->
+            <div class="toast" id="toastPacienteNoExiste" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="img/HSRA-.svg" class="img-fluid p-md-1" alt="" width="50px" height="50px">
+                    <strong class="me-auto">Registro de Exámenes</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                </div>
+                <div class="toast-body">El paciente no existe en la base de datos.</div>
+            </div>
+
+            <!-- Toast para Error al obtener la información del paciente -->
+            <div class="toast" id="toastErrorObtenerPaciente" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="img/HSRA-.svg" class="img-fluid p-md-1" alt="" width="50px" height="50px">
+                    <strong class="me-auto">Registro de Exámenes</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                </div>
+                <div class="toast-body">Error al obtener la información del paciente.</div>
+            </div>
+
+            <!-- Toast para Error al abrir la base de datos -->
+            <div class="toast" id="toastErrorAbrirBD" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="img/HSRA-.svg" class="img-fluid p-md-1" alt="" width="50px" height="50px">
+                    <strong class="me-auto">Registro de Exámenes</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                </div>
+                <div class="toast-body">Error al abrir la base de datos.</div>
+            </div>
+
+            <!-- Toast para Error al verificar la existencia del paciente -->
+            <div class="toast" id="toastErrorVerificarPaciente" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="img/HSRA-.svg" class="img-fluid p-md-1" alt="" width="50px" height="50px">
+                    <strong class="me-auto">Registro de Exámenes</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                </div>
+                <div class="toast-body">Error al verificar la existencia del paciente.</div>
+            </div>
+
+            <!-- Toast para Error al agregar el examen de sangre -->
+            <div class="toast" id="toastErrorAgregarExamen" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="img/HSRA-.svg" class="img-fluid p-md-1" alt="" width="50px" height="50px">
+                    <strong class="me-auto">Registro de Exámenes</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                </div>
+                <div class="toast-body">Error al agregar el examen de sangre.</div>
+            </div>
+
+            <!-- Toast para Examen de sangre agregado correctamente -->
+            <div class="toast" id="toastExamenAgregadoCorrectamente" role="alert" aria-live="assertive"
+                aria-atomic="true">
+                <div class="toast-header">
+                    <img src="img/HSRA-.svg" class="img-fluid p-md-1" alt="" width="50px" height="50px">
+                    <strong class="me-auto">Registro de Exámenes</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                </div>
+                <div class="toast-body">Examen de sangre agregado correctamente.</div>
+            </div>
+
             <!-- Toast para Examen de Orina -->
             <div class="toast" id="toastExamenOrina" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header">
                     <img src="img/HSRA-.svg" class="img-fluid p-md-1" alt="" width="50px" height="50px">
-
                     <strong class="me-auto">Registro de Exámenes</strong>
                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
                 </div>
@@ -71,6 +149,9 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
         <script src="Js/obtainDateToast.js"></script>
+        <script src="js/database.js"></script>
+        <script src="Js/controlExamenes.js"></script>
+        <script src="Js/pruebaSangre.js"></script>
 </body>
 
 </html>

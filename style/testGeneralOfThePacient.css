@@ -9,6 +9,7 @@
 }
 .form-control, .btn {
     margin-top: 10px;
+    margin-inline: 2px;
 }
 .titleTests{
     color: #007bff;
@@ -72,4 +73,9 @@ body {
 }
 input::placeholder{
     font-style: italic;
+}
+
+#verification-data{
+    display: flex;
+    flex-direction: row;
 }
