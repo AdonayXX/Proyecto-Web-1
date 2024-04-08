@@ -59,8 +59,8 @@ async function agregarExamenSangre() {
 }
 
 async function agregarExamenOrina() {
-    let pacienteId = document.getElementById('pacienteId').value;
-    let consultaId = parseInt(document.getElementById('consultaId').value);
+    let pacienteId = document.getElementById('pacienteIdOrina').value;
+    let consultaId = parseInt(document.getElementById('consultaIdOrina').value);
     let glucosa = document.getElementById('glucosa').value;
     let eritrocitos = document.getElementById('eritrocitos').value;
     let color = document.getElementById('color').value;
@@ -254,7 +254,7 @@ document.getElementById('agregarExamenSangre').addEventListener('click', functio
     agregarExamenSangre();
 });
 
-document.getElementById('agregarExamenOrina').addEventListener('click', function (event) {
+document.getElementById('agregarExamenesOrina').addEventListener('click', function (event) {
     event.preventDefault(); 
     agregarExamenOrina();
 });
