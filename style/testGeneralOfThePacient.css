@@ -79,3 +79,17 @@ input::placeholder{
     display: flex;
     flex-direction: row;
 }
+
+/* .h-E{
+    display: flex;
+    flex-direction: row;
+
+}
+.h-E input{
+    width: 60%;
+
+} */
+
+.c-P{
+    border:1px solid #343a40;
+}

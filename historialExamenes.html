@@ -12,12 +12,18 @@
 
 <body>
     <div class="container py-5">
-        <h2 class="text-center mb-4 titleTests">Historial de Exámenes Médicos</h2>
+        <!-- <h2 class="text-center mb-4 titleTests">Historial de Exámenes Médicos</h2> -->
 
         <div class="card mb-3">
-            <div class="card-body verification">
-                <div id="verification-pacient" class="verification-element">
+            <div class="card-body verification-data  ">
+                 <div class="card-header text-center ">
+                    <h3>Historial Examenes de Sangre</h3>
+                </div>
+                <div id="verification-pacient" class="verification-element ">
+                    <div class="h-E">
                     <input type="text" class="form-control" placeholder="Paciente ID" name="pacienteId" id="pacienteId" required>
+                    <input type="text" class="form-control" placeholder="Consulta ID" name="consultaId" id="consultaId" required>
+                </div>
                     <input type="text" class="form-control" placeholder="Nombre del Paciente" name="nombrePaciente" id="nombrePaciente" readonly>
                 </div>
                 <button id="buscarPorPaciente" type="button" class="btn btn-primary">Buscar Examenes por paciente</button>

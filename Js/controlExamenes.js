@@ -24,7 +24,7 @@ async function agregarExamenSangre() {
 
     let examenSangreExistente = await verificarExistenciaExamenSangre(consultaId);
     if (examenSangreExistente) {
-        alert('Ya existe un examen de sangre para esta consulta.');
+        mostrarToastExamenSangreExistente();
         return;
     }
 
@@ -50,11 +50,10 @@ async function agregarExamenSangre() {
             mostrarToastExamenAgregadoCorrectamente();
         };
         addRequest.onerror = function () {
-            mostrarToastErrorAgregarExamen();
+            console.error('Error al agregar el examen de sangre:', error);
         };
     } catch (error) {
         console.error('Error al agregar el examen de sangre:', error);
-        mostrarToastErrorAgregarExamen();
     }
 }
 
@@ -79,7 +78,7 @@ async function agregarExamenOrina() {
 
     let examenOrinaExistente = await verificarExistenciaExamenOrina(consultaId);
     if (examenOrinaExistente) {
-        alert('Ya existe un examen de orina para esta consulta.');
+        mostrarToastExamenOrinaExistente();
         return;
     }
 
@@ -100,14 +99,13 @@ async function agregarExamenOrina() {
 
         let addRequest = store.add(examenOrina);
         addRequest.onsuccess = function () {
-            mostrarToastExamenAgregadoCorrectamente();
+            mostrarToastExamenOrinaAgregadoCorrectamente() 
         };
         addRequest.onerror = function () {
-            mostrarToastErrorAgregarExamenOrina();
+            console.error('Error al agregar el examen de orina:', error);
         };
     } catch (error) {
         console.error('Error al agregar el examen de orina:', error);
-        mostrarToastErrorAgregarExamenOrina();
     }
 }
 
@@ -174,7 +172,6 @@ async function verificarExistenciaPaciente(pacienteId, consultaId) {
         return true;
     } catch (error) {
         console.error('Error al verificar la existencia del paciente:', error);
-        mostrarToastErrorVerificarPaciente();
         return false;
     }
 }
@@ -184,13 +181,12 @@ async function verificarExistenciaConsulta(consultaId) {
         let db = await abrirBaseDatos();
         let consulta = await obtenerConsulta(db, consultaId);
         if (!consulta) {
-            alert('El ID de consulta proporcionado no está asociado a ninguna consulta en la base de datos.');
+            mostrarToastConsultaNoExiste();
             return false;
         }
         return true;
     } catch (error) {
         console.error('Error al verificar la existencia de la consulta:', error);
-        mostrarToastErrorObtenerConsulta();
         return false;
     }
 }
@@ -215,7 +211,6 @@ async function verificarExistenciaExamenSangre(consultaId) {
         return examenesSangre && examenesSangre.length > 0;
     } catch (error) {
         console.error('Error al verificar la existencia del examen de sangre:', error);
-        mostrarToastErrorObtenerExamenSangre();
         return false;
     }
 }
@@ -240,7 +235,6 @@ async function verificarExistenciaExamenOrina(consultaId) {
         return examenesOrina && examenesOrina.length > 0;
     } catch (error) {
         console.error('Error al verificar la existencia del examen de orina:', error);
-        mostrarToastErrorObtenerExamenOrina();
         return false;
     }
 }
@@ -267,33 +261,10 @@ document.getElementById('agregarExamenesOrina').addEventListener('click', functi
 
 // -----------------------------Toast--------------------------------//
 
+
+
 function mostrarToastCamposObligatorios() {
     var toast = new bootstrap.Toast(document.getElementById('toastCamposObligatorios'));
-    toast.show();
-}
-
-function mostrarToastPacienteNoExiste() {
-    var toast = new bootstrap.Toast(document.getElementById('toastPacienteNoExiste'));
-    toast.show();
-}
-
-function mostrarToastErrorObtenerPaciente() {
-    var toast = new bootstrap.Toast(document.getElementById('toastErrorObtenerPaciente'));
-    toast.show();
-}
-
-function mostrarToastErrorAbrirBD() {
-    var toast = new bootstrap.Toast(document.getElementById('toastErrorAbrirBD'));
-    toast.show();
-}
-
-function mostrarToastErrorVerificarPaciente() {
-    var toast = new bootstrap.Toast(document.getElementById('toastErrorVerificarPaciente'));
-    toast.show();
-}
-
-function mostrarToastErrorAgregarExamen() {
-    var toast = new bootstrap.Toast(document.getElementById('toastErrorAgregarExamen'));
     toast.show();
 }
 
@@ -301,3 +272,39 @@ function mostrarToastExamenAgregadoCorrectamente() {
     var toast = new bootstrap.Toast(document.getElementById('toastExamenAgregadoCorrectamente'));
     toast.show();
 }
+
+
+function mostrarToastExamenOrinaAgregadoCorrectamente() {
+    var toast = new bootstrap.Toast(document.getElementById('toastExamenOrinaAgregadoCorrectamente'));
+    toast.show();
+}
+
+
+function mostrarToastPacienteNoExiste() {
+    var toast = new bootstrap.Toast(document.getElementById('toastPacienteNoExiste'));
+    toast.show();
+}
+function mostrarToastConsultaNoExiste() {
+    var toast = new bootstrap.Toast(document.getElementById('toastConsultaNoExiste'));
+    toast.show();
+}
+
+
+function mostrarToastExamenSangreExistente() {
+    var toast = new bootstrap.Toast(document.getElementById('toastExamenSangreExistente'));
+    toast.show();
+}
+
+
+
+
+
+function mostrarToastExamenOrinaExistente() {
+    var toast = new bootstrap.Toast(document.getElementById('toastExamenOrinaExistente'));
+    toast.show();
+}
+
+
+
+
+
