@@ -43,7 +43,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
         diagnostico: document.getElementById('diagnostico').value,
         medicamentos: document.getElementById('medicamentos').value,
         examenes: document.getElementById('examenes').value, 
-        fecha: new Date().toISOString()
+        fecha: new Date().toISOString().split('T')[0]
     };
 
     actualizarConsultaMedica(consultaId, datosActualizados);
