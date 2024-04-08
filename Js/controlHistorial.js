@@ -1,4 +1,4 @@
-document.getElementById('agregarExamenSangre').addEventListener('click', function () {
+document.getElementById('buscarPorPaciente').addEventListener('click', function () {
     cargarHistorialExamenesSangre();
     cargarHistorialExamenesOrina();
 });
@@ -9,7 +9,7 @@ async function cargarHistorialExamenesSangre() {
 
     // Abrir la base de datos IndexedDB
     let request = indexedDB.open('ClinicaDB');
-    request.onsuccess = async function(event) {
+    request.onsuccess = async function (event) {
         let db = event.target.result;
 
         // Iniciar una transacción para buscar el paciente por su ID
@@ -17,17 +17,20 @@ async function cargarHistorialExamenesSangre() {
         let store = transaction.objectStore('pacientes');
         let pacienteRequest = store.get(pacienteId);
 
-        pacienteRequest.onsuccess = function(event) {
+        pacienteRequest.onsuccess = function (event) {
             let paciente = event.target.result;
             if (paciente) {
-                // Mostrar el nombre del paciente en el campo correspondiente
-                document.getElementById('nombrePaciente').value = paciente.nombre;
+                // Concatenar el nombre y los apellidos del paciente
+                let nombreCompleto = `${paciente.nombre.toString()} ${paciente.apellidos.toString()}`;
+                console.log(nombreCompleto);
+                // Mostrar el nombre completo del paciente en el campo correspondiente
+                document.getElementById('nombrePaciente').value = nombreCompleto;
             } else {
                 // Limpiar el campo de nombre si no se encuentra el paciente
                 document.getElementById('nombrePaciente').value = '';
             }
         };
-        pacienteRequest.onerror = function(event) {
+        pacienteRequest.onerror = function (event) {
             console.error('Error al obtener la información del paciente:', event.target.error);
         };
 
@@ -44,7 +47,7 @@ async function cargarHistorialExamenesSangre() {
         historialExamenSangre.innerHTML = '';
 
         // Iterar sobre el cursor y agregar los exámenes de sangre a la tabla
-        examenesSangreCursor.onsuccess = function(event) {
+        examenesSangreCursor.onsuccess = function (event) {
             let cursor = event.target.result;
             if (cursor) {
                 let examen = cursor.value;
@@ -64,7 +67,7 @@ async function cargarHistorialExamenesSangre() {
             }
         };
     };
-    request.onerror = function(event) {
+    request.onerror = function (event) {
         console.error('Error al abrir la base de datos:', event.target.error);
     };
 }
@@ -78,7 +81,7 @@ async function cargarHistorialExamenesOrina() {
 
     // Abrir la base de datos IndexedDB
     let request = indexedDB.open('ClinicaDB');
-    request.onsuccess = async function(event) {
+    request.onsuccess = async function (event) {
         let db = event.target.result;
 
         // Iniciar una transacción para buscar el paciente por su ID
@@ -86,17 +89,21 @@ async function cargarHistorialExamenesOrina() {
         let store = transaction.objectStore('pacientes');
         let pacienteRequest = store.get(pacienteId);
 
-        pacienteRequest.onsuccess = function(event) {
+        pacienteRequest.onsuccess = function (event) {
             let paciente = event.target.result;
             if (paciente) {
-                // Mostrar el nombre del paciente en el campo correspondiente
-                document.getElementById('nombrePaciente').value = paciente.nombre;
+                // Concatenar el nombre y los apellidos del paciente
+                let nombreCompleto = `${paciente.nombre.toString()} ${paciente.apellidos.toString()}`;
+                console.log(nombreCompleto);
+                // Mostrar el nombre completo del paciente en el campo correspondiente
+                document.getElementById('nombrePaciente').value = nombreCompleto;
             } else {
                 // Limpiar el campo de nombre si no se encuentra el paciente
                 document.getElementById('nombrePaciente').value = '';
             }
         };
-        pacienteRequest.onerror = function(event) {
+        
+        pacienteRequest.onerror = function (event) {
             console.error('Error al obtener la información del paciente:', event.target.error);
         };
 
@@ -113,7 +120,7 @@ async function cargarHistorialExamenesOrina() {
         historialExamenSangre.innerHTML = '';
 
         // Iterar sobre el cursor y agregar los exámenes de sangre a la tabla
-        examenesSangreCursor.onsuccess = function(event) {
+        examenesSangreCursor.onsuccess = function (event) {
             let cursor = event.target.result;
             if (cursor) {
                 let examen = cursor.value;
@@ -131,7 +138,7 @@ async function cargarHistorialExamenesOrina() {
             }
         };
     };
-    request.onerror = function(event) {
+    request.onerror = function (event) {
         console.error('Error al abrir la base de datos:', event.target.error);
     };
 }
