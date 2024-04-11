@@ -12,8 +12,12 @@
 </head>
 
 <body>
-  <div class="container-Roles">
+  <div class="row">
+  <div class="container-Roles container-fluid">
+    <div class="card m-auto mt-4">
+      <div class="card-header">
     <h1>Administración de Roles</h1>
+  </div>
     <table id="userTable">
       <thead>
         <tr>
@@ -24,7 +28,11 @@
       </thead>
       <tbody id="userList"></tbody>
     </table>
+    
   </div>
+  </div>
+</div>
+
 
   <div class="toast-container position-absolute top-0 end-0 p-3">
     <div class="toast" id="toastRolActualizado" role="alert" aria-live="assertive" aria-atomic="true">

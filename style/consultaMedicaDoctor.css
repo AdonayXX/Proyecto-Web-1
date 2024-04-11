@@ -4,6 +4,9 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.c-m{
+    width: 95%;
+}
 
 .a-CM {
     width: 60%; /* Cambiado a porcentaje */
@@ -15,28 +18,55 @@
     width: 30%; /* Porcentaje del 20% */
     /* po; Añadida la posición fija */
 }
+.h-CM h3 {
+    display: grid;
+    place-items: center;
+}
 h2{
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: 50px;
 }
 
-.C-medic{
-    max-width: 90%;
-    background-color: #ffffff;
-    padding: 20px;
-    min-height: 600px;
-    border-radius: 10px;
-    margin-top: 20px;
-    border: 1px solid #dcdcdc;
-    box-shadow: 0px 0px 4px 0px #807f7f;
-}
+
 .f-CM{
     display: flex;
     flex-direction: row;
     margin-top: 20px;
 }
 body{
-    background-color: #f5f5f5;
+    background-color: #F0F2F5
 
+}
+
+.card-header {
+    font-size: 20px;
+    font-weight: 600;
+    background: linear-gradient(45deg, #007bff, #6c757d);
+    background-color: #007bff;
+    color: #ffffff;
+    border-bottom: none;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.card{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+
+.card {
+    border: none;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 20px rgba(0, 0, 0, 0.2);
 }

@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    checkUserRole();
     const menuToggle = document.getElementById("menu-toggle");
     const loginButton = document.getElementById("loginButton");
     const logoutButton = document.getElementById("logoutButton");
@@ -44,5 +45,34 @@ document.addEventListener("DOMContentLoaded", function () {
     logoutButton.addEventListener("click", function () {
         simulateLogout();
     });
+
+         // Verificar el rol del usuario al cargar la página
+      
+       
+  function checkUserRole() {
+    const userRole = sessionStorage.getItem('userRole');
+
+    const optionsByRole = {
+      admin: ['Gestión de Medicos y especialidades', 'Añadir Citas', 'Gestión de Roles', 'Gestión de Pacientes', 'Gestión de Consultas', 'Gestión de Consultas Enfermeras','Gestión de Consultas Medico', 'Gestión de Citas', 'Gestión de Examenes', 'Historial de Exámenes'],
+      recepcionista: ['Gestión de Citas', 'Añadir Citas'],
+      medico: [ 'Gestión de Pacientes',  'Historial de Exámenes', 'Gestión de Consultas Medico'],
+      enfermero: ['Gestión de Consultas', 'Gestión de Consultas Enfermeras','Gestión de Examenes', 'Historial de Exámenes'],
+      public: [] 
+    };
+
+    const sidebarOptions = document.querySelectorAll('.opt');
+
+    sidebarOptions.forEach(option => {
+      const optionText = option.textContent.trim();
+
+      if (optionsByRole[userRole]?.includes(optionText)) {
+        option.style.display = 'block';
+      } else {
+        option.style.display = 'none';
+      }
+    });
+  }
+
+      
 });
 

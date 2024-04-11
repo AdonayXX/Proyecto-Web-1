@@ -11,10 +11,13 @@
 </head>
 
 <body>
-    <div class="container py-5 C-medic">
+    <div class="row mt-5">
+    <div class="container-fluid c-m">
+        <div class="card m-auto">
+            <div class="card-header">
         <h2 class="text-center mb-5">Consulta Médica</h2>
-
-        <div class="c-CM">
+    </div>
+        <div class="c-CM m-4">
         <div class="accordion a-CM" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingTwo">
@@ -69,12 +72,12 @@
             </div>
         </div>
         <div class="h-CM">
-            <div class="row mt-5">
+            <div class="row mt-5 mb-5">
                 <div class="col">
                     <h3>Historial del Paciente</h3>
                     <div class="card text-start">
                         <div class="card-body">
-                            <h4 class="card-title"><i class="fas fa-notes-medical"></i> Última Consulta</h4>
+                            <h4 class="card-title"><i class="fas fa-notes-medical"></i> Últimas Consulta</h4>
                             <form id="buscarForm">
                                 <div class="mb-3">
                                     <label for="Id-Buscar">Identificación del paciente:</label>
@@ -91,7 +94,11 @@
         </div>
         
     </div>
+</div>
     </div>
+</div>
+
+
     <div class="position-fixed top-0 end-0 p-3" style="z-index: 5">
         <div class="toast" id="toastConsultaMedicoRealizada" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">

@@ -38,7 +38,8 @@ function openDatabase() {
             // Nuevo índice para pacienteId
             // Índice compuesto para estado y fecha para asignar un estado
             citaStore.createIndex('estadoFecha', ['estado', 'fecha'], { unique: false });
-
+            
+            citaStore.createIndex('pacienteIdFecha', ['pacienteId', 'fecha'], { unique: false });
         }
 
         // Almacén para usuarios
@@ -70,7 +71,7 @@ function openDatabase() {
             familiaresStore.createIndex('pacienteId', 'pacienteId', { unique: false });
             familiaresStore.createIndex('nombreCompleto', 'nombreCompleto', { unique: false });
             familiaresStore.createIndex('relacionFamiliar', 'relacionFamiliar', { unique: false });
-            familiaresStore.createIndex('telefono', 'telefono', { unique: true });
+            familiaresStore.createIndex('telefono', 'telefono', { unique: false });
             familiaresStore.createIndex('direccion', 'direccion', { unique: false });
         }
         //Almacén para consultas médicas

@@ -15,17 +15,21 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body style="background-color: #F0F2F5;">
     <div class="row">
-        <div class="container-fluid container-P">
-            <div class=" opt-t">
+        
+        <div class="container-fluid container-P mt-4" >
+        <div class="card m-auto">
+            
+            <div class="card-header">
+            <!-- <div class=" opt-t"> -->
                 <h1>Gestión de Pacientes</h1>
 
                 <div class="options">
-                    <a class="opt-icons" href="#" data-bs-toggle="modal" data-bs-target="#agregarPacienteModal"> <i
-                            class="bi bi-plus"></i></a>
-                    <a class="opt-icons" href="#" data-bs-toggle="modal" data-bs-target="#eliminarPacienteModal"> <i
-                            class="bi bi-trash"></i></a>
+                    <a class="opt-icons" href="#" data-bs-toggle="modal" data-bs-target="#agregarPacienteModal"><i 
+                        class="bi bi-person-plus"></i></a>
+                    <a class="opt-icons" href="#" data-bs-toggle="modal" data-bs-target="#eliminarPacienteModal"><i 
+                        class="bi bi-person-slash"></i></i></a>
                     <a class="opt-icons" href="#" data-bs-toggle="modal" data-bs-target="#editarPacienteModal"><i
                             class="bi bi-pencil"></i></a>
                     <a class="opt-icons" href="" data-bs-toggle="modal" data-bs-target="#buscarPacienteModal"><i
@@ -36,7 +40,8 @@
                         class="bi bi-bookmark-plus"></i></a>
 
                 </div>
-            </div>
+            <!-- </div> -->
+        </div>
             <div class="table-c">
                 <table>
                     <thead>
@@ -62,6 +67,7 @@
             </div>
 
         </div>
+    </div>
     </div>
     <!-- Modal de Agregar Paciente -->
     <div class="modal-1">
@@ -439,7 +445,7 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">ID</th>
+                                <!-- <th scope="col">ID</th> -->
                                 <th scope="col">Nombre Completo</th>
                                 <th scope="col">Teléfono</th>
                                 <th scope="col">Relación Familiar</th>
@@ -501,7 +507,7 @@
 
             <!-- Toast Paciente no encontrado -->
 
-            <div class="position-fixed top-0 end-0 p-3" style="z-index: 100">
+            <div class="position-fixed top-0 end-0 p-3" style="z-index: 1100">
                 <div class="toast" id="toastPacienteNoEncontrado" role="alert" aria-live="assertive" aria-atomic="true">
                     <div class="toast-header">
                         <img src="img/HSRA-.svg" class="img-fluid p-md-1" alt="" width="50px" height="50px">
@@ -539,6 +545,20 @@
                     </div>
                     <div class="toast-body text-white" style="background: linear-gradient(45deg, #007bff, #6c757d);">
                         Contacto de emergencia agregado con éxito.</div>
+                </div>
+            </div>
+
+            <!-- Ingrese todos los datos -->
+
+            <div class="position-fixed top-0 end-0 p-3" style="z-index: 100">
+                <div class="toast" id="toastIngreseDatos" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <img src="img/HSRA-.svg" class="img-fluid p-md-1" alt="" width="50px" height="50px">
+                        <strong class="me-auto">Ingrese todos los datos</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="toast-body text-white" style="background: linear-gradient(45deg, #007bff, #6c757d);">
+                        Por favor, ingrese todos los datos del paciente.</div>
                 </div>
             </div>
 

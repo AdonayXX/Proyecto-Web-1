@@ -11,19 +11,20 @@
 </head>
 
 <body>
-
-    <div class="container py-5 C-medic" >
-        <h1 class="text-center mb-5">Consulta Médica</h1>
-
-        <div id="accordionExample">
-            <!-- Sección de la enfermera -->
-            <div>
-                <h2 class="accordion-header mb-3" id="headingOne">Registro de la Enfermera </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+    <div class="row">
+    <div class="container-fluid mt-4" >
+        <div class="card m-auto">
+        <div class="card-header">
+        <h1 class="textcenter- mb-5">Consulta Médica</h1>
+    </div>
+    
+        <div id="accordionExample" >
+                <h3 class="accordion-header mb-3 mt-3 m-2" id="headingOne">Registro de la Enfermera </h3>
+                <div id="collapseOne" class="accordion-collapse collapse show m-2 mt-3" aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <form id="formularioConsulta">
-                            <div class="patients-data">
+                            <div class="patients-data w-75">
                                 <div class="mb-3 p-data">
                                     <label for="cedula" class="form-label">Cédula</label>
                                     <input type="text" class="form-control" id="cedula" name="cedula" required >
@@ -37,7 +38,6 @@
                                     <input type="text" class="form-control" id="apellidos" name="apellidos" required>
                                 </div>
                                 
-                                <!-- edad por fecha -->
                                 <div class="mb-3 p-data">
                                     <label for="edad" class="form-label">Fecha De Nacimiento</label>
                                     <input type="date" class="form-control" id="edad" name="edad" required>
@@ -64,11 +64,13 @@
                         </form>
                     </div>
                 </div>
-            </div>
-
+          
+        </div>
         </div>
         
     </div>
+
+</div>
 
     <div class="position-fixed top-0 end-0 p-3" style="z-index: 5">
         <div class="toast" id="toastConsultaRealizada" role="alert" aria-live="assertive" aria-atomic="true">
