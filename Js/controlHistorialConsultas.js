@@ -93,3 +93,4 @@ async function mostrarResultados(resultados) {
         }
     }
 }
+//cargar dom

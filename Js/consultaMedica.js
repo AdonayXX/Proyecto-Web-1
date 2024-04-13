@@ -15,23 +15,6 @@ function openDatabase() {
     };
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    openDatabase();
-}, false);
-
-function openDatabase() {
-    const request = indexedDB.open('ClinicaDB', 1);
-
-    request.onerror = function(event) {
-        console.error('IndexedDB error:', event.target.error);
-    };
-
-    request.onsuccess = function(event) {
-        db = event.target.result;
-        console.log("Base de datos abierta exitosamente");
-    };
-}
-
 document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault();
     const consultaId = document.getElementById('idConsulta').value; 
@@ -47,6 +30,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
     };
 
     actualizarConsultaMedica(consultaId, datosActualizados);
+    actualizarPaciente(datosActualizados.pacienteId, datosActualizados.enfermedades, datosActualizados.medicamentosAlergicos);
 });
 
 function actualizarConsultaMedica(consultaId, datosActualizados) {

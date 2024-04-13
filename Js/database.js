@@ -33,7 +33,7 @@ function openDatabase() {
         if (!db.objectStoreNames.contains('citas')) {
             let citaStore = db.createObjectStore('citas', { keyPath: 'id', autoIncrement: true });
             citaStore.createIndex('doctor', 'doctor', { unique: false });
-            // Índice compuesto para doctor y fecha, sin cambios
+            // Índice compuesto para doctor y fecha para asignar una cita
             citaStore.createIndex('doctorFecha', ['doctor', 'fecha'], { unique: false });
             // Nuevo índice para pacienteId
             // Índice compuesto para estado y fecha para asignar un estado
@@ -120,18 +120,6 @@ function openDatabase() {
             examenOrinaStore.createIndex('leucocitos', 'leucocitos', { unique: false });
         }    
         
-        //Almacen para historial de consultas médicas
-        // if (!db.objectStoreNames.contains('historialConsultas')) {
-        //     const historialConsultasStore = db.createObjectStore('historialConsultas', { keyPath: 'historialId', autoIncrement: true });
-        //     historialConsultasStore.createIndex('pacienteId', 'pacienteId', { unique: false });
-        //     historialConsultasStore.createIndex('fecha', 'fecha', { unique: false });
-        //     historialConsultasStore.createIndex('presion', 'presion', { unique: false });
-        //     historialConsultasStore.createIndex('peso', 'peso', { unique: false });
-        //     historialConsultasStore.createIndex('sintomas', 'sintomas', { unique: false });
-        //     historialConsultasStore.createIndex('diagnostico', 'diagnostico', { unique: false });
-        //     historialConsultasStore.createIndex('medicamentos', 'medicamentos', { unique: false });
-        // };
-
 
     };
 
