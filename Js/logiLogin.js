@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
         simulateLogout();
     });
 
-         // Verificar el rol del usuario al cargar la página
       
        
   function checkUserRole() {

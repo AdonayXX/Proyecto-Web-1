@@ -85,18 +85,16 @@ function actualizarPaciente(id, nombre, apellidos, edad, peso, altura) {
 }
 
 function guardarConsultaMedica(idPaciente, presion, peso, altura, sintomas) {
-    // Inicia una transacción con permisos de lectura/escritura sobre el almacén deseado
     const transaction = db.transaction(['consultasMedicas'], 'readwrite');
     const store = transaction.objectStore('consultasMedicas');
     
-    // Crea un objeto con los datos de la nueva consulta
     const nuevaConsulta = {
         pacienteId: idPaciente,
         presion: presion,
         peso: peso,
         altura: altura,
         sintomas: sintomas,
-        fecha: new Date().toISOString() // Registra la fecha y hora actual de la consulta
+        fecha: new Date().toISOString() 
     };
 
     const request = store.add(nuevaConsulta);
@@ -108,7 +106,6 @@ function guardarConsultaMedica(idPaciente, presion, peso, altura, sintomas) {
     };
 
     request.onerror = function(e) {
-        // Maneja y muestra cualquier error que ocurra al intentar guardar la nueva consulta
         console.error("Error al guardar la consulta médica:", e.target.error);
     };
 }

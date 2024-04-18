@@ -13,7 +13,7 @@ document.getElementById('form-especialidad').addEventListener('submit', function
         console.log('Especialidad añadida');
         document.getElementById('nombre-especialidad').value = '';
         mostrarToastEspecialidadAgregada();
-        cargarEspecialidades(); // Actualizar la lista de especialidades
+        cargarEspecialidades(); 
     };
 });
 function cargarEspecialidades() {

@@ -61,7 +61,6 @@ function actualizarConsultaMedica(consultaId, datosActualizados) {
 }
 
 
-// Función para actualizar los datos del paciente
 function actualizarPaciente(id, enfermedades, medicamentosAlergicos) {
     const transaction = db.transaction(['pacientes'], 'readwrite');
     const store = transaction.objectStore('pacientes'); 
@@ -91,7 +90,6 @@ function actualizarPaciente(id, enfermedades, medicamentosAlergicos) {
     };
 }
 
-// Función para guardar la consulta médica
 function guardarConsultaMedica(pacienteID, consultaMedica) {
     const transaction = db.transaction(['pacientes'], 'readonly');
     const store = transaction.objectStore('pacientes');
@@ -132,7 +130,6 @@ function mostrarToastConsultaMedico() {
     }, 3000);
 }
 
-//FUNCION PARA LIMPIAR LOS CAMPOS DEL FORMULARIO
 
 function limpiarCampos() {
     document.getElementById('ID').value

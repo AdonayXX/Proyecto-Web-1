@@ -50,12 +50,12 @@ async function mostrarCitasPendientes() {
     };
 }
 
-// Función para obtener detalles del paciente por ID
+
 async function obtenerPacientePorId(pacienteId) {
     return new Promise((resolve, reject) => {
         const transaction = db.transaction(['pacientes'], 'readonly');
         const store = transaction.objectStore('pacientes');
-        const request = store.get(pacienteId); // Asume que pacienteId es el adecuado para el store.get
+        const request = store.get(pacienteId); 
 
         request.onsuccess = () => {
             if (request.result) {
@@ -88,20 +88,19 @@ document.getElementById('confirmarCancelacionBtn').addEventListener('click', fun
     modal.hide();
 });
 function cancelarCita(citaId) {
-    const transaction = db.transaction(['citas'], 'readwrite'); // Abre una transacción de lectura/escritura
+    const transaction = db.transaction(['citas'], 'readwrite'); 
     const objectStore = transaction.objectStore('citas');
 
-    // Intenta eliminar la cita
+
     const request = objectStore.delete(Number(citaId)); 
 
     request.onsuccess = function() {
         console.log(`Cita con ID ${citaId} cancelada exitosamente.`);
-        mostrarCitasPendientes(); // Vuelve a cargar o actualizar la lista de citas pendientes
+        mostrarCitasPendientes(); 
     };
 
     request.onerror = function(e) {
         console.error('Error al cancelar la cita:', e.target.error);
-        // Maneja el error, posiblemente mostrando un mensaje al usuario
+        
     };
 }
-//REVISAR EL REPOSITORIO DE NOSOTROS PARA REVISAR LA FUNCIÓN PARA QUE ME MUESTRE TODAS LAS CITAS PENDIENTES

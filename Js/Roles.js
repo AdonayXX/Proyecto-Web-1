@@ -50,7 +50,6 @@ function checkUserRole() {
   }
 }
 
-// Se encarga de obtener los usuarios de la base de datos y mostrarlos en una tabla. También se encarga de actualizar el rol de un usuario en la base de datos
 
 function getUsers() {
   if (db) {
@@ -111,7 +110,6 @@ function getUsers() {
   }
 }
 
-// Se encarga de actualizar el rol de un usuario en la base de datos //
 
 
 function updateUserRole(userId, newRole) {
