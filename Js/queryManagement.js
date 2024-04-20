@@ -28,7 +28,6 @@ async function openDatabase() {
 
         request.onupgradeneeded = function(event) {
             let db = event.target.result;
-            // Considerar agregar aquí la creación de object stores si aún no existen
         };
     });
 }

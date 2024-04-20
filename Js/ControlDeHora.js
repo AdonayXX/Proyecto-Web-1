@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('doctor').addEventListener('change', cargarHorasDisponibles);
     document.getElementById('date').addEventListener('change', function () {
         cargarHorasDisponibles();
-        verificarDiaSeleccionado(this); // Verifica si el día seleccionado es domingo
+        verificarDiaSeleccionado(this); 
     });
 
     const inputFecha = document.getElementById('date');

@@ -19,13 +19,10 @@ async function cargarHistorialExamenesSangre() {
         pacienteRequest.onsuccess = function (event) {
             let paciente = event.target.result;
             if (paciente) {
-                // Concatenar el nombre y los apellidos del paciente
                 let nombreCompleto = `${paciente.nombre.toString()} ${paciente.apellidos.toString()}`;
                 console.log(nombreCompleto);
-                // Mostrar el nombre completo del paciente en el campo correspondiente
                 document.getElementById('nombrePaciente').value = nombreCompleto;
             } else {
-                // Limpiar el campo de nombre si no se encuentra el paciente
                 document.getElementById('nombrePaciente').value = '';
             }
         };
@@ -33,19 +30,15 @@ async function cargarHistorialExamenesSangre() {
             console.error('Error al obtener la información del paciente:', event.target.error);
         };
 
-        // Iniciar una transacción para buscar los exámenes de sangre del paciente
         let transactionExamenes = db.transaction(['examenesSangre'], 'readonly');
         let storeExamenes = transactionExamenes.objectStore('examenesSangre');
         let indexExamenes = storeExamenes.index('pacienteId');
 
-        // Obtener todos los exámenes de sangre del paciente con el pacienteId
         let examenesSangreCursor = await indexExamenes.openCursor(IDBKeyRange.only(pacienteId));
 
-        // Limpiar la tabla antes de cargar los nuevos datos
         let historialExamenSangre = document.getElementById('historialExamenSangre');
         historialExamenSangre.innerHTML = '';
 
-        // Iterar sobre el cursor y agregar los exámenes de sangre a la tabla
         examenesSangreCursor.onsuccess = function (event) {
             let cursor = event.target.result;
             if (cursor) {
@@ -74,15 +67,12 @@ async function cargarHistorialExamenesSangre() {
 //------------------------------------------♡ Historial Examenes Orina ♡----------------------------------------------
 
 async function cargarHistorialExamenesOrina() {
-    // Obtener el pacienteId ingresado
     let pacienteId = document.getElementById('pacienteId').value;
 
-    // Abrir la base de datos IndexedDB
     let request = indexedDB.open('ClinicaDB');
     request.onsuccess = async function (event) {
         let db = event.target.result;
 
-        // Iniciar una transacción para buscar el paciente por su ID
         let transaction = db.transaction(['pacientes'], 'readonly');
         let store = transaction.objectStore('pacientes');
         let pacienteRequest = store.get(pacienteId);
@@ -90,13 +80,10 @@ async function cargarHistorialExamenesOrina() {
         pacienteRequest.onsuccess = function (event) {
             let paciente = event.target.result;
             if (paciente) {
-                // Concatenar el nombre y los apellidos del paciente
                 let nombreCompleto = `${paciente.nombre.toString()} ${paciente.apellidos.toString()}`;
                 console.log(nombreCompleto);
-                // Mostrar el nombre completo del paciente en el campo correspondiente
                 document.getElementById('nombrePaciente').value = nombreCompleto;
             } else {
-                // Limpiar el campo de nombre si no se encuentra el paciente
                 document.getElementById('nombrePaciente').value = '';
             }
         };
@@ -104,19 +91,15 @@ async function cargarHistorialExamenesOrina() {
             console.error('Error al obtener la información del paciente:', event.target.error);
         };
 
-        // Iniciar una transacción para buscar los exámenes de orina del paciente
         let transactionExamenes = db.transaction(['examenesOrina'], 'readonly');
         let storeExamenes = transactionExamenes.objectStore('examenesOrina');
         let indexExamenes = storeExamenes.index('pacienteId');
 
-        // Obtener todos los exámenes de orina del paciente con el pacienteId
         let examenesOrinaCursor = await indexExamenes.openCursor(IDBKeyRange.only(pacienteId));
 
-        // Limpiar la tabla antes de cargar los nuevos datos
         let historialExamenOrina = document.getElementById('historialExamenOrina');
         historialExamenOrina.innerHTML = '';
 
-        // Iterar sobre el cursor y agregar los exámenes de orina a la tabla
         examenesOrinaCursor.onsuccess = function (event) {
             let cursor = event.target.result;
             if (cursor) {

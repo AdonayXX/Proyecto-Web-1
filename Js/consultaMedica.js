@@ -15,23 +15,6 @@ function openDatabase() {
     };
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    openDatabase();
-}, false);
-
-function openDatabase() {
-    const request = indexedDB.open('ClinicaDB', 1);
-
-    request.onerror = function(event) {
-        console.error('IndexedDB error:', event.target.error);
-    };
-
-    request.onsuccess = function(event) {
-        db = event.target.result;
-        console.log("Base de datos abierta exitosamente");
-    };
-}
-
 document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault();
     const consultaId = document.getElementById('idConsulta').value; 
@@ -47,7 +30,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
     };
 
     actualizarConsultaMedica(consultaId, datosActualizados);
-    // actualizarPaciente(pacienteId, enfermedades, medicamentosAlergicos);
+    actualizarPaciente(datosActualizados.pacienteId, datosActualizados.enfermedades, datosActualizados.medicamentosAlergicos);
 });
 
 function actualizarConsultaMedica(consultaId, datosActualizados) {
@@ -78,7 +61,6 @@ function actualizarConsultaMedica(consultaId, datosActualizados) {
 }
 
 
-// Función para actualizar los datos del paciente
 function actualizarPaciente(id, enfermedades, medicamentosAlergicos) {
     const transaction = db.transaction(['pacientes'], 'readwrite');
     const store = transaction.objectStore('pacientes'); 
@@ -108,7 +90,6 @@ function actualizarPaciente(id, enfermedades, medicamentosAlergicos) {
     };
 }
 
-// Función para guardar la consulta médica
 function guardarConsultaMedica(pacienteID, consultaMedica) {
     const transaction = db.transaction(['pacientes'], 'readonly');
     const store = transaction.objectStore('pacientes');
@@ -149,7 +130,6 @@ function mostrarToastConsultaMedico() {
     }, 3000);
 }
 
-//FUNCION PARA LIMPIAR LOS CAMPOS DEL FORMULARIO
 
 function limpiarCampos() {
     document.getElementById('ID').value

@@ -133,7 +133,7 @@ async function mostrarCitasPorFecha(fecha) {
     objectStore.openCursor().onsuccess = function(event) {
         let cursor = event.target.result;
         if (cursor) {
-            if (cursor.value.fecha === fecha) { // Filtrar por fecha
+            if (cursor.value.fecha === fecha) { 
                 citas.push(cursor.value);
             }
             cursor.continue();
