@@ -47,6 +47,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
     };
 
     actualizarConsultaMedica(consultaId, datosActualizados);
+    // actualizarPaciente(pacienteId, enfermedades, medicamentosAlergicos);
 });
 
 function actualizarConsultaMedica(consultaId, datosActualizados) {

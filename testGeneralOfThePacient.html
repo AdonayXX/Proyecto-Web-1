@@ -11,10 +11,9 @@
 </head>
 
 <body>
-
     <div class="container py-5">
         <h2 class="text-center mb-4 titleTests">Registro de Exámenes Médicos</h2>
-
+    
         <div class="card mb-3">
             <div class="card-header">
                 <h3>Examen de Sangre</h3>
@@ -22,29 +21,29 @@
             <div class="card-body">
                 <form id="formExamenSangre" class="formExamenSangre">
                     <div id="verification-data">
-                        <input type="text" class="form-control" placeholder="Paciente ID" name="pacienteId"
+                        <input type="text" class="form-control" placeholder="ID del Paciente" name="pacienteId"
                             id="pacienteId" required>
-                        <input type="text" class="form-control" placeholder="Consulta ID" name="consultaId"
+                        <input type="text" class="form-control" placeholder="ID de la Consulta" name="consultaId"
                             id="consultaId" required>
                     </div>
-                    <input type="text" class="form-control" placeholder="Hemoglobina" name="hemoglobina"
+                    <input type="text" class="form-control" placeholder="Hemoglobina (g/dL)" name="hemoglobina"
                         id="hemoglobina" required>
-                    <input type="text" class="form-control" placeholder="Hematocrito" name="hematocrito"
+                    <input type="text" class="form-control" placeholder="Hematocrito (%)" name="hematocrito"
                         id="hematocrito" required>
-                    <input type="text" class="form-control" placeholder="Triglicéridos" name="trigliceridos"
+                    <input type="text" class="form-control" placeholder="Triglicéridos (mg/dL)" name="trigliceridos"
                         id="trigliceridos" required>
-                    <input type="text" class="form-control" placeholder="Colesterol total" name="colesterolTotal"
+                    <input type="text" class="form-control" placeholder="Colesterol total (mg/dL)" name="colesterolTotal"
                         id="colesterolTotal" required>
-                    <input type="text" class="form-control" placeholder="Ácido Úrico" name="acidoUrico" id="acidoUrico"
+                    <input type="text" class="form-control" placeholder="Ácido Úrico (mg/dL)" name="acidoUrico" id="acidoUrico"
                         required>
-                    <input type="text" class="form-control" placeholder="Creatinina" name="creatinina" id="creatinina"
+                    <input type="text" class="form-control" placeholder="Creatinina (mg/dL)" name="creatinina" id="creatinina"
                         required>
                     <button id="agregarExamenSangre" type="submit" class="btn btn-primary">Registrar Examen de
                         Sangre</button>
                 </form>
             </div>
         </div>
-
+    
         <div class="card">
             <div class="card-header">
                 <h3>Examen de Orina</h3>
@@ -52,22 +51,24 @@
             <div class="card-body">
                 <form id="formExamenOrina" class="formExamenOrina">
                     <div id="verification-data">
-                        <input type="text" class="form-control" placeholder="Paciente ID" name="pacienteId"
+                        <input type="text" class="form-control" placeholder="ID del Paciente" name="pacienteId"
                             id="pacienteIdOrina" required>
-                        <input type="text" class="form-control" placeholder="Consulta ID" name="consultaId"
+                        <input type="text" class="form-control" placeholder="ID de la Consulta" name="consultaId"
                             id="consultaIdOrina" required>
                     </div>
-                    <input type="text" class="form-control" placeholder="Glucosa" name="glucosa" id="glucosa">
-                    <input type="text" class="form-control" placeholder="Eritrocitos" name="eritrocitos"
+                    <input type="text" class="form-control" placeholder="Glucosa (mg/dL)" name="glucosa" id="glucosa">
+                    <input type="text" class="form-control" placeholder="Eritrocitos (millones/μL)" name="eritrocitos"
                         id="eritrocitos">
-                    <input type="text" class="form-control" placeholder="Color" name="color" id="color">
-                    <input type="text" class="form-control" placeholder="Leucocitos (Esterasa)" name="leucocitos"
+                    <input type="text" class="form-control" placeholder="Color (escala de 1 a 10)" name="color" id="color">
+                    <input type="text" class="form-control" placeholder="Leucocitos (Esterasa) (mg/dL)" name="leucocitos"
                         id="leucocitos">
                     <button id="agregarExamenesOrina" type="submit" class="btn btn-primary">Registrar Examen de
                         Orina</button>
                 </form>
             </div>
         </div>
+    </div>
+    
         <div class="toast-container position-fixed top-0 end-0 p-3">
 
 

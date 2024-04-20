@@ -53,9 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const userRole = sessionStorage.getItem('userRole');
 
     const optionsByRole = {
-      admin: ['Gestión de Medicos y especialidades', 'Añadir Citas', 'Gestión de Roles', 'Gestión de Pacientes', 'Gestión de Consultas', 'Gestión de Consultas Enfermeras','Gestión de Consultas Medico', 'Gestión de Citas', 'Gestión de Examenes', 'Historial de Exámenes'],
+      admin: ['Gestión de Medicos y especialidades', 'Añadir Citas', 'Gestión de Roles', 'Gestión de Pacientes', 'Gestión de Consultas', 'Gestión de Consultas Enfermeras','Gestión de Consultas Medico', 'Gestión de Citas', 'Gestión de Examenes', 'Historial de Exámenes','Historial de Consultas'],
       recepcionista: ['Gestión de Citas', 'Añadir Citas'],
-      medico: [ 'Gestión de Pacientes',  'Historial de Exámenes', 'Gestión de Consultas Medico'],
+      medico: [ 'Gestión de Pacientes',  'Historial de Exámenes', 'Gestión de Consultas Medico', 'Historial de Consultas'],
       enfermero: ['Gestión de Consultas', 'Gestión de Consultas Enfermeras','Gestión de Examenes', 'Historial de Exámenes'],
       public: [] 
     };

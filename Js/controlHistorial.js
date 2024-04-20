@@ -138,4 +138,6 @@ async function cargarHistorialExamenesOrina() {
     request.onerror = function (event) {
         console.error('Error al abrir la base de datos:', event.target.error);
     };
+
+    
 }
