@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/callback",
+    callbackURL: "https://proyectoweb1-ke9nw.ondigitalocean.app/auth/google/callback",
     passReqToCallback: true 
 }, (req, accessToken, refreshToken, params, profile, done) => {
     const idToken = params.id_token; 
