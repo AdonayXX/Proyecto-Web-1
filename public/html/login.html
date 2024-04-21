@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/style/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id"
+        content="548554821842-3248dvcodmvtpepde8288dh983e71k0b.apps.googleusercontent.com">
+
+</head>
+
+<body>
+    <div class="container-form register">
+        <div class="information">
+            <div class="info-childs">
+                <h2>Bienvenido</h2>
+                <p>Para unirte a nuestra comunidad por favor inicia sesión con tus datos</p>
+                <input type="button" value="Iniciar Sesión" id="sign-in">
+            </div>
+        </div>
+        <div class="form-information">
+            <h2>Crear una cuenta</h2>
+            <div class="icons">
+                <i class='bx bxl-google'></i>
+                <i class='bx bxl-facebook'></i>
+                <i class='bx bxl-instagram'></i>
+            </div>
+            <p>o usa tu email para registrarte</p>
+            <form class="form" id="registerForm">
+                <label>
+                    <i class='bx bx-user'></i>
+                    <input type="text" placeholder="Nombre Completo" name="nombreCompleto" id="name" required>
+                </label>
+                <label>
+                    <i class='bx bx-envelope'></i>
+                    <input type="email" placeholder="Correo Electrónico" name="correoElectronico" id="email" required>
+                </label>
+                <label>
+                    <i class='bx bx-lock-alt'></i>
+                    <input type="password" placeholder="Contraseña" name="contraseña" id="password" required>
+                </label>
+                <input type="submit" value="Registrarse" id="useradd">
+
+
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <div class="container-form login hide">
+        <div class="information">
+            <div class="info-childs">
+                <h2>Bienvenido nuevamente</h2>
+                <p>Si aun no tienes una cuenta por favor registrese aqui</p>
+                <input type="button" value="Registrarse" id="sign-up">
+            </div>
+        </div>
+        <div class="form-information">
+            <h2>Iniciar Sesión</h2>
+            <div class="icons">
+                <a href="/auth/google" class="icon-button google"><i class='bx bxl-google'></i></a>
+                <i class='bx bxl-facebook'></i>
+                <i class='bx bxl-instagram'></i>
+            </div>
+            <p>o iniciar Sesión con una cuenta</p>
+            <form class="form" id="loginForm">
+                <label>
+                    <i class='bx bx-envelope'></i>
+                    <input type="email" placeholder="Correo Electronico" id="email-L">
+                </label>
+                <label>
+                    <i class='bx bx-lock-alt'></i>
+                    <input type="password" placeholder="Contraseña" id="password-L" name="contraseña"
+                        autocomplete="current-password" required>
+                </label>
+                <input type="submit" value="Iniciar Sesión" id="userlogin">
+            </form>
+        </div>
+    </div>
+    </div>
+    <script>
+        function onSignIn(googleUser) {
+            var id_token = googleUser.getAuthResponse().id_token;
+            console.log('ID Token:', id_token);
+
+            fetch('/verify-token', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ token: id_token })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        console.log('Token verified successfully');
+                        window.location.href = '/html/principal.html';
+                    } else {
+                        console.error('Verification failed:', data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error sending the token to server:', error);
+                });
+        }
+    </script>
+
+    <script src="/Js/database.js"></script>
+    <script src="/Js/Login.js"></script>
+    <script src="/Js/Roles.js"></script>
+    <script src="/Js/A-Login.js"></script>
+
+</body>
+
+</html>
