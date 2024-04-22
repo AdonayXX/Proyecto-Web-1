@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo del Médico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style/consultaMedicaDoctor.css">
+</head>
+
+<body>
+    <div class="row mt-5">
+        <div class="container-fluid c-m">
+            <div class="card m-auto">
+                <div class="card-header">
+            <h2 class="text-center mb-5">Consulta Médica</h2>
+        </div>
+            <div class="c-CM m-4">
+            <div class="accordion a-CM" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Diagnóstico y Tratamiento por el Médico
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="idConsulta">ID de la consulta Médica:</label>
+                                    <input type="text" class="form-control" id="idConsulta" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ID">Identificación del paciente:</label>
+                                    <input type="text" class="form-control" id="ID" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="medicamentosAlergicos">Medicamentos Alérgicos:</label>
+                                    <textarea class="form-control" id="medicamentosAlergicos" rows="2"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="diagnostico">Enfermedades que padece:</label>
+                                    <textarea class="form-control" name="diagnostico" id="enfermedades" rows="2"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="diagnostico" class="form-label">Diagnóstico</label>
+                                    <textarea class="form-control" id="diagnostico" rows="2"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="medicamentos" class="form-label">Medicamentos
+                                        Administrados/Recetados</label>
+                                    <textarea class="form-control" id="medicamentos" rows="2"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="examenes" class="form-label">Exámenes Enviados</label>
+                                    <select class="form-select" id="examenes">
+                                        <option selected>Selecciona...</option>
+                                        <option value="sangre">Sangre</option>
+                                        <option value="orina">Orina</option>
+                                        <option value="ambos">Ambos</option>
+                                        <option value="Ninguno">Ninguno</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-success">Guardar Consulta</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="h-CM">
+                <div class="row mt-5 mb-5">
+                    <div class="col">
+                        <h3>Historial del Paciente</h3>
+                        <div class="card text-start">
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="fas fa-notes-medical"></i> Últimas Consulta</h4>
+                                <form id="buscarForm">
+                                    <div class="mb-3">
+                                        <label for="Id-Buscar">Identificación del paciente:</label>
+                                        <div class="f-CM">
+                                        <input type="text" class="form-control me-1" id="Id-Buscar" required>
+                                        <button type="submit" class="btn btn-primary" id="buscarBtn">Buscar</button>
+                                    </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+        </div>
+    </div>
+    
+    
+        <div class="position-fixed top-0 end-0 p-3" style="z-index: 5">
+            <div class="toast" id="toastConsultaMedicoRealizada" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="/img/HSRA-.svg" class="img-fluid p-md-1" alt="" width="50px" height="50px">
+                    <strong class="me-auto">Consulta Realizada</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                </div>
+                <div class="toast-body text-white" style="background: linear-gradient(45deg, #007bff, #6c757d);">Consulta realizada con éxito.</div>
+            </div>
+        </div>
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="/Js/consultaMedica.js"></script>
+    <script src="/Js/historial.js"></script>
+</body>
+</html>

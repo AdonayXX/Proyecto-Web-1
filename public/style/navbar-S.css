@@ -1,0 +1,116 @@
+.Icons {
+    color: white;
+    font-size: 26px;
+}
+.nav-p{
+    background: linear-gradient(to right, #30b6ce, #009ca8);
+}
+.login-icon{
+    font-size: 26px;
+}
+.cita-icon{
+    font-size: 23px;
+}
+.no-under-line{
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+}
+
+.ul {
+    padding-right: 140px;
+}
+
+
+.items {
+    background-color: dimgrey;
+    padding: 10px;
+    margin: 0.5px;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.items:hover {
+    background-color: #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.geo-point:hover {
+    color: rgb(219, 10, 10);
+}
+.icon-hover:hover {
+    color: greenyellow;
+}
+
+
+.bi-instagram {
+    transition: 0.8s;
+}
+
+.bi-instagram:hover {
+    color: rgb(225, 48, 108);
+}
+
+.telegram:hover {
+    color: #0088cc;
+
+}
+
+.youtube:hover {
+    color: #c4302b;
+}
+.facebook:hover{
+   color: #3b5998;
+
+}
+.bi-whatsapp:hover{
+    color: #25D366;
+}
+.phone{
+    margin-top: 20px;
+}
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+body * {
+    animation: fadeIn 1s ease-in-out;
+}
+.logo-img {
+    animation: fadeInUp 2s ease forwards;
+}
+
+.navbar-nav {
+    animation: slideInDown 1s ease forwards;
+}
+
+/* Agrega animación a los elementos de la sección "Sobre Nosotros" */
+.text-1, .text-2 {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 2s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
