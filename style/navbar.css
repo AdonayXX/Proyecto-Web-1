@@ -8,10 +8,10 @@
     height: 100%;
     background-color: white;
 }
-.ml-16{
+/* .ml-16{
     margin-left: 135px;
 
-}
+} */
 
 
 .nav-b {
@@ -167,6 +167,51 @@
 
 
 }
+@media (max-width: 772px) {
+
+    /* Escondidos */
+
+    .map{
+        display: none;
+    }
+
+    .subcri-b button{
+        display: none;
+    }
+    .subcri-b p{
+        display: none;
+    }
+
+    .footer-P img{
+        display: none;
+        width: auto;
+
+
+}
+}
+@media (max-width: 992px) {
+
+    /* Escondidos */
+
+    .map{
+        display: none;
+    }
+
+    .subcri-b button{
+        display: none;
+    }
+    .subcri-b p{
+        display: none;
+    }
+
+    .footer-P img{
+        display: none;
+        width: auto;
+
+
+}
+}
+
 
 
 /* Animacion para toggle */
@@ -316,16 +361,18 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
     width: 80%;
-    text-align: center; /* Added to center the text */
+    text-align: center; 
 }
   
   .subscribe-btn:hover, .suscribe-btn:focus {
-    transform: scale(1.05); /* Ligeramente más grande al pasar el mouse o enfocar */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el mouse o enfocar */
-    cursor: pointer; /* Cambia el cursor a una mano para indicar que es clickeable */
+    transform: scale(1.05); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+    cursor: pointer;
   }
   
   .subscribe-btn:active {
-    transform: scale(0.95); /* Efecto de presionado */
+    transform: scale(0.95); 
   }
   
+
+

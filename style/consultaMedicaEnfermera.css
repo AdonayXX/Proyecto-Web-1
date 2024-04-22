@@ -13,7 +13,7 @@
     }
 
     .p-data input{
-        width: 280px;
+        width: 100%;
     }
 
     .card-header {
@@ -49,4 +49,15 @@
     .card-header h1{
         display: grid;
         place-items: center;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+        .patients-data{
+            display: flex;
+            flex-direction: column;
+        }
+        .patients-data input{
+            width: 100%;
+        }
     }

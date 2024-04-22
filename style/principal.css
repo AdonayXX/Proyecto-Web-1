@@ -323,3 +323,139 @@
 
 }
 
+@media (max-width: 772px) {
+
+    .serv-r {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+
+    .line-c {
+        display: none;
+    }
+
+    .serv-r1 {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+    }
+
+    .box-s {
+        width: 260px;
+
+    }
+
+    .about-us h1 {
+        text-align: center;
+    }
+
+    .line {
+        height: 750px;
+    }
+
+    .opti-Direct {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        /* margin-top: 164px; */
+
+    }
+
+    .box-Opti {
+        display: flex;
+        width: 100%;
+        height: 98px;
+        margin: auto;
+    }
+
+    .box-Direc {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-basis: 98%;
+        margin-left:0px;
+    
+    }
+
+    .btn-chat {
+        display: flex;
+        margin-top: 10px;
+        flex-basis: 100%;
+        justify-content:end;
+        margin: none;
+    
+    }
+
+}
+
+@media (max-width: 892px) {
+
+    .serv-r {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+
+    .line-c {
+        display: none;
+    }
+
+    .serv-r1 {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+    }
+
+    .box-s {
+        width: 260px;
+
+    }
+
+    .about-us h1 {
+        text-align: center;
+    }
+
+    .line {
+        height: 750px;
+    }
+
+    .opti-Direct {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        /* margin-top: 164px; */
+
+    }
+
+    .box-Opti {
+        display: flex;
+        width: 100%;
+        height: 98px;
+        margin: auto;
+    }
+
+    .box-Direc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-basis: 98%;
+        margin-left:0px;
+    
+    }
+
+    .btn-chat {
+        display: flex;
+        margin-top: 10px;
+        flex-basis: 100%;
+        justify-content:end;
+        margin: none;
+    
+    }
+
+}
+
